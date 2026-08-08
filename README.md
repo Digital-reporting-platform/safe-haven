@@ -4,7 +4,7 @@
 
 **A survivor-centered digital platform for anonymous reporting, coordinated case management, and multilingual support.**
 
-*Where privacy meets protection — built so every voice can be heard, in any language.*
+*Where privacy meets protection — built so every voice can be heard, in the language they trust.*
 
 <br />
 
@@ -34,7 +34,7 @@ Violence, abuse, and bullying remain severely underreported. Survivors often sta
 | Principle | How We Deliver It |
 |-----------|---------------------|
 | **Privacy by default** | Anonymous reporting with tracking numbers — no account required |
-| **Language inclusion** | Full interface and NLP classification in English, Amharic (አማርኛ), and Oromo (Afaan Oromoo) |
+| **Language inclusion** | Full interface and NLP classification in English and Amharic (አማርኛ) |
 | **Intelligent routing** | Keyword-based ML classification across 13 incident categories with severity scoring |
 | **Coordinated care** | Dedicated workflows for counselors, medical professionals, and legal advisors |
 | **Accountability** | Role-based access, audit trails, and PostgreSQL Row-Level Security |
@@ -127,7 +127,7 @@ Report → Language Detection → ML Classification → Risk Score → Database
 | **Storage** | Supabase Storage for evidence and file uploads |
 | **Auth** | JWT tokens + OTP email verification (Gmail SMTP) |
 | **Testing** | Jest (backend), Playwright (frontend E2E + API tests) |
-| **Deployment** | Vercel (frontend), Railway (backend) |
+| **Deployment** | Vercel (frontend), Render (backend) |
 
 ---
 
@@ -142,7 +142,7 @@ Safe_Haven/
 │   │   ├── services/           # API client layer
 │   │   ├── routes/             # Route configs per role
 │   │   ├── auth/               # Login, register, OTP flows
-│   │   └── i18n/               # EN · AM · OM translations
+│   │   └── i18n/               # EN · AM translations
 │   └── env.sample              # Frontend env template
 │
 ├── violence_backend/           # NestJS REST API
@@ -162,7 +162,7 @@ Safe_Haven/
 │   ├── prisma/
 │   │   ├── schema.prisma       # Database schema
 │   │   └── migrations/         # Version-controlled migrations
-│   └── nixpacks.toml           # Railway build configuration
+│   └── package.json            # Build & start scripts for Render
 │
 └── README.md
 ```
@@ -360,17 +360,20 @@ Set environment variables: `VITE_API_URL`, `VITE_SUPABASE_URL`, `VITE_SUPABASE_A
 
 Guide: [`violence_frontend/VERCEL_DEPLOYMENT.md`](./violence_frontend/VERCEL_DEPLOYMENT.md)
 
-### Backend → Railway
+### Backend → Render
 
-Railway uses [`violence_backend/nixpacks.toml`](./violence_backend/nixpacks.toml) for builds:
+1. Create a new **Web Service** at [render.com](https://render.com) and connect your GitHub repository
+2. Set the **Root Directory** to `violence_backend`
+3. Configure build and start commands:
 
-- Installs dependencies with `npm ci`
-- Runs `prisma generate` and `nest build`
-- Starts with `prisma migrate deploy && node dist/main`
+| Setting | Value |
+|---------|-------|
+| **Build Command** | `npm install && npx prisma generate && npm run build` |
+| **Start Command** | `npx prisma migrate deploy && node dist/main` |
+| **Node Version** | 18+ (22 recommended) |
 
-Set all backend `.env` variables in the Railway dashboard, including `NODE_ENV=production` and your production `FRONTEND_URL`.
-
-Guide: [`violence_backend/RAILWAY_DEPLOYMENT_FIX.md`](./violence_backend/RAILWAY_DEPLOYMENT_FIX.md)
+4. Add all backend environment variables in the Render dashboard, including `NODE_ENV=production`, `DATABASE_URL`, `JWT_SECRET`, `GMAIL_USER`, `GMAIL_APP_PASSWORD`, and your production `FRONTEND_URL`
+5. Render assigns `PORT` automatically — the API reads it from the environment at runtime
 
 ### Database → Supabase
 
