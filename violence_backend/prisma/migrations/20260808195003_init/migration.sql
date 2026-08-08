@@ -1,8 +1,11 @@
 -- CreateEnum
-CREATE TYPE "UserRole" AS ENUM ('SURVIVOR', 'COUNSELOR', 'MEDICAL_PROFESSIONAL', 'LEGAL_ADVISOR', 'ADMIN', 'MODERATOR', 'SYSTEM');
+CREATE TYPE "UserRole" AS ENUM ('GUEST', 'SURVIVOR', 'COUNSELOR', 'MEDICAL_PROFESSIONAL', 'LEGAL_ADVISOR', 'ADMIN', 'MODERATOR', 'SYSTEM');
 
 -- CreateEnum
-CREATE TYPE "UserStatus" AS ENUM ('ACTIVE', 'INACTIVE', 'SUSPENDED', 'DELETED');
+CREATE TYPE "UserStatus" AS ENUM ('INVITED', 'ACTIVE', 'INACTIVE', 'SUSPENDED', 'DELETED');
+
+-- CreateEnum
+CREATE TYPE "MessageAudience" AS ENUM ('ALL', 'SURVIVOR', 'ASSIGNED_PROFESSIONAL', 'SUPPORT_PROVIDER', 'COUNSELOR', 'ADMIN');
 
 -- CreateEnum
 CREATE TYPE "IncidentCategory" AS ENUM ('PHYSICAL_VIOLENCE', 'SEXUAL_ASSAULT', 'EMOTIONAL_ABUSE', 'PSYCHOLOGICAL_ABUSE', 'NEGLECT', 'CYBERBULLYING', 'HARASSMENT', 'DISCRIMINATION', 'WORKPLACE_ABUSE', 'DOMESTIC_VIOLENCE', 'CHILD_ABUSE', 'ELDER_ABUSE', 'OTHER');
@@ -11,7 +14,7 @@ CREATE TYPE "IncidentCategory" AS ENUM ('PHYSICAL_VIOLENCE', 'SEXUAL_ASSAULT', '
 CREATE TYPE "SeverityLevel" AS ENUM ('LOW', 'MEDIUM', 'HIGH', 'CRITICAL');
 
 -- CreateEnum
-CREATE TYPE "ReportStatus" AS ENUM ('PENDING_REVIEW', 'UNDER_INVESTIGATION', 'ASSIGNED_TO_PROFESSIONAL', 'IN_PROGRESS', 'RESOLVED', 'CLOSED', 'REJECTED', 'ARCHIVED');
+CREATE TYPE "ReportStatus" AS ENUM ('PENDING_REVIEW', 'RECEIVED', 'ASSIGNED', 'IN_SUPPORT', 'RESOLVED', 'CLOSED', 'REJECTED');
 
 -- CreateEnum
 CREATE TYPE "CaseType" AS ENUM ('COUNSELING', 'MEDICAL_SUPPORT', 'LEGAL_ASSISTANCE', 'EMERGENCY_SUPPORT', 'PREVENTION_EDUCATION', 'RESOURCE_REFERRAL', 'COMBINED_SUPPORT');
@@ -35,7 +38,25 @@ CREATE TYPE "ForumCategory" AS ENUM ('PEER_SUPPORT', 'STORYTELLING', 'QUESTIONS_
 CREATE TYPE "ForumPostStatus" AS ENUM ('PENDING_MODERATION', 'PUBLISHED', 'HIDDEN', 'DELETED');
 
 -- CreateEnum
-CREATE TYPE "MissingPersonStatus" AS ENUM ('ACTIVE', 'FOUND', 'CLOSED');
+CREATE TYPE "MissingPersonStatus" AS ENUM ('PENDING', 'ACTIVE', 'FOUND', 'CLOSED');
+
+-- CreateEnum
+CREATE TYPE "AppointmentStatus" AS ENUM ('PENDING', 'ACCEPTED', 'DECLINED', 'CANCELLED');
+
+-- CreateEnum
+CREATE TYPE "OTPType" AS ENUM ('EMAIL_VERIFICATION', 'ACCOUNT_ACTIVATION', 'LOGIN_OTP', 'PASSWORD_RESET');
+
+-- CreateEnum
+CREATE TYPE "JobApplicationStatus" AS ENUM ('APPLIED', 'UNDER_REVIEW', 'INTERVIEW_SCHEDULED', 'ACCEPTED', 'REJECTED', 'WITHDRAWN');
+
+-- CreateEnum
+CREATE TYPE "ContactInquiryType" AS ENUM ('GENERAL', 'PRIVACY', 'TECHNICAL', 'LEGAL', 'ACCESSIBILITY', 'PARTNERSHIP', 'BILLING', 'MEDIA');
+
+-- CreateEnum
+CREATE TYPE "ContactStatus" AS ENUM ('NEW', 'IN_PROGRESS', 'RESPONDED', 'RESOLVED', 'CLOSED');
+
+-- CreateEnum
+CREATE TYPE "ContactUrgency" AS ENUM ('LOW', 'NORMAL', 'HIGH', 'URGENT');
 
 -- CreateTable
 CREATE TABLE "User" (
@@ -47,10 +68,13 @@ CREATE TABLE "User" (
     "phone" TEXT,
     "role" "UserRole" NOT NULL DEFAULT 'SURVIVOR',
     "status" "UserStatus" NOT NULL DEFAULT 'ACTIVE',
+    "isEmailVerified" BOOLEAN NOT NULL DEFAULT false,
     "language" TEXT NOT NULL DEFAULT 'en',
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "deletedAt" TIMESTAMP(3),
+    "resetToken" TEXT,
+    "resetTokenExpires" TIMESTAMP(3),
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -70,18 +94,28 @@ CREATE TABLE "Report" (
     "classificationLabel" TEXT,
     "suggestedCaseType" TEXT,
     "suggestedPriority" TEXT,
+    "classificationConfirmed" BOOLEAN NOT NULL DEFAULT false,
     "location" TEXT,
     "gpsLat" DOUBLE PRECISION,
     "gpsLng" DOUBLE PRECISION,
     "ipAddress" VARCHAR(255),
     "ipHash" TEXT,
     "deviceFingerprint" VARCHAR(255),
+    "detectedCountry" TEXT,
+    "detectedRegion" TEXT,
+    "detectedCity" TEXT,
+    "locationMismatchWarning" BOOLEAN NOT NULL DEFAULT false,
+    "locationMismatchConfirmed" BOOLEAN NOT NULL DEFAULT false,
     "riskScore" DOUBLE PRECISION NOT NULL DEFAULT 0,
     "flaggedAsRepetitive" BOOLEAN NOT NULL DEFAULT false,
     "isDuplicate" BOOLEAN NOT NULL DEFAULT false,
+    "contactEmail" TEXT,
+    "trackingNumber" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "resolvedAt" TIMESTAMP(3),
+    "closedAt" TIMESTAMP(3),
+    "statusHistory" JSONB,
 
     CONSTRAINT "Report_pkey" PRIMARY KEY ("id")
 );
@@ -122,9 +156,12 @@ CREATE TABLE "CaseAssignment" (
 CREATE TABLE "CaseComment" (
     "id" TEXT NOT NULL,
     "reportId" TEXT NOT NULL,
-    "authorId" TEXT NOT NULL,
+    "authorId" TEXT,
+    "senderRole" "UserRole" NOT NULL DEFAULT 'SURVIVOR',
+    "isSystemMessage" BOOLEAN NOT NULL DEFAULT false,
+    "audience" "MessageAudience" NOT NULL DEFAULT 'ALL',
     "content" TEXT NOT NULL,
-    "isPublic" BOOLEAN NOT NULL DEFAULT false,
+    "isPublic" BOOLEAN NOT NULL DEFAULT true,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
@@ -239,6 +276,23 @@ CREATE TABLE "MissingPerson" (
 );
 
 -- CreateTable
+CREATE TABLE "Sighting" (
+    "id" TEXT NOT NULL,
+    "missingPersonId" TEXT NOT NULL,
+    "location" TEXT NOT NULL,
+    "sightingDate" TIMESTAMP(3) NOT NULL,
+    "description" TEXT,
+    "contactName" TEXT,
+    "contactPhone" TEXT,
+    "contactEmail" TEXT,
+    "isVerified" BOOLEAN NOT NULL DEFAULT false,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Sighting_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "AnalyticsSnapshot" (
     "id" TEXT NOT NULL,
     "date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -283,6 +337,136 @@ CREATE TABLE "MLTrainingData" (
 );
 
 -- CreateTable
+CREATE TABLE "SystemSetting" (
+    "id" TEXT NOT NULL,
+    "category" TEXT NOT NULL,
+    "data" JSONB NOT NULL,
+    "updatedById" TEXT,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "SystemSetting_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Conversation" (
+    "id" TEXT NOT NULL,
+    "participant1Id" TEXT NOT NULL,
+    "participant2Id" TEXT NOT NULL,
+    "subject" TEXT,
+    "lastMessageAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Conversation_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Message" (
+    "id" TEXT NOT NULL,
+    "conversationId" TEXT NOT NULL,
+    "senderId" TEXT NOT NULL,
+    "content" TEXT NOT NULL,
+    "isRead" BOOLEAN NOT NULL DEFAULT false,
+    "attachments" JSONB,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Message_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "AppointmentRequest" (
+    "id" TEXT NOT NULL,
+    "caseId" TEXT NOT NULL,
+    "requestedById" TEXT NOT NULL,
+    "requestedToId" TEXT NOT NULL,
+    "proposedDateTime" TIMESTAMP(3) NOT NULL,
+    "message" TEXT,
+    "status" "AppointmentStatus" NOT NULL DEFAULT 'PENDING',
+    "responseMessage" TEXT,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "AppointmentRequest_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "OTP" (
+    "id" TEXT NOT NULL,
+    "userId" TEXT NOT NULL,
+    "code" TEXT NOT NULL,
+    "type" "OTPType" NOT NULL,
+    "expiresAt" TIMESTAMP(3) NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "usedAt" TIMESTAMP(3),
+
+    CONSTRAINT "OTP_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "JobOpportunity" (
+    "id" TEXT NOT NULL,
+    "externalId" TEXT NOT NULL,
+    "source" TEXT NOT NULL,
+    "sourceUrl" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "company" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    "category" TEXT NOT NULL,
+    "tags" TEXT[] DEFAULT ARRAY[]::TEXT[],
+    "minRecoveryLevel" INTEGER NOT NULL DEFAULT 1,
+    "isVerified" BOOLEAN NOT NULL DEFAULT true,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "JobOpportunity_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "SavedJob" (
+    "id" TEXT NOT NULL,
+    "userId" TEXT NOT NULL,
+    "jobOpportunityId" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "SavedJob_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "JobApplication" (
+    "id" TEXT NOT NULL,
+    "userId" TEXT NOT NULL,
+    "jobOpportunityId" TEXT NOT NULL,
+    "status" "JobApplicationStatus" NOT NULL DEFAULT 'APPLIED',
+    "appliedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "notes" TEXT,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "JobApplication_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "ContactSubmission" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
+    "phone" TEXT,
+    "company" TEXT,
+    "subject" TEXT NOT NULL,
+    "inquiryType" "ContactInquiryType" NOT NULL,
+    "urgency" "ContactUrgency" NOT NULL DEFAULT 'NORMAL',
+    "message" TEXT NOT NULL,
+    "status" "ContactStatus" NOT NULL DEFAULT 'NEW',
+    "ipAddress" VARCHAR(255),
+    "userAgent" TEXT,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "ContactSubmission_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "_supportProviders" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
@@ -300,7 +484,16 @@ CREATE INDEX "User_email_idx" ON "User"("email");
 CREATE INDEX "User_role_idx" ON "User"("role");
 
 -- CreateIndex
+CREATE INDEX "User_status_idx" ON "User"("status");
+
+-- CreateIndex
+CREATE INDEX "User_resetToken_idx" ON "User"("resetToken");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "Report_ipHash_key" ON "Report"("ipHash");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Report_trackingNumber_key" ON "Report"("trackingNumber");
 
 -- CreateIndex
 CREATE INDEX "Report_status_idx" ON "Report"("status");
@@ -316,6 +509,9 @@ CREATE INDEX "Report_riskScore_idx" ON "Report"("riskScore");
 
 -- CreateIndex
 CREATE INDEX "Report_ipHash_idx" ON "Report"("ipHash");
+
+-- CreateIndex
+CREATE INDEX "Report_trackingNumber_idx" ON "Report"("trackingNumber");
 
 -- CreateIndex
 CREATE INDEX "Report_createdAt_idx" ON "Report"("createdAt");
@@ -346,6 +542,15 @@ CREATE INDEX "CaseComment_reportId_idx" ON "CaseComment"("reportId");
 
 -- CreateIndex
 CREATE INDEX "CaseComment_authorId_idx" ON "CaseComment"("authorId");
+
+-- CreateIndex
+CREATE INDEX "CaseComment_senderRole_idx" ON "CaseComment"("senderRole");
+
+-- CreateIndex
+CREATE INDEX "CaseComment_audience_idx" ON "CaseComment"("audience");
+
+-- CreateIndex
+CREATE INDEX "CaseComment_createdAt_idx" ON "CaseComment"("createdAt");
 
 -- CreateIndex
 CREATE INDEX "ServiceProvider_type_idx" ON "ServiceProvider"("type");
@@ -390,6 +595,15 @@ CREATE INDEX "MissingPerson_status_idx" ON "MissingPerson"("status");
 CREATE INDEX "MissingPerson_lastSeenDate_idx" ON "MissingPerson"("lastSeenDate");
 
 -- CreateIndex
+CREATE INDEX "Sighting_missingPersonId_idx" ON "Sighting"("missingPersonId");
+
+-- CreateIndex
+CREATE INDEX "Sighting_sightingDate_idx" ON "Sighting"("sightingDate");
+
+-- CreateIndex
+CREATE INDEX "Sighting_isVerified_idx" ON "Sighting"("isVerified");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "AnalyticsSnapshot_date_key" ON "AnalyticsSnapshot"("date");
 
 -- CreateIndex
@@ -406,6 +620,99 @@ CREATE INDEX "MLTrainingData_category_idx" ON "MLTrainingData"("category");
 
 -- CreateIndex
 CREATE INDEX "MLTrainingData_isActive_idx" ON "MLTrainingData"("isActive");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "SystemSetting_category_key" ON "SystemSetting"("category");
+
+-- CreateIndex
+CREATE INDEX "SystemSetting_category_idx" ON "SystemSetting"("category");
+
+-- CreateIndex
+CREATE INDEX "Conversation_participant1Id_idx" ON "Conversation"("participant1Id");
+
+-- CreateIndex
+CREATE INDEX "Conversation_participant2Id_idx" ON "Conversation"("participant2Id");
+
+-- CreateIndex
+CREATE INDEX "Conversation_lastMessageAt_idx" ON "Conversation"("lastMessageAt");
+
+-- CreateIndex
+CREATE INDEX "Message_conversationId_idx" ON "Message"("conversationId");
+
+-- CreateIndex
+CREATE INDEX "Message_senderId_idx" ON "Message"("senderId");
+
+-- CreateIndex
+CREATE INDEX "Message_createdAt_idx" ON "Message"("createdAt");
+
+-- CreateIndex
+CREATE INDEX "AppointmentRequest_caseId_idx" ON "AppointmentRequest"("caseId");
+
+-- CreateIndex
+CREATE INDEX "AppointmentRequest_requestedById_idx" ON "AppointmentRequest"("requestedById");
+
+-- CreateIndex
+CREATE INDEX "AppointmentRequest_requestedToId_idx" ON "AppointmentRequest"("requestedToId");
+
+-- CreateIndex
+CREATE INDEX "AppointmentRequest_status_idx" ON "AppointmentRequest"("status");
+
+-- CreateIndex
+CREATE INDEX "OTP_userId_idx" ON "OTP"("userId");
+
+-- CreateIndex
+CREATE INDEX "OTP_code_idx" ON "OTP"("code");
+
+-- CreateIndex
+CREATE INDEX "OTP_type_idx" ON "OTP"("type");
+
+-- CreateIndex
+CREATE INDEX "OTP_expiresAt_idx" ON "OTP"("expiresAt");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "JobOpportunity_externalId_key" ON "JobOpportunity"("externalId");
+
+-- CreateIndex
+CREATE INDEX "JobOpportunity_source_idx" ON "JobOpportunity"("source");
+
+-- CreateIndex
+CREATE INDEX "JobOpportunity_isVerified_idx" ON "JobOpportunity"("isVerified");
+
+-- CreateIndex
+CREATE INDEX "JobOpportunity_minRecoveryLevel_idx" ON "JobOpportunity"("minRecoveryLevel");
+
+-- CreateIndex
+CREATE INDEX "JobOpportunity_createdAt_idx" ON "JobOpportunity"("createdAt");
+
+-- CreateIndex
+CREATE INDEX "SavedJob_userId_idx" ON "SavedJob"("userId");
+
+-- CreateIndex
+CREATE INDEX "SavedJob_jobOpportunityId_idx" ON "SavedJob"("jobOpportunityId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "SavedJob_userId_jobOpportunityId_key" ON "SavedJob"("userId", "jobOpportunityId");
+
+-- CreateIndex
+CREATE INDEX "JobApplication_userId_idx" ON "JobApplication"("userId");
+
+-- CreateIndex
+CREATE INDEX "JobApplication_jobOpportunityId_idx" ON "JobApplication"("jobOpportunityId");
+
+-- CreateIndex
+CREATE INDEX "JobApplication_status_idx" ON "JobApplication"("status");
+
+-- CreateIndex
+CREATE INDEX "ContactSubmission_status_idx" ON "ContactSubmission"("status");
+
+-- CreateIndex
+CREATE INDEX "ContactSubmission_inquiryType_idx" ON "ContactSubmission"("inquiryType");
+
+-- CreateIndex
+CREATE INDEX "ContactSubmission_urgency_idx" ON "ContactSubmission"("urgency");
+
+-- CreateIndex
+CREATE INDEX "ContactSubmission_createdAt_idx" ON "ContactSubmission"("createdAt");
 
 -- CreateIndex
 CREATE INDEX "_supportProviders_B_index" ON "_supportProviders"("B");
@@ -426,7 +733,7 @@ ALTER TABLE "CaseAssignment" ADD CONSTRAINT "CaseAssignment_assignedToId_fkey" F
 ALTER TABLE "CaseComment" ADD CONSTRAINT "CaseComment_reportId_fkey" FOREIGN KEY ("reportId") REFERENCES "Report"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "CaseComment" ADD CONSTRAINT "CaseComment_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "CaseComment" ADD CONSTRAINT "CaseComment_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "ServiceProviderReview" ADD CONSTRAINT "ServiceProviderReview_serviceProviderId_fkey" FOREIGN KEY ("serviceProviderId") REFERENCES "ServiceProvider"("id") ON DELETE CASCADE ON UPDATE CASCADE;
@@ -447,7 +754,37 @@ ALTER TABLE "ForumPost" ADD CONSTRAINT "ForumPost_authorId_fkey" FOREIGN KEY ("a
 ALTER TABLE "ForumComment" ADD CONSTRAINT "ForumComment_postId_fkey" FOREIGN KEY ("postId") REFERENCES "ForumPost"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "Sighting" ADD CONSTRAINT "Sighting_missingPersonId_fkey" FOREIGN KEY ("missingPersonId") REFERENCES "MissingPerson"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "AuditLog" ADD CONSTRAINT "AuditLog_entityId_fkey" FOREIGN KEY ("entityId") REFERENCES "Report"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Conversation" ADD CONSTRAINT "Conversation_participant1Id_fkey" FOREIGN KEY ("participant1Id") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Conversation" ADD CONSTRAINT "Conversation_participant2Id_fkey" FOREIGN KEY ("participant2Id") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Message" ADD CONSTRAINT "Message_conversationId_fkey" FOREIGN KEY ("conversationId") REFERENCES "Conversation"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Message" ADD CONSTRAINT "Message_senderId_fkey" FOREIGN KEY ("senderId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "OTP" ADD CONSTRAINT "OTP_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "SavedJob" ADD CONSTRAINT "SavedJob_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "SavedJob" ADD CONSTRAINT "SavedJob_jobOpportunityId_fkey" FOREIGN KEY ("jobOpportunityId") REFERENCES "JobOpportunity"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "JobApplication" ADD CONSTRAINT "JobApplication_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "JobApplication" ADD CONSTRAINT "JobApplication_jobOpportunityId_fkey" FOREIGN KEY ("jobOpportunityId") REFERENCES "JobOpportunity"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "_supportProviders" ADD CONSTRAINT "_supportProviders_A_fkey" FOREIGN KEY ("A") REFERENCES "CaseAssignment"("id") ON DELETE CASCADE ON UPDATE CASCADE;

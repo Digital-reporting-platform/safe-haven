@@ -32,9 +32,6 @@ async function bootstrap() {
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
-  'https://pleasant-expression.vercel.app',
-  'https://pleaseant-expression.vercel.app',
-  'https://pleasing-expression-production-237e.up.railway.app',
   process.env.FRONTEND_URL,
 ].filter((origin): origin is string => Boolean(origin));
 
@@ -63,11 +60,11 @@ const allowedOrigins = [
   await app.listen(port, '0.0.0.0');
   
   const environment = process.env.NODE_ENV || 'development';
-  console.log(`🚀 SafeHaven API running in ${environment} mode`);
-  console.log(`📍 Server: http://0.0.0.0:${port}${globalPrefix}`);
-  console.log(`📚 Swagger docs: http://0.0.0.0:${port}${globalPrefix}/docs`);
-  console.log(`🗄️  Database: ${process.env.DATABASE_URL ? 'Connected' : 'Not configured'}`);
-  console.log(`🔐 JWT: ${process.env.JWT_SECRET ? 'Configured' : 'Not configured'}`);
+  console.log(` SafeHaven API running in ${environment} mode`);
+  console.log(`Server: http://0.0.0.0:${port}${globalPrefix}`);
+  console.log(`Swagger docs: http://0.0.0.0:${port}${globalPrefix}/docs`);
+  console.log(`Database: ${process.env.DATABASE_URL ? 'Connected' : 'Not configured'}`);
+  console.log(`JWT: ${process.env.JWT_SECRET ? 'Configured' : 'Not configured'}`);
 }
 
 bootstrap();
