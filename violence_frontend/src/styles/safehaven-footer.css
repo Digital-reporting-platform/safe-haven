@@ -1,0 +1,337 @@
+:root {
+  --sh-footer-bg: #3D4136;
+  --sh-footer-glass: var(--colors-olive-8);
+  --sh-footer-border: var(--border-border-secondary);
+  --sh-accent-warm: var(--colors-terracotta-5);
+  --sh-accent-warm-hover: var(--colors-terracotta-6);
+  --sh-footer-text-muted: var(--colors-olive-4);
+  --sh-footer-text-main: var(--colors-neutral-white);
+  --sh-transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sh-footer {
+  position: relative;
+  background-color: var(--sh-footer-bg);
+  color: var(--sh-footer-text-main);
+  padding: 80px 0 40px;
+  margin-top: auto;
+  font-family: var(--font-sans-primary, 'Inter', sans-serif);
+  overflow: hidden;
+  border-top: 1px solid var(--sh-footer-border);
+}
+
+/* Glassmorphic Layering (Lusion.co influence) */
+.sh-footer::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+      rgba(193, 91, 62, 0.05) 0%,
+    transparent 70%
+  );
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.sh-footer-accent {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--sh-accent-warm),
+    transparent
+  );
+  opacity: 0.3;
+}
+
+.sh-footer-main {
+  padding: 60px 0;
+}
+
+.sh-footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 60px;
+}
+
+@media (max-width: 1024px) {
+  .sh-footer-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* Brand Section */
+.sh-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--sh-accent-warm);
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+.brand-tagline {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--sh-footer-text-muted);
+  max-width: 320px;
+  font-weight: 400;
+}
+
+.security-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--sh-footer-glass);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--sh-footer-border);
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sh-footer-text-muted);
+  width: fit-content;
+}
+
+/* Footer Sections */
+.sh-footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sh-accent-warm);
+  margin: 0;
+}
+
+.section-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-link {
+  font-size: 15px;
+  color: var(--sh-footer-text-muted);
+  text-decoration: none;
+  transition: var(--sh-transition);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.footer-link:hover {
+  color: #fff;
+  transform: translateX(4px);
+}
+
+.link-arrow {
+  width: 14px;
+  height: 14px;
+  opacity: 0;
+  transition: var(--sh-transition);
+}
+
+.footer-link:hover .link-arrow {
+  opacity: 1;
+}
+
+/* Compliance Badges */
+.compliance-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.badge-item {
+  background: var(--sh-footer-glass);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--sh-footer-border);
+  padding: 6px 12px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sh-footer-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Newsletter */
+.newsletter-text {
+  font-size: 14px;
+  color: var(--sh-footer-text-muted);
+  margin: 0;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+}
+
+.newsletter-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--sh-footer-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 14px;
+  transition: var(--sh-transition);
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--sh-accent-warm);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.newsletter-btn {
+  background: var(--sh-accent-warm);
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: var(--sh-transition);
+  white-space: nowrap;
+}
+
+.newsletter-btn:hover {
+  background: var(--sh-accent-warm-hover);
+  transform: translateY(-2px);
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--sh-footer-glass);
+  border: 1px solid var(--sh-footer-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sh-footer-text-muted);
+  transition: var(--sh-transition);
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background: var(--sh-accent-warm);
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+/* Bottom Bar */
+.sh-footer-bottom {
+  border-top: 1px solid var(--sh-footer-border);
+  padding: 24px 0;
+}
+
+.bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--sh-footer-text-muted);
+}
+
+@media (max-width: 768px) {
+  .bottom-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-mark {
+  font-weight: 700;
+  color: #fff;
+}
+
+.separator {
+  color: var(--sh-footer-border);
+}
+
+.bottom-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.meta-item svg {
+  color: #ef4444;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid var(--sh-footer-border);
+  border-radius: 6px;
+  color: var(--sh-text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  transition: var(--sh-transition);
+}
+
+.logout-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}

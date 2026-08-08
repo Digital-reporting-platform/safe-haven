@@ -1,0 +1,1795 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register"
+  },
+  "language": {
+    "select": "Select Language",
+    "current": "Current Language",
+    "english": "English",
+    "amharic": "Amharic",
+    "switchTo": "Switch to {{language}}",
+    "changeLanguage": "Change Language"
+  },
+  "navigation": {
+    "home": "Home",
+    "report": "Report",
+    "missing": "Missing Persons",
+    "support": "Support Services",
+    "dashboard": "Dashboard",
+    "overview": "Overview",
+    "cases": "Cases",
+    "myCases": "My Cases",
+    "safety": "Safety",
+    "resources": "Resources",
+    "messages": "Messages",
+    "notifications": "Notifications",
+    "profile": "Profile",
+    "settings": "Settings",
+    "about": "About",
+    "contact": "Contact",
+    "help": "Help",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "transparency": "Transparency",
+    "recoveryHub": "Recovery Hub",
+    "supportDirectory": "Support Directory",
+    "empowerment": "Empowerment",
+    "communityForum": "Community Forum",
+    "appointments": "Appointments",
+    "examinations": "Examinations",
+    "consultations": "Consultations",
+    "courtCalendar": "Court Calendar",
+    "contentModeration": "Content Moderation",
+    "moderation": "Content Moderation",
+    "userManagement": "User Management",
+    "analytics": "Analytics",
+    "caseManagement": "Case Management",
+    "systemSettings": "System Settings",
+    "incidentOversight": "Incident Oversight",
+    "reportsOverview": "Reports Overview",
+    "reports": "Reports",
+    "court": "Court",
+    "users": "Users",
+    "missingPersons": "Missing Persons",
+    "missing persons": "Missing Persons",
+    "forum posts": "Forum Posts",
+    "community": "Community"
+  },
+  "hero": {
+    "your": "YOUR",
+    "matters": "MATTERS",
+    "words": {
+      "voice": "VOICE",
+      "story": "STORY",
+      "hope": "HOPE",
+      "power": "POWER"
+    },
+    "description": "Anonymous reporting platform.",
+    "descriptionHighlight": "Safe, secure, survivor-centered.",
+    "features": {
+      "encrypted": "Encrypted",
+      "anonymous": "Anonymous",
+      "support": "Support"
+    },
+    "cta": {
+      "startReport": "Start Report",
+      "exploreResources": "Explore Resources"
+    },
+    "stats": {
+      "anonymous": "Anonymous",
+      "available": "Available",
+      "compromises": "Compromises"
+    },
+    "guestAccess": "GUEST ACCESS"
+  },
+  "sectionPreviews": {
+    "badge": "Trusted by 10,000+ Community Members",
+    "title": "How We",
+    "titleHighlight": "Support You",
+    "description": "Access comprehensive services designed to protect, support, and empower every member of the Ethiopian community",
+    "tabs": {
+      "report": {
+        "title": "Report an Incident",
+        "shortTitle": "Report",
+        "description": "Confidential and secure reporting",
+        "stats": {
+          "value": "10,847",
+          "label": "Reports Processed"
+        }
+      },
+      "help": {
+        "title": "Get Help",
+        "shortTitle": "Help",
+        "description": "24/7 support and resources",
+        "stats": {
+          "value": "24/7",
+          "label": "Always Available"
+        }
+      },
+      "community": {
+        "title": "Community & Forums",
+        "shortTitle": "Community",
+        "description": "Safe space to connect",
+        "stats": {
+          "label": "Active Members"
+        }
+      },
+      "support": {
+        "title": "Legal & Medical Support",
+        "shortTitle": "Support",
+        "description": "Professional assistance",
+        "stats": {
+          "label": "Verified Professionals"
+        }
+      },
+      "missing": {
+        "title": "Missing Persons",
+        "shortTitle": "Missing",
+        "description": "Report and search",
+        "stats": {
+          "label": "Success Rate"
+        }
+      }
+    },
+    "reportPreview": {
+      "title": "Report an Incident",
+      "subtitle": "100% Confidential & Encrypted",
+      "description": "Our advanced reporting system uses end-to-end encryption to protect your identity and ensure complete confidentiality. Report incidents safely, track case progress, and access support resources.",
+      "features": {
+        "encryption": "Military-grade encryption",
+        "anonymous": "Anonymous submission option",
+        "available": "24/7 submission availability"
+      },
+      "cta": "Start Confidential Report",
+      "whatToReport": "What You Can Report:",
+      "reportTypes": {
+        "physical": "Physical violence or assault",
+        "sexual": "Sexual harassment or abuse",
+        "workplace": "Workplace bullying or discrimination",
+        "domestic": "Domestic violence",
+        "child": "Child abuse or neglect",
+        "online": "Online harassment or cyberbullying"
+      }
+    },
+    "helpPreview": {
+      "title": "Get Help",
+      "subtitle": "24/7 Support Available",
+      "description": "Access critical emergency resources and professional support services across Ethiopia. We connect you with the right assistance during difficult times.",
+      "emergencyNumbers": {
+        "police": {
+          "title": "Police Emergency",
+          "number": "991",
+          "desc": "Federal Police - National"
+        },
+        "medical": {
+          "title": "Medical Emergency",
+          "number": "907",
+          "desc": "Red Cross Ambulance"
+        },
+        "support": {
+          "title": "Support Hotline",
+          "number": "8335",
+          "desc": "Mental Health - 24/7"
+        }
+      },
+      "services": "Support Services:",
+      "servicesList": {
+        "crisis": "Crisis intervention counseling",
+        "therapy": "Trauma-informed therapy",
+        "legal": "Legal consultation referrals",
+        "medical": "Medical assistance coordination",
+        "shelter": "Safe shelter information",
+        "financial": "Financial aid guidance"
+      }
+    },
+    "communityPreview": {
+      "title": "Community & Forums",
+      "subtitle": "Safe, Moderated Spaces",
+      "description": "Join survivor-led discussions in a safe, anonymous environment. Share experiences, find support, and connect with others who understand your journey.",
+      "categories": "Forum Categories:",
+      "categoryList": {
+        "peer": "Peer Support Groups",
+        "qa": "Questions & Answers",
+        "resources": "Resource Sharing",
+        "stories": "Survivor Stories"
+      },
+      "stats": {
+        "members": "Active Members",
+        "posts": "Posts This Month",
+        "responses": "Avg. Response Time"
+      },
+      "recentActivity": "Recent Activity",
+      "anonymousUser": "Anonymous User",
+      "timeAgo": {
+        "hours": "{{count}} hours ago",
+        "minutes": "{{count}} minutes ago",
+        "days": "{{count}} days ago"
+      },
+      "samplePost": "Thank you all for the support...",
+      "cta": "Join Community Forums"
+    },
+    "supportPreview": {
+      "title": "Legal & Medical Support",
+      "subtitle": "Verified Professionals",
+      "description": "Access our network of vetted legal professionals, medical practitioners, and licensed counselors who specialize in supporting survivors with compassion and expertise.",
+      "categories": "Professional Categories:",
+      "categoryList": {
+        "legal": "Legal Advisors",
+        "medical": "Medical Professionals",
+        "counseling": "Licensed Counselors"
+      },
+      "features": {
+        "verified": "All professionals verified",
+        "confidential": "Confidential consultations",
+        "specialized": "Trauma-specialized care"
+      },
+      "cta": "Browse Professionals"
+    },
+    "missingPreview": {
+      "title": "Missing Persons",
+      "subtitle": "Help Reunite Families",
+      "description": "Report missing persons or search our comprehensive database. Every report helps reunite families and keeps our community safe and informed.",
+      "stats": {
+        "active": "Active Cases",
+        "resolved": "Resolved Cases",
+        "rate": "Success Rate"
+      },
+      "recentSuccesses": "Recent Successes",
+      "foundSafe": "Found Safe",
+      "resolved": "Resolved",
+      "daysToResolve": "{{count}} days",
+      "noSuccessStories": "No recent success stories to display yet.",
+      "actions": {
+        "report": "Report Missing Person",
+        "search": "Search Database"
+      }
+    }
+  },
+  "recoveryHub": {
+    "badge": "RECOVERY & GROWTH",
+    "title": "Beyond Reporting:",
+    "titleSubtitle": "Your Path to Resilience",
+    "description": "SafeHaven is more than a platform, it's a sanctuary for healing, learning, and rebuilding your future.",
+    "storytelling": {
+      "title": "Survivor Storytelling Space",
+      "subtitle": "Community-led healing and connection",
+      "description": "Finding this forum made me realize I wasn't alone. Seeing others speak their truth gave me the strength to finally reclaim my own narrative...",
+      "featured": "Featured Experience",
+      "tags": {
+        "moderated": "Moderated",
+        "anonymous": "Anonymous",
+        "survivorOnly": "Survivor-Only"
+      },
+      "cta": "Explore Moderated Forums",
+      "ctaGuest": "Join Our Community"
+    },
+    "empowerment": {
+      "title": "Empowerment Portal",
+      "subtitle": "Rebuild your independence with verified opportunities",
+      "description": "Rebuild your independence with verified opportunities tailored for survivors. We support your journey back to self-reliance.",
+      "features": {
+        "training": "Skill Training & Certification",
+        "placement": "Job Placement Assistance",
+        "leadership": "Volunteer Leadership Roles"
+      },
+      "cta": "Access Portal",
+      "ctaGuest": "Join for Access"
+    },
+    "blog": {
+      "title": "Awareness & Advocacy",
+      "subtitle": "Education is the first step toward a zero-tolerance culture",
+      "description": "Education is the first step toward a zero-tolerance culture. Learn to identify subtle signs of abuse, understand your legal rights, and stay informed.",
+      "latest": "Latest Insights",
+      "cta": "Explore Articles"
+    }
+  },
+  "home": {
+    "marquee": "100% ANONYMOUS • END-TO-END ENCRYPTED • SURVIVOR CENTERED",
+    "howItWorks": {
+      "badge": "Simple & Secure",
+      "title": "How SafeHaven Works",
+      "description": "Your journey to safety and resolution starts here. Completely anonymous and secure.",
+      "steps": {
+        "step1": {
+          "title": "Safe Report",
+          "description": "Share your experience through our secure, encrypted portal. No identity required, no logs kept. Your safety is our starting point."
+        },
+        "step2": {
+          "title": "Compassionate Review",
+          "description": "Our trauma-informed team reviews your case. We focus on your needs and connect you with verified local support networks."
+        },
+        "step3": {
+          "title": "Guided Recovery",
+          "description": "Access resources for healing and justice at your own pace. Stay connected via secure channels as you rebuild and move forward."
+        }
+      },
+      "cta": {
+        "badge": "Verified Support Network",
+        "title": "Ready to Begin Your Journey?",
+        "description": "Every service provider in our directory is manually verified by administrators to ensure the highest standards of care and safety.",
+        "startReport": "Start Confidential Report",
+        "browseResources": "Browse Resources"
+      }
+    },
+    "security": {
+      "badge": "Maximum Privacy Architecture",
+      "title": "Your Identity is Hidden",
+      "titleHighlight": "By Design, Not Policy.",
+      "description": "Your safety and privacy are our foundation. We built SafeHaven on a Zero-Trust framework, ensuring that even we cannot see who you are.",
+      "features": {
+        "zeroTrust": {
+          "title": "Zero-Trust Protocol",
+          "description": "No privileged access. Every request is verified, and metadata is never stored."
+        },
+        "encryption": {
+          "title": "E2E Encryption",
+          "description": "Encrypted the moment you type. Only specialists with shared keys can decrypt."
+        }
+      },
+      "vault": {
+        "title": "Vault Protection",
+        "status": "System Live & Secure",
+        "riskLevel": "0%",
+        "riskLabel": "Identity Leak RISK",
+        "identityMasking": "Identity Masking",
+        "metadataScrubbing": "Metadata Scrubbing",
+        "ipAnonymization": "IP Anonymization",
+        "enabled": "Enabled",
+        "active": "Active",
+        "verified": "Verified",
+        "encryptionStatus": "DATABASE ENCRYPTION STATUS",
+        "optimal": "OPTIMAL"
+      }
+    },
+    "supportCallout": {
+      "title": "Need Immediate Help or Professional Resources?",
+      "description": "Access crisis hotlines, NGO partnerships, and verified support organizations in one place.",
+      "cta": "Explore Support Services"
+    },
+    "finalCta": {
+      "title": "Ready to Make an Impact?",
+      "description": "Join thousands using SafeHaven to access world-class support when it matters most.",
+      "submitReport": "Submit Confidential Report",
+      "exploreResources": "Explore Resources",
+      "security": "Military-grade encryption • HIPAA compliant • ISO 27001 certified"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Login to SafeHaven",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your email",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "submit": "Sign In",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign up",
+      "forgotPassword": "Forgot password?"
+    },
+    "register": {
+      "title": "Create Account",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "submit": "Create Account",
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign in"
+    }
+  },
+  "chatbot": {
+    "nav_label": "Chat",
+    "open_label": "Open chat",
+    "close_label": "Close chat",
+    "title": "SafeHaven Assistant",
+    "welcome": "Here to help you navigate our services",
+    "greeting": "Hi! I can help you with questions about SafeHaven. What would you like to know?",
+    "input_placeholder": "Type your question...",
+    "input_label": "Message input",
+    "send_label": "Send message",
+    "questions": {
+      "how_it_works": "How does SafeHaven work?",
+      "privacy": "Is my information private?",
+      "ml_logic": "How does the ML risk assessment work?",
+      "legal": "What legal support is available?"
+    },
+    "answers": {
+      "emergency": "If you are in immediate danger, please call emergency services (911) or contact local authorities. SafeHaven also has emergency support available 24/7.",
+      "reporting": "You can submit a report through our anonymous reporting form. Your identity will be protected, and the report will be reviewed by our team within 24 hours.",
+      "privacy": "Your privacy is our priority. All reports can be submitted anonymously. We use encryption and strict access controls to protect your information.",
+      "ml_logic": "Our ML system analyzes reports to assess risk levels and prioritize cases. This helps counselors focus on urgent cases first. The system is continuously monitored for fairness.",
+      "legal": "We connect you with legal aid organizations, pro bono lawyers, and can help you understand your rights. Legal support is confidential and free for survivors.",
+      "support": "SafeHaven provides access to counselors, medical providers, and support groups. You can connect with professionals through our secure messaging system.",
+      "missing": "If someone is missing, you can report it through our missing persons portal. We work with authorities and NGOs to help locate missing individuals.",
+      "system": "SafeHaven is a comprehensive platform for reporting gender-based violence, accessing support services, and tracking case progress securely.",
+      "how_it_works": "SafeHaven allows you to report incidents anonymously, track your case status, access support resources, and connect with counselors and legal professionals—all in one secure platform.",
+      "fallback": "I'm here to help with questions about SafeHaven. You can ask about reporting, privacy, support services, legal aid, or how the system works."
+    }
+  },
+    "anonymousToggle": {
+    "title": "Report Anonymously",
+    "description": "Your identity will be protected",
+    "features": "✓ Zero-knowledge encryption • ✓ No identity logs • ✓ Secure by design"
+  },
+  "reportSuccessModal": {
+    "title": "Thank you for speaking up",
+    "anonymousMessage": "Your report has been received safely. You're not alone in this.",
+    "verifiedMessage": "Your report has been received safely. We're here to support you.",
+    "trackingReference": "Your Tracking Reference",
+    "saveToTrack": "Save this to track your case",
+    "reportId": "Report ID: {{id}}",
+    "locationAssessment": "Sensitive Location Assessment",
+    "locationPrecision": "Location Precision",
+    "safetyAssessment": "Safety Assessment",
+    "timeToReport": "Time to Report",
+    "preciseLocation": "Precise Location Detected",
+    "regionLocation": "Region-level Location",
+    "locationNotSpecified": "Location Not Specified",
+    "highPriority": "High Priority",
+    "mediumPriority": "Medium Priority",
+    "standardReview": "Standard Review",
+    "medicalSupport": "Medical team support",
+    "legalSupport": "Legal counselor support",
+    "bothSupport": "Medical + legal support",
+    "whatHappensNext": "What happens next?",
+    "nextSteps": {
+      "review": "Our team will review your report within 24 hours.",
+      "triage": "NLP triage routed this report to {{support}}.",
+      "anonymousTrack": "Use the <strong>Track Your Case</strong> button below to check updates and message your support team.",
+      "verifiedDashboard": "You can view your report in your dashboard.",
+      "confidential": "All information is kept confidential and secure."
+    },
+    "reportsRemaining": "{{remaining}} of {{daily}} daily reports remaining",
+    "trackCase": "Track Your Case →",
+    "signUpAccount": "Sign up for account",
+    "continueHome": "Continue to Home",
+    "goToDashboard": "Go to Dashboard",
+    "encryptionProtected": "Your report is protected with military-grade encryption"
+  },
+  "missingPersons": {
+    "title": "Missing Persons",
+    "subtitle": "Search & Report",
+    "description": "Community-powered search with verified, safe information. All reports are verified by administrators to ensure accuracy.",
+    "verifiedPlatform": "Verified & Secure Platform",
+    "reportMissingPerson": "Report Missing Person",
+    "safetyGuidelines": "Safety Guidelines",
+    "safetyNotice": {
+      "title": "Safety First",
+      "description": "We protect everyone's privacy. Sensitive details are never shown publicly. All reports are verified by administrators before appearing here."
+    },
+    "search": {
+      "placeholder": "Search by location, description, or case ID...",
+      "title": "Search Missing Person Cases",
+      "filtersButton": "Filters",
+      "filtersOn": "On"
+    },
+    "filters": {
+      "gender": "Gender",
+      "location": "Location",
+      "caseStatus": "Case Status",
+      "showing": "Showing",
+      "verifiedCases": "verified cases",
+      "clearAll": "Clear all filters",
+      "allGenders": "All Genders",
+      "allLocations": "All Locations",
+      "allCases": "All Cases",
+      "verifiedOnly": "Verified Only",
+      "recentSevenDays": "Recent (Last 7 days)",
+      "genderOptions": {
+        "male": "Male",
+        "female": "Female"
+      },
+      "locationOptions": {
+        "addisAbaba": "Addis Ababa",
+        "hawassa": "Hawassa",
+        "direDawa": "Dire Dawa"
+      }
+    },
+    "activeCases": {
+      "title": "Active Cases",
+      "description": "Verified missing persons currently being searched for",
+      "activeCases": "active cases"
+    },
+    "loading": {
+      "title": "Loading cases...",
+      "description": "Fetching missing persons data"
+    },
+    "error": {
+      "title": "Unable to load",
+      "description": "{error}"
+    },
+    "noCases": {
+      "title": "No cases found",
+      "tryAdjust": "Try adjusting your search criteria or filters",
+      "noActiveCases": "No verified missing persons cases at this time",
+      "clearAllFilters": "Clear all filters"
+    },
+    "caseCard": {
+      "activeSearch": "Active Search",
+      "yearsOld": "yrs",
+      "lastSeenLocation": "Last Seen Location",
+      "lastSeenOn": "Last Seen On",
+      "at": "at",
+      "verified": "Verified",
+      "sightings": "Sightings",
+      "reportSighting": "Report Sighting",
+      "details": "Details",
+      "anonymousCase": "Anonymous Case"
+    },
+    "emergencyHelp": {
+      "title": "Need Immediate Help?",
+      "description": "Contact these emergency services for urgent situations",
+      "policeEmergency": "Police Emergency",
+      "antiTrafficking": "Anti-Trafficking",
+      "mentalHealthCrisis": "Mental Health Crisis"
+    },
+    "footer": {
+      "verificationNotice": "All cases are verified by administrators. Personal and sensitive information is protected.",
+      "lawEnforcementContact": "For law enforcement inquiries: havensafe207@gmail.com"
+    }
+  },
+  "reportPage": {
+    "incidentDescriptionLabel": "Incident Description",
+    "incidentDescriptionPlaceholder": "Your story is safe here...",
+    "incidentDescriptionTitle": "Incident Description",
+    "title": "SafeHaven | Anonymous Report",
+    "stepProgress": "Step {{current}} of {{total}}",
+    "complete": "{{percent}}% Complete",
+    "reportsRemaining": "{{count}} reports remaining today",
+    "anonymous": "Anonymous",
+    "verified": "Verified",
+    "unspecifiedCategory": "unspecified category",
+    "step1": {
+      "title": "Describe what <span class='text-[#C15B3E]'>happened</span>",
+      "description": "Share your story. Our AI will analyze it securely.",
+      "placeholder": "Your story is safe here...",
+      "continue": "Continue"
+    },
+    "step2": {
+      "title": "Add <span class='text-[#C15B3E]'>evidence</span>",
+      "continue": "Continue"
+    },
+    "step3": {
+      "title": "Location & <span class='text-[#C15B3E]'>Time</span>",
+      "selectRegion": "Select Region",
+      "incidentDate": "Incident Date and Time",
+      "locationSelected": "Location selected: <strong>{{location}}</strong>",
+      "continue": "Continue"
+    },
+    "step4": {
+      "title": "Your <span class='text-[#C15B3E]'>Information</span>",
+      "description": "Please provide your contact information for verified reporting.",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone (Optional)",
+      "firstNamePlaceholder": "Jane",
+      "lastNamePlaceholder": "Doe",
+      "emailPlaceholder": "jane@example.com",
+      "phonePlaceholder": "e.g. +251...",
+      "continue": "Continue"
+    },
+    "step4Anonymous": {
+      "title": "Select <span class='text-[#C15B3E]'>Category</span>",
+      "reviewSubmit": "Review & Submit"
+    },
+    "step5": {
+      "title": "Select <span class='text-[#C15B3E]'>Category</span>",
+      "reviewSubmit": "Review & Submit"
+    },
+    "step5Anonymous": {
+      "title": "Final <span class='text-[#C15B3E]'>Consent</span>",
+      "consentText": "You are submitting a {{type}} report for {{category}}.",
+      "consentCheckbox": "I confirm this information is accurate to my knowledge.",
+      "submit": "Submit Secure Report",
+      "encrypting": "Encrypting...",
+      "editDetails": "Edit Details"
+    },
+    "step6": {
+      "title": "Final <span class='text-[#C15B3E]'>Consent</span>",
+      "consentText": "You are submitting a {{type}} report for {{category}}.",
+      "contactInfo": "Contact: {{firstName}} {{lastName}} ({{email}})",
+      "consentCheckbox": "I confirm this information is accurate to my knowledge.",
+      "submit": "Submit Secure Report",
+      "encrypting": "Encrypting...",
+      "editDetails": "Edit Details"
+    },
+    "regions": [
+      "Addis Ababa",
+      "Afar",
+      "Amhara",
+      "Benishangul-Gumuz",
+      "Dire Dawa",
+      "Gambela",
+      "Harari",
+      "Oromia",
+      "Sidama",
+      "Somali",
+      "South Ethiopia",
+      "South West Ethiopia",
+      "Tigray"
+    ],
+    "errors": {
+      "dailyLimit": "Daily report limit reached for your safety.",
+      "loginRequired": "Please login to submit a verified report",
+      "submissionFailed": "Submission failed"
+    }
+  },
+  "supportServices": {
+    "badge": "Support Ecosystem",
+    "title": "Find Help",
+    "titleHighlight": "Near You.",
+    "description": "Connect with verified medical, legal, and counseling services across Ethiopia in a safe and supportive environment.",
+    "searchPlaceholder": "Find help near me (medical, legal, counseling)",
+    "filterBy": "Filter by",
+    "clearAll": "Clear all",
+    "callNow": "Call Now",
+    "viewDetails": "View Details",
+    "hotline": "Hotline",
+    "languages": "Languages",
+    "region": "Region",
+    "type": "Type",
+    "noResults": "No services found matching your criteria"
+  },
+  "supportServicesPage": {
+    "hero": {
+      "badge": "Support & Resources",
+      "title": "You Are",
+      "titleHighlight": "Not Alone",
+      "titleEnd": "Help is Available.",
+      "description": "Access immediate crisis intervention, trauma-informed support, and professional resources designed to help Ethiopians navigate their journey to safety and healing.",
+      "crisisHotlines": "Crisis Hotlines",
+      "browseDirectory": "Browse Directory"
+    },
+    "hotlines": {
+      "badge": "IMMEDIATE ASSISTANCE",
+      "title": "Crisis Hotlines",
+      "note": "SafeHaven is an anonymous reporting platform and is not a real-time emergency dispatch system. For life-threatening emergencies requiring immediate intervention, please contact the services below.",
+      "policeEmergency": "Police Emergency",
+      "redCrossAmbulance": "Red Cross Ambulance",
+      "mentalHealthSupport": "Mental Health Support",
+      "call": "Call"
+    },
+    "institutional": {
+      "badge": "INSTITUTIONAL RESOURCES",
+      "title": "Organizations Ready to Help",
+      "description": "SafeHaven connects survivors with verified government agencies, NGOs, and healthcare providers across Ethiopia who are committed to supporting victims of violence.",
+      "ngos": "NGOs & Civil Society",
+      "government": "Government Agencies",
+      "health": "Health & Mental Health",
+      "legal": "Legal Aid",
+      "registerPrompt": "Are you a support organization?",
+      "registerDescription": "Register your services on our platform so survivors can find you through our verified directory.",
+      "browseFullDirectory": "Browse the full directory"
+    },
+    "trust": {
+      "title": "Why Trust Our Services?",
+      "description": "Your safety and privacy are baked into every connection we facilitate.",
+      "confidentiality": {
+        "title": "Confidentiality",
+        "description": "We never share your personal information with partners without your explicit consent."
+      },
+      "vetted": {
+        "title": "Vetted Partners",
+        "description": "Every organization in our directory undergoes a rigorous verification process."
+      },
+      "traumaInformed": {
+        "title": "Trauma-Informed",
+        "description": "All support services prioritize your emotional well-being and recovery."
+      }
+    },
+    "cta": {
+      "title": "Ready to take the next step?",
+      "viewDirectory": "View Full Directory",
+      "submitReport": "Submit A Report"
+    }
+  },
+  "providerDirectory": {
+    "badge": "VERIFIED SUPPORT NETWORK",
+    "title": "Professional Support",
+    "titleHighlight": "Directory",
+    "description": "Connect with vetted professionals committed to your safety and recovery. Our directory features counselors, legal advisors, and medical experts.",
+    "searchPlaceholder": "Search by name, specialty, or location...",
+    "showFilters": "Show Filters",
+    "hideFilters": "Hide Filters",
+    "clearFilters": "Clear Filters",
+    "filterBy": "Filter by",
+    "serviceType": "Service Type",
+    "location": "Location",
+    "allServices": "All Services",
+    "allLocations": "All Locations",
+    "counseling": "Counseling",
+    "medical": "Medical",
+    "legalAid": "Legal Aid",
+    "ngos": "NGOs",
+    "govAgencies": "Gov Agencies",
+    "shelters": "Shelters",
+    "verified": "Verified",
+    "available": "Available",
+    "contactInfo": "Contact Info",
+    "phone": "Phone",
+    "email": "Email",
+    "website": "Website",
+    "hours": "Hours",
+    "viewProfile": "View Profile",
+    "bookAppointment": "Book Appointment",
+    "noResults": "No providers found",
+    "noResultsDescription": "Try adjusting your filters or search terms",
+    "loading": "Loading providers...",
+    "resultsCount": "{{count}} providers found",
+    "page": "Page {{current}} of {{total}}",
+    "previous": "Previous",
+    "next": "Next",
+    "safetyFirst": {
+      "title": "Your Safety First",
+      "description": "All providers are vetted, but please trust your instincts. Use our",
+      "safetyPlanning": "safety planning",
+      "toolsBefore": "tools before any meeting."
+    },
+    "noResultsFound": {
+      "title": "No results found",
+      "description": "Try adjusting your search or filters to find more providers.",
+      "clearAllFilters": "Clear all filters"
+    },
+    "providerCTA": {
+      "title": "Are you a support provider?",
+      "description": "Join our network of verified professionals and help survivors reclaim their lives. We offer a secure platform for case management and communication.",
+      "registerAsProvider": "Register as Provider",
+      "learnMore": "Learn More"
+    },
+    "footer": {
+      "disclaimer": "SafeHaven Directory is a public resource for finding help. We do not provide direct medical or legal advice. If you are in immediate danger, please use the",
+      "emergencyHotlines": "emergency hotlines",
+      "listedOnPlatform": "listed on our platform.",
+      "copyright": "© 2026 SafeHaven Initiative. All Rights Reserved."
+    }
+  },
+  "survivor": {
+    "dashboard": {
+      "welcomeBack": "Welcome back, {{name}}",
+      "safetyMatters": "Your safety and progress matter most",
+      "search": "Search",
+      "newReport": "New Report",
+      "activeCase": "Active Case",
+      "incidentReport": "Incident Report",
+      "caseProgress": "Case Progress",
+      "newMessageFromProfessional": "{{count}} new message{{plural}} from your professional",
+      "tapBelowToView": "Tap below to view and respond",
+      "viewDetails": "View Details",
+      "viewMessages": "View Messages",
+      "noActiveReports": "No active reports found. If you need help, please file a report.",
+      "quickActions": "Quick Actions",
+      "fileReport": "File a confidential incident report",
+      "communityPost": "Community Post",
+      "communityPostDesc": "Share or read community stories",
+      "voiceMessage": "Voice Message",
+      "voiceMessageDesc": "Record a secure voice message",
+      "empowerment": "Empowerment",
+      "empowermentDesc": "Self care, goals & support circle",
+      "goTo": "Go to",
+      "availableResources": "Available Resources",
+      "crisisHotline": "Crisis Hotline",
+      "emergencySupport": "24/7 emergency support",
+      "peerSupportGroups": "Peer Support Groups",
+      "weeklyVirtualMeetings": "Weekly virtual meetings",
+      "legalAid": "Legal Aid",
+      "freeLegalConsultation": "Free legal consultation",
+      "needHelp": "Need Help?",
+      "supportAvailable": "24/7 Support Available",
+      "contactSupport": "Contact Support"
+    },
+    "empowerment": {
+      "badge": "Growth & Recovery",
+      "title": "Empowerment & Career Portal",
+      "description": "Curated opportunities, training, and resources designed to support your journey towards long-term resilience and independence.",
+      "publicAccess": "Public Access - No sign in required to browse opportunities",
+      "searchPlaceholder": "Search jobs, workshops, or organizations...",
+      "findOpportunity": "Find Opportunity",
+      "listings": "{{count}} Listings",
+      "verifiedPartnersOnly": "Verified Partners Only",
+      "jobsVolunteer": "Jobs & Volunteer",
+      "trainingPrograms": "Training Programs",
+      "myApplications": "My Applications",
+      "noOpportunitiesFound": "No opportunities found",
+      "tryAdjustSearch": "Try adjusting your search",
+      "checkBackSoon": "Check back soon for new listings",
+      "viewAllOpportunities": "View All Opportunities",
+      "noApplicationsYet": "No applications yet",
+      "startApplyingToJobs": "Start applying to jobs to track your applications here",
+      "activeApplications": "Active Applications",
+      "trackRecentSubmissions": "Track the status of your recent submissions ({{count}} total)",
+      "jobTitle": "Job Title",
+      "company": "Company",
+      "appliedOn": "Applied On",
+      "status": "Status",
+      "viewJob": "View Job",
+      "resumeBuilder": "Resume Builder",
+      "resumeBuilderDesc": "Create a professional profile that highlights your growth and resilient mindset.",
+      "startBuilding": "Start Building",
+      "mentorshipProgram": "Mentorship Program",
+      "mentorshipDesc": "Connect with experienced professionals who understand your journey.",
+      "findMentor": "Find a Mentor",
+      "remote": "Remote",
+      "lowStress": "Low Stress",
+      "match": "{{percent}}% Match",
+      "source": "Source",
+      "applied": "Applied",
+      "applyNow": "Apply Now",
+      "learnMore": "Learn More",
+      "duration": "Duration",
+      "modality": "Modality",
+      "level": "Level",
+      "spotsLeft": "Spots Left",
+      "available": "Available",
+      "digitalLiteracy": "Digital Literacy & Office Essentials",
+      "resilienceWorkshop": "Resilience & Entrepreneurship Workshop",
+      "microBusiness": "Micro-Business Management",
+      "globalSkillsHub": "Global Skills Hub",
+      "hopeVentureCapital": "Hope Venture Capital",
+      "ethioGrowthLab": "Ethio-Growth Lab",
+      "beginner": "Beginner",
+      "allLevels": "All Levels",
+      "intermediate": "Intermediate",
+      "weeks": "Weeks",
+      "days": "Days",
+      "months": "Months",
+      "hybrid": "Hybrid",
+      "inPerson": "In-person (Addis Ababa)",
+      "online": "Online",
+      "failedToLoadJobs": "Failed to load job opportunities",
+      "jobRemovedFromSaved": "Job removed from saved",
+      "jobSavedSuccessfully": "Job saved successfully",
+      "pleaseSignInToSaveJobs": "Please sign in to save jobs",
+      "failedToSaveJob": "Failed to save job",
+      "applicationSubmittedSuccessfully": "Application submitted successfully!",
+      "pleaseSignInToApplyForJobs": "Please sign in to apply for jobs",
+      "failedToApply": "Failed to apply",
+      "alreadyAppliedToJob": "You have already applied to this job"
+    },
+    "myCases": {
+      "title": "My Cases",
+      "description": "View and manage your reported incidents",
+      "newReport": "New Report",
+      "noCasesYet": "No Cases Yet",
+      "haventSubmittedReports": "You haven't submitted any reports yet.",
+      "submitFirstReport": "Submit Your First Report",
+      "caseDescription": "Description",
+      "noDescriptionProvided": "No description provided.",
+      "submitted": "Submitted",
+      "status": "Status",
+      "id": "ID",
+      "complete": "{{percent}}% complete",
+      "messages": "Messages",
+      "fullCaseDetails": "Full Case Details",
+      "newMessageFromProfessional": "{{count}} new message{{plural}} from your professional",
+      "loading": "Loading..."
+    },
+    "messages": {
+      "title": "Messages",
+      "assignedSupportChats": "Assigned Support Chats",
+      "searchPlaceholder": "Search chats...",
+      "loading": "Loading...",
+      "noAssignedSupportChat": "No assigned support chat thread found yet.",
+      "selectConversation": "Select a conversation",
+      "chatWith": "Chat with {{name}}",
+      "noMessagesYet": "No messages yet. Send your first message.",
+      "pickConversation": "Pick a conversation from left panel.",
+      "typeYourMessage": "Type your message...",
+      "send": "Send",
+      "sending": "Sending...",
+      "failedToLoadConversations": "Failed to load conversations",
+      "failedToLoadMessages": "Failed to load messages",
+      "failedToSendMessage": "Failed to send message"
+    },
+    "safety": {
+      "title": "Safety & Identity",
+      "description": "Control your privacy and how you interact with platform. Your safety and comfort are our highest priority.",
+      "secureEnvironment": "Secure Environment",
+      "privacyLevel": "Privacy Level",
+      "high": "High",
+      "encryption": "Encryption",
+      "active": "Active",
+      "session": "Session",
+      "secure": "Secure",
+      "anonymityControls": "Anonymity Controls",
+      "anonymityDesc": "Manage how your identity is protected",
+      "privateIdentityMode": "Private Identity Mode",
+      "privateIdentityDesc": "Hides your name and metadata from counselors and other users until you choose to reveal it.",
+      "anonymousReporting": "Anonymous Reporting",
+      "anonymousReportingDesc": "All incident reports will be submitted without any link to your account identity.",
+      "privacyPreferences": "Privacy Preferences",
+      "privacyDesc": "Session security and data retention",
+      "clearHistoryOnExit": "Clear History on Exit",
+      "clearHistoryDesc": "Automatically clear your search history and local platform cache when you log out.",
+      "inactivityTimeout": "Inactivity Timeout",
+      "inactivityDesc": "Log out automatically after 15 minutes of inactivity for your protection.",
+      "safetyNotifications": "Safety Notifications",
+      "safetyNotifDesc": "Choose how you want to be alerted",
+      "stealthNotifications": "Stealth Notifications",
+      "stealthNotifDesc": "Receive alerts with generic titles like 'System Update' to hide nature of message.",
+      "criticalSOSAlerts": "Critical SOS Alerts",
+      "criticalSOSDesc": "Allow vital safety alerts to bypass silent mode in case of immediate danger.",
+      "statusDashboard": "Status Dashboard",
+      "networkPrivacy": "Network Privacy",
+      "sessionKey": "Session Key",
+      "verified": "Verified",
+      "saveChanges": "Save Changes",
+      "settingsUpdated": "Settings Updated",
+      "dataManagement": "Data Management",
+      "downloadMyData": "Download My Data",
+      "deleteAccount": "Delete Account",
+      "resetDefaults": "Reset Defaults",
+      "yourDataStaysLocal": "Your data stays local",
+      "yourDataStaysDesc": "We use advanced local-first encryption. This means your private keys never leave your device, ensuring that not even our team can access your personal identifiers.",
+      "verifiedProtection": "Verified Protection",
+      "verifiedProtectionDesc": "Our safety protocols are reviewed by legal and trauma experts to ensure they meet highest standards for survivors in Ethiopian digital landscape.",
+      "encryptionActiveSecure": "Encryption Active & Secure"
+    },
+    "settings": {
+      "title": "Settings",
+      "description": "Manage your account settings and preferences",
+      "profile": "Profile",
+      "notifications": "Notifications",
+      "privacy": "Privacy",
+      "security": "Security",
+      "language": "Language",
+      "theme": "Theme",
+      "about": "About",
+      "accountSettings": "Account Settings",
+      "preferences": "Preferences",
+      "saveError": "Please fix the errors before saving.",
+      "saveSuccess": "Settings saved successfully",
+      "profile": {
+        "title": "Profile Information",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email Address",
+        "firstNamePlaceholder": "Enter your first name",
+        "lastNamePlaceholder": "Enter your last name",
+        "emailPlaceholder": "Enter your email"
+      },
+      "privacy": {
+        "title": "Privacy & Security",
+        "anonymousMode": "Anonymous Mode",
+        "anonymousDescription": "Keep your identity private",
+        "profileVisibility": "Profile Visibility",
+        "profileVisibilityDescription": "Control who can see your profile"
+      },
+      "notifications": {
+        "title": "Notifications",
+        "push": "Push Notifications",
+        "pushDescription": "Receive important updates",
+        "email": "Email Notifications",
+        "emailDescription": "Get updates via email"
+      },
+      "appearance": {
+        "title": "Appearance",
+        "darkMode": "Dark Mode",
+        "darkModeDescription": "Switch to dark theme",
+        "language": "Language",
+        "languageDescription": "Choose your preferred language",
+        "currentLanguage": "English"
+      },
+      "actions": {
+        "title": "Quick Actions",
+        "saveChanges": "Save Changes",
+        "saving": "Saving...",
+        "previewProfile": "Preview Profile",
+        "deleteAccount": "Delete Account"
+      },
+      "status": {
+        "verified": "Account Verified",
+        "verifiedDescription": "Your account is secure and verified",
+        "emailVerified": "Email Verified",
+        "accountActive": "Account Active",
+        "privacyProtected": "Privacy Protected"
+      },
+      "errors": {
+        "saveError": "Please fix errors before saving.",
+        "deleteError": "Failed to delete account"
+      },
+      "success": {
+        "profileUpdated": "Profile updated successfully!",
+        "accountDeleted": "Account deleted successfully"
+      },
+      "confirmations": {
+        "deleteAccount": "Are you sure you want to delete your account? This action cannot be undone."
+      }
+    },
+    "communityForum": {
+      "title": "Community Forum",
+      "description": "Connect with survivors in a safe, supportive environment",
+      "createPost": "Create Post",
+      "searchPlaceholder": "Search discussions...",
+      "categories": "Categories",
+      "allCategories": "All Categories",
+      "peerSupport": "Peer Support",
+      "questionsAnswers": "Questions & Answers",
+      "replyTooShort": "Reply is too short (min 5 chars)",
+      "replyTooLong": "Reply is too long (max 300 chars)",
+      "postTooShort": "Post is too short (min 10 chars)",
+      "postTooLong": "Post is too long (max 500 chars)",
+      "safeSpace": "A safe space for survivors to connect",
+      "resourceSharing": "Resource Sharing",
+      "survivorStories": "Survivor Stories",
+      "recentPosts": "Recent Posts",
+      "noPostsFound": "No posts found",
+      "joinDiscussion": "Join Discussion",
+      "shareExperience": "Share your experience",
+      "askQuestion": "Ask a question",
+      "offerSupport": "Offer support to others",
+      "filter": "Filter",
+      "newPost": "New Post",
+      "allTopics": "All Topics",
+      "communityStats": "Community Stats",
+      "members": "Members",
+      "postsToday": "Posts today",
+      "onlineNow": "Online now",
+      "postPlaceholder": "Share your story or ask for support... (posts are anonymous)",
+      "cancel": "Cancel",
+      "post": "Post",
+      "loadMorePosts": "Load More Posts",
+      "postDetails": "Post Details",
+      "selectPost": "Select a Post",
+      "selectPostDesc": "Click on any post to view details and join the conversation",
+      "replyPlaceholder": "Write a supportive reply... (Anonymous)",
+      "reply": "Reply",
+      "replies": "Replies",
+      "communityGuidelines": "Community Guidelines",
+      "guidelinesDesc": "Please review our guidelines to ensure a safe space for everyone.",
+      "guideline1": "Practice Kindness",
+      "guideline1Desc": "Support without judgement",
+      "guideline2": "Maintain Anonymity",
+      "guideline2Desc": "Protect everyone's privacy",
+      "guideline3": "Zero Tolerance",
+      "guideline3Desc": "No hate speech or harassment",
+      "leave": "Leave",
+      "iAgree": "I Agree",
+      "anonymous": "Anonymous",
+      "protected": "Protected",
+      "more": "More",
+      "share": "Share",
+      "views": "views",
+      "likes": "likes",
+      "noPostsYet": "No posts yet",
+      "beFirstToPost": "Be the first to share your story or ask for support"
+    },
+    "caseDetails": {
+      "title": "Case Details",
+      "description": "View detailed information about your case",
+      "caseId": "Case ID",
+      "status": "Status",
+      "date": "Date",
+      "location": "Location",
+      "assignedTo": "Assigned To",
+      "priority": "Priority",
+      "description": "Description",
+      "evidence": "Evidence",
+      "updates": "Updates",
+      "messages": "Messages",
+      "actions": "Actions",
+      "back": "Back",
+      "noCasesFound": "No cases found",
+      "loading": "Loading...",
+      "error": "Error loading case details",
+      "viewFullReport": "View Full Report",
+      "downloadReport": "Download Report",
+      "contactSupport": "Contact Support",
+      "updateStatus": "Update Status",
+      "addNote": "Add Note",
+      "uploadEvidence": "Upload Evidence",
+      "scheduleAppointment": "Schedule Appointment",
+      "sendReminder": "Send Reminder",
+      "markResolved": "Mark as Resolved",
+      "reopenCase": "Reopen Case",
+      "caseHistory": "Case History",
+      "timeline": "Timeline",
+      "documents": "Documents",
+      "notes": "Notes",
+      "activities": "Activities",
+      "caseClosed": "Case Closed",
+      "caseActive": "Case Active",
+      "casePending": "Case Pending",
+      "caseInProgress": "Case In Progress",
+      "caseResolved": "Case Resolved",
+      "caseCancelled": "Case Cancelled",
+      "caseRejected": "Case Rejected",
+      "caseUnderReview": "Case Under Review",
+      "caseAssigned": "Case Assigned",
+      "caseUnassigned": "Case Unassigned",
+      "caseReopened": "Case Reopened",
+      "caseArchived": "Case Archived",
+      "caseDeleted": "Case Deleted",
+      "caseUpdated": "Case Updated",
+      "caseCreated": "Case Created",
+      "caseStatusChanged": "Case Status Changed",
+      "caseAssignedToProfessional": "Case Assigned to Professional",
+      "caseUnassignedFromProfessional": "Case Unassigned from Professional",
+      "caseNoteAdded": "Case Note Added",
+      "caseEvidenceUploaded": "Case Evidence Uploaded",
+      "caseDocumentUploaded": "Case Document Uploaded",
+      "caseReminderSent": "Case Reminder Sent",
+      "caseAppointmentScheduled": "Case Appointment Scheduled",
+      "caseAppointmentCancelled": "Case Appointment Cancelled",
+      "caseAppointmentCompleted": "Case Appointment Completed",
+      "caseAppointmentRescheduled": "Case Appointment Rescheduled",
+      "caseAppointmentMissed": "Case Appointment Missed",
+      "caseFollowUpScheduled": "Case Follow-up Scheduled",
+      "caseFollowUpCompleted": "Case Follow-up Completed",
+      "caseFollowUpMissed": "Case Follow-up Missed",
+      "caseEscalated": "Case Escalated",
+      "caseDeescalated": "Case De-escalated",
+      "caseTransferred": "Case Transferred",
+      "caseMerged": "Case Merged",
+      "caseSplit": "Case Split",
+      "caseDuplicated": "Case Duplicated",
+      "caseLinked": "Case Linked",
+      "caseUnlinked": "Case Unlinked",
+      "caseTagged": "Case Tagged",
+      "caseUntagged": "Case Untagged",
+      "caseFlagged": "Case Flagged",
+      "caseUnflagged": "Case Unflagged",
+      "caseArchivedSuccessfully": "Case Archived Successfully",
+      "caseDeletedSuccessfully": "Case Deleted Successfully",
+      "caseUpdatedSuccessfully": "Case Updated Successfully",
+      "caseCreatedSuccessfully": "Case Created Successfully",
+      "caseStatusChangedSuccessfully": "Case Status Changed Successfully",
+      "caseAssignedToProfessionalSuccessfully": "Case Assigned to Professional Successfully",
+      "caseUnassignedFromProfessionalSuccessfully": "Case Unassigned from Professional Successfully",
+      "caseNoteAddedSuccessfully": "Case Note Added Successfully",
+      "caseEvidenceUploadedSuccessfully": "Case Evidence Uploaded Successfully",
+      "caseDocumentUploadedSuccessfully": "Case Document Uploaded Successfully",
+      "caseReminderSentSuccessfully": "Case Reminder Sent Successfully",
+      "caseAppointmentScheduledSuccessfully": "Case Appointment Scheduled Successfully",
+      "caseAppointmentCancelledSuccessfully": "Case Appointment Cancelled Successfully",
+      "caseAppointmentCompletedSuccessfully": "Case Appointment Completed Successfully",
+      "caseAppointmentRescheduledSuccessfully": "Case Appointment Rescheduled Successfully",
+      "caseAppointmentMissedSuccessfully": "Case Appointment Missed Successfully",
+      "caseFollowUpScheduledSuccessfully": "Case Follow-up Scheduled Successfully",
+      "caseFollowUpCompletedSuccessfully": "Case Follow-up Completed Successfully",
+      "caseFollowUpMissedSuccessfully": "Case Follow-up Missed Successfully",
+      "caseEscalatedSuccessfully": "Case Escalated Successfully",
+      "caseDeescalatedSuccessfully": "Case De-escalated Successfully",
+      "caseTransferredSuccessfully": "Case Transferred Successfully",
+      "caseMergedSuccessfully": "Case Merged Successfully",
+      "caseSplitSuccessfully": "Case Split Successfully",
+      "caseDuplicatedSuccessfully": "Case Duplicated Successfully",
+      "caseLinkedSuccessfully": "Case Linked Successfully",
+      "caseUnlinkedSuccessfully": "Case Unlinked Successfully",
+      "caseTaggedSuccessfully": "Case Tagged Successfully",
+      "caseUntaggedSuccessfully": "Case Untagged Successfully",
+      "caseFlaggedSuccessfully": "Case Flagged Successfully",
+      "caseUnflaggedSuccessfully": "Case Unflagged Successfully",
+      "caseArchivedFailed": "Case Archived Failed",
+      "caseDeletedFailed": "Case Deleted Failed",
+      "caseUpdatedFailed": "Case Updated Failed",
+      "caseCreatedFailed": "Case Created Failed",
+      "caseStatusChangedFailed": "Case Status Changed Failed",
+      "caseAssignedToProfessionalFailed": "Case Assigned to Professional Failed",
+      "caseUnassignedFromProfessionalFailed": "Case Unassigned from Professional Failed",
+      "caseNoteAddedFailed": "Case Note Added Failed",
+      "caseEvidenceUploadedFailed": "Case Evidence Uploaded Failed",
+      "caseDocumentUploadedFailed": "Case Document Uploaded Failed",
+      "caseReminderSentFailed": "Case Reminder Sent Failed",
+      "caseAppointmentScheduledFailed": "Case Appointment Scheduled Failed",
+      "caseAppointmentCancelledFailed": "Case Appointment Cancelled Failed",
+      "caseAppointmentCompletedFailed": "Case Appointment Completed Failed",
+      "caseAppointmentRescheduledFailed": "Case Appointment Rescheduled Failed",
+      "caseAppointmentMissedFailed": "Case Appointment Missed Failed",
+      "caseFollowUpScheduledFailed": "Case Follow-up Scheduled Failed",
+      "caseFollowUpCompletedFailed": "Case Follow-up Completed Failed",
+      "caseFollowUpMissedFailed": "Case Follow-up Missed Failed",
+      "caseEscalatedFailed": "Case Escalated Failed",
+      "caseDeescalatedFailed": "Case De-escalated Failed",
+      "caseTransferredFailed": "Case Transferred Failed",
+      "caseMergedFailed": "Case Merged Failed",
+      "caseSplitFailed": "Case Split Failed",
+      "caseDuplicatedFailed": "Case Duplicated Failed",
+      "caseLinkedFailed": "Case Linked Failed",
+      "caseUnlinkedFailed": "Case Unlinked Failed",
+      "caseTaggedFailed": "Case Tagged Failed",
+      "caseUntaggedFailed": "Case Untagged Failed",
+      "caseFlaggedFailed": "Case Flagged Failed",
+      "caseUnflaggedFailed": "Case Unflagged Failed",
+      "caseNotFound": "Case Not Found",
+      "noAccess": "The case you're looking for doesn't exist or you don't have access to it.",
+      "backToMyCases": "Back to My Cases",
+      "caseDescription": "Detailed view of your case progress and communication history.",
+      "incidentReport": "Incident Report",
+      "caseStatus": {
+        "pending": "Pending Review",
+        "underInvestigation": "Under Investigation",
+        "assignedToProfessional": "Assigned to Professional",
+        "inProgress": "In Progress",
+        "resolved": "Resolved",
+        "closed": "Closed"
+      }
+    }
+  },
+  "mainFooter": {
+    "tagline": "Your safety is our priority. Confidential support and resources available 24/7.",
+    "encryption": "256-bit E2E Encryption",
+    "sections": {
+      "platform": "Platform",
+      "resources": "Resources",
+      "legal": "Legal"
+    },
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "reportIncident": "Report Incident",
+      "myCases": "My Cases",
+      "resources": "Resources",
+      "cases": "Cases",
+      "auditLogs": "Audit Logs",
+      "report": "Report",
+      "support": "Support",
+      "missingPersons": "Missing Persons",
+      "supportDirectory": "Support Directory",
+      "recoveryHub": "Recovery Hub",
+      "blog": "Blog",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "accessibility": "Accessibility",
+      "transparency": "Transparency"
+    },
+    "compliance": {
+      "wcag": "WCAG AA",
+      "iso": "ISO 27001"
+    },
+    "bottom": {
+      "rights": "© 2025 All rights reserved",
+      "builtFor": "Built for humanity",
+      "signOut": "Sign Out"
+    }
+  },
+  "blogPage": {
+    "hero": {
+      "badge": "Community Stories & Insights",
+      "titleStart": "Stories of ",
+      "titleHighlight": "Hope & Healing",
+      "titleEnd": "",
+      "description": "Real experiences from survivors, expert insights, and resources to support your journey.",
+      "searchPlaceholder": "Search stories, topics, or authors..."
+    },
+    "categories": {
+      "all": "All News",
+      "educational": "Educational",
+      "insights": "General Insights"
+    },
+    "mainContent": {
+      "featuredStories": "Featured Stories",
+      "featuredBadge": "Featured",
+      "exploreCategory": "Explore by Category",
+      "latestStories": "Latest Stories",
+      "readFull": "Read full article",
+      "showLess": "Show less",
+      "readMore": "Read more"
+    },
+    "sidebar": {
+      "trendingTopics": "Trending Topics",
+      "moderationNoticeTitle": "All content is moderated to ensure a safe, supportive environment.",
+      "moderationNoticeDesc": "Please be respectful and compassionate in all interactions."
+    }
+  },
+  "privacyPage": {
+    "badge": "PRIVACY POLICY",
+    "hero": {
+      "titleStart": "Your Privacy ",
+      "titleHighlight": "Matters",
+      "description": "At SafeHaven, your privacy is fundamental to everything we do. Learn how we protect your information and respect your rights.",
+      "learnMore": "Learn More"
+    },
+    "principles": {
+      "title": "Our Privacy Principles",
+      "subtitle": "These core principles guide how we handle your personal information.",
+      "dataMinimization": {
+        "title": "Data Minimization",
+        "desc": "We collect only the minimum information necessary to provide our services and ensure your safety."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "desc": "We clearly explain what data we collect, how we use it, and your rights regarding your information."
+      },
+      "secureStorage": {
+        "title": "Secure Storage",
+        "desc": "All data is encrypted and stored using industry-leading security measures to prevent unauthorized access."
+      }
+    },
+    "dataCollection": {
+      "title": "What Information We Collect",
+      "subtitle": "We only collect information necessary to provide safe and effective support services.",
+      "youProvide": {
+        "title": "Information You Provide",
+        "item1": "Report content and supporting documentation",
+        "item2": "Account information (if you choose to register)",
+        "item3": "Communication with support services"
+      },
+      "autoCollected": {
+        "title": "Automatically Collected",
+        "item1": "Anonymous usage statistics to improve our service",
+        "item2": "Device type and browser information (not stored)",
+        "item3": "Session duration for service optimization"
+      }
+    },
+    "rights": {
+      "title": "Your Data Rights",
+      "subtitle": "You have complete control over your personal information and how it's used.",
+      "access": {
+        "title": "Access Your Data",
+        "desc": "Request a copy of all personal information we have about you."
+      },
+      "portability": {
+        "title": "Data Portability",
+        "desc": "Receive your data in a structured, machine-readable format."
+      },
+      "deletion": {
+        "title": "Right to Deletion",
+        "desc": "Request deletion of your personal information, subject to legal requirements."
+      },
+      "withdraw": {
+        "title": "Withdraw Consent",
+        "desc": "Revoke consent for data processing at any time."
+      }
+    },
+    "contact": {
+      "title": "Questions About Your Privacy?",
+      "subtitle": "Our privacy team is here to help you understand and exercise your rights.",
+      "button": "Contact Privacy Team"
+    }
+  },
+  "accessibilityPage": {
+    "badge": "ACCESSIBILITY STATEMENT",
+    "hero": {
+      "titleStart": "Accessible ",
+      "titleHighlight": "Support",
+      "description": "SafeHaven is committed to providing accessible support services. Our platform meets WCAG 2.1 AA standards and supports users with diverse abilities and assistive technologies.",
+      "explore": "Explore Features"
+    },
+    "features": {
+      "badge": "Assistive Technologies",
+      "title": "Accessibility Features",
+      "subtitle": "Built-in features to support users with different abilities. Try keyboard navigation!",
+      "visual": {
+        "title": "Visual Accessibility",
+        "desc": "High contrast options, screen reader compatibility, and adjustable text sizes for users with visual impairments."
+      },
+      "keyboard": {
+        "title": "Keyboard Navigation",
+        "desc": "Full keyboard accessibility with clear focus indicators and logical tab order throughout the platform."
+      },
+      "audio": {
+        "title": "Audio Support",
+        "desc": "Screen reader compatibility and audio descriptions for important interface elements."
+      }
+    },
+    "demos": {
+      "title": "Try Our Accessibility Features",
+      "subtitle": "Interactive demonstrations of our accessibility capabilities."
+    },
+    "keyboardDemo": {
+      "title": "Try Keyboard Navigation",
+      "desc": "Press any key to see visual feedback. Our platform fully supports keyboard-only navigation."
+    },
+    "contrastDemo": {
+      "title": "High Contrast Mode",
+      "desc": "Toggle to see how our interface adapts for better visibility.",
+      "on": "On",
+      "off": "Off",
+      "highContrast": "HIGH CONTRAST",
+      "standard": "Standard contrast"
+    },
+    "textSizeDemo": {
+      "title": "Text Size Adjustment",
+      "desc": "Users can adjust text size up to 200% without loss of content.",
+      "preview": "Preview text at "
+    },
+    "standards": {
+      "title": "Standards & Compliance",
+      "subtitle": "Our commitment to accessibility standards and inclusive design.",
+      "wcag": {
+        "title": "WCAG 2.1 AA Compliance",
+        "desc": "Meets all Web Content Accessibility Guidelines Level AA requirements."
+      },
+      "mobile": {
+        "title": "Mobile Accessibility",
+        "desc": "Optimized for touch interfaces and mobile screen readers."
+      },
+      "cross": {
+        "title": "Cross-Platform Support",
+        "desc": "Consistent accessibility features across desktop, tablet, and mobile devices."
+      }
+    },
+    "support": {
+      "title": "Need Accessibility Support?",
+      "desc": "If you're experiencing difficulties accessing our services or have suggestions for improving accessibility, please contact our support team.",
+      "contact": "Contact Support",
+      "report": "Report an Issue"
+    },
+    "footer": {
+      "note": "SafeHaven is continuously working to improve accessibility. This statement was last updated on ",
+      "skipLink": "Skip to main content",
+      "srOnly": "Accessibility feature: "
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "badge": "About Safe Ethiopia",
+      "titleStart": "Building a ",
+      "titleHighlight": "Safer Ethiopia",
+      "titleEnd": "Together",
+      "description": "We are a trauma-informed platform dedicated to creating safe spaces for reporting, healing, and community support across Ethiopia. Our mission is to empower every Ethiopian with tools and resources needed to break the cycle of violence.",
+      "getHelp": "Get Help Now",
+      "learnMore": "Learn More"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "desc": "To provide a secure, confidential, and culturally-sensitive platform that empowers Ethiopians to report violence, access support services, and build resilient communities free from abuse and discrimination.",
+      "item1": "Create safe reporting channels for all Ethiopians",
+      "item2": "Provide immediate access to trauma-informed support",
+      "item3": "Build community networks for lasting protection",
+      "item4": "Advocate for systemic change through data-driven insights"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "desc": "We envision an Ethiopia where every person feels safe, heard, and supported where communities are empowered to prevent violence and create environments where all citizens can thrive with dignity and respect.",
+      "item1": "An Ethiopia free from violence and abuse",
+      "item2": "Communities that protect and support each other",
+      "item3": "Systems that respond with compassion and efficiency",
+      "item4": "A culture of safety and mutual respect"
+    },
+    "values": {
+      "title": "Our Core Values",
+      "subtitle": "These principles guide every decision we make and every feature we build",
+      "safety": {
+        "title": "Safety First",
+        "desc": "Every feature is designed with user safety and emotional well-being as top priority"
+      },
+      "confidentiality": {
+        "title": "Absolute Confidentiality",
+        "desc": "Military-grade encryption ensures complete privacy and anonymity for all users"
+      },
+      "trauma": {
+        "title": "Trauma-Informed",
+        "desc": "Our approach is built on understanding and responding to needs of trauma survivors"
+      },
+      "community": {
+        "title": "Community-Led",
+        "desc": "Solutions are co-designed with Ethiopian communities to ensure cultural relevance"
+      },
+      "cultural": {
+        "title": "Cultural Sensitivity",
+        "desc": "We honor and incorporate Ethiopian traditions, languages, and social structures"
+      },
+      "excellence": {
+        "title": "Excellence in Service",
+        "desc": "Committed to providing highest quality support and resources to every user"
+      }
+    },
+    "cta": {
+      "title": "Join Us in Building a Safer Ethiopia",
+      "desc": "Whether you need support, want to volunteer, or are looking to partner with us, there's a place for you in our mission.",
+      "getHelp": "Get Help Now",
+      "partner": "Partner With Us"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "badge": "Contact SafeHaven",
+      "titleStart": "Get in ",
+      "titleHighlight": "Touch",
+      "description": "We're here to help. Whether you need support, have questions about our services, or want to report an issue, our team is ready to assist you through multiple channels."
+    },
+    "departments": {
+      "title": "Department Contacts",
+      "subtitle": "Get in touch with the right team for your specific inquiry.",
+      "privacy": {
+        "title": "Privacy & Data Protection",
+        "desc": "Data rights, privacy policies, GDPR compliance, and security concerns."
+      },
+      "legal": {
+        "title": "Legal & Compliance",
+        "desc": "Terms of service, legal agreements, partnerships, and regulatory matters."
+      },
+      "support": {
+        "title": "General Support",
+        "desc": "Technical issues, account support, accessibility concerns, and general inquiries."
+      },
+      "media": {
+        "title": "Partnerships & Media",
+        "desc": "Business partnerships, media inquiries, collaborations, and press releases."
+      }
+    },
+    "form": {
+      "title": "Send us a Message",
+      "subtitle": "Fill out the form below and we'll get back to you within 24 hours.",
+      "name": "Full Name *",
+      "namePlaceholder": "Your full name",
+      "email": "Email Address *",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+1 (555) 123-4567",
+      "company": "Company/Organization",
+      "companyPlaceholder": "Company name (optional)",
+      "subject": "Subject *",
+      "subjectPlaceholder": "Brief description of your inquiry",
+      "inquiryType": "Inquiry Type *",
+      "inquirySelect": "Select inquiry type",
+      "inquiryGeneral": "General Inquiry",
+      "inquiryPrivacy": "Privacy Concerns",
+      "inquiryTech": "Technical Support",
+      "inquiryLegal": "Legal Questions",
+      "inquiryAccess": "Accessibility Issues",
+      "inquiryPartner": "Partnership Opportunities",
+      "inquiryBilling": "Billing Questions",
+      "inquiryMedia": "Media Inquiries",
+      "urgency": "Urgency Level",
+      "urgencyLow": "Low - General question",
+      "urgencyNormal": "Normal - Standard inquiry",
+      "urgencyHigh": "High - Need quick response",
+      "urgencyUrgent": "Urgent - Immediate attention needed",
+      "message": "Message *",
+      "messagePlaceholder": "Please provide details about your inquiry. The more information you provide, the better we can assist you.",
+      "sending": "Sending Message...",
+      "submit": "Send Message",
+      "successTitle": "Message Sent Successfully!",
+      "successDesc": "Thank you for contacting SafeHaven. We've received your message and will respond within 24 hours.",
+      "successExpected": "Expected response time: 24 hours"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find answers to common questions about SafeHaven's services and support.",
+      "q1": "How long does it take to get a response?",
+      "a1": "We typically respond within 24 hours for email inquiries and immediately for phone support during business hours.",
+      "q2": "Is my information kept confidential?",
+      "a2": "Yes, all communications are encrypted and handled with the highest level of confidentiality. We never share personal information without explicit consent.",
+      "q3": "Do you offer 24/7 support?",
+      "a3": "Yes, our live chat is available 24/7, and emergency support is always accessible. Phone support is available during business hours.",
+      "q4": "How can I report an accessibility issue?",
+      "a4": "You can report accessibility issues through our contact form, by calling our support line, or using the Report an Issue button on our accessibility page.",
+      "q5": "What information should I include when contacting support?",
+      "a5": "Please provide as much detail as possible about your issue, including any error messages, what you were trying to do, and your contact information for follow-up.",
+      "q6": "Do you provide training or workshops?",
+      "a6": "Yes, we offer various training programs and workshops. Contact our partnerships team for information about available programs."
+    }
+  },
+  "termsPage": {
+    "hero": {
+      "badge": "TERMS OF SERVICE",
+      "titleStart": "Terms of ",
+      "titleHighlight": "Service",
+      "description": "Clear guidelines for using SafeHaven's services responsibly and effectively. Your safety and privacy are our top priorities.",
+      "review": "Review Terms"
+    },
+    "overview": {
+      "badge": "Legal Framework",
+      "title": "Service Agreement Overview",
+      "desc": "These terms govern your use of SafeHaven's platform and services.",
+      "service": {
+        "title": "Service Usage",
+        "desc": "How you can use our platform and what we expect from you as a user."
+      },
+      "privacy": {
+        "title": "Privacy & Security",
+        "desc": "Our commitment to protecting your data and maintaining confidentiality."
+      },
+      "responsibilities": {
+        "title": "User Responsibilities",
+        "desc": "What we expect from you when using our services and reporting incidents."
+      }
+    },
+    "keyTerms": {
+      "title": "Key Terms & Conditions",
+      "desc": "Important guidelines for using our platform safely and effectively.",
+      "t1": {
+        "title": "Acceptable Use",
+        "desc": "Use our services only for their intended purpose of reporting and seeking support for domestic violence and related issues."
+      },
+      "t2": {
+        "title": "Content Guidelines",
+        "desc": "Provide accurate information when reporting incidents. Do not submit false or misleading reports."
+      },
+      "t3": {
+        "title": "Confidentiality",
+        "desc": "Respect the privacy of others. Do not share confidential information obtained through our platform."
+      },
+      "t4": {
+        "title": "Account Security",
+        "desc": "Keep your account credentials secure and notify us immediately of any unauthorized access."
+      }
+    },
+    "notices": {
+      "title": "Important Notices",
+      "desc": "Critical information about our services and your rights.",
+      "emergency": {
+        "title": "Emergency Services",
+        "desc": "SafeHaven is not a replacement for emergency services. In case of immediate danger, contact local authorities or emergency services directly.",
+        "l1": "• Call emergency services (911) for immediate threats",
+        "l2": "• Contact local domestic violence hotlines",
+        "l3": "• Seek immediate medical attention if needed"
+      },
+      "rights": {
+        "title": "Your Rights",
+        "desc": "You have the right to access, modify, or delete your personal information at any time.",
+        "l1": "• Request data access and portability",
+        "l2": "• Correct inaccurate information",
+        "l3": "• Delete your account and data",
+        "l4": "• Withdraw consent for data processing"
+      }
+    },
+    "contact": {
+      "title": "Questions About Our Terms?",
+      "desc": "Our legal team is available to help clarify any aspects of our terms of service.",
+      "button": "Contact Support Team"
+    }
+  },
+  "transparencyPage": {
+    "hero": {
+      "badge": "TRUST & INTEGRITY",
+      "titleStart": "Transparency ",
+      "titleHighlight": "Report",
+      "description": "At SafeHaven, transparency isn't just a policy, it's our foundation. Discover how we protect your data, handle requests, and maintain the highest standards of anonymity.",
+      "explore": "Explore Security Features"
+    },
+    "stats": {
+      "badge": "By The Numbers",
+      "title": "Our Impact",
+      "reports": "Reports Protected",
+      "requests": "Data Requests Denied",
+      "uptime": "Security Uptime",
+      "partners": "Verified Partners"
+    },
+    "security": {
+      "title": "Our Security Architecture",
+      "subtitle": "How we lead the industry in private reporting and community safety.",
+      "f1": {
+        "title": "Zero-Knowledge Encryption",
+        "desc": "We use E2EE for all reports. Even our database administrators cannot read the contents of your confidential submissions."
+      },
+      "f2": {
+        "title": "Automatic Metadata Stripping",
+        "desc": "All uploaded images and documents have EXIF and GPS data automatically removed before being stored on our secure servers."
+      },
+      "f3": {
+        "title": "IP Masking",
+        "desc": "We do not log user IP addresses. Your geographic location is never recorded during the reporting process."
+      }
+    },
+    "audit": {
+      "title": "System Audit History",
+      "subtitle": "Regular third-party audits ensure we maintain the highest standards.",
+      "requestText": "Request full report (Approved Organizations Only)",
+      "button": "Contact Oversight Committee",
+      "log1": {
+        "type": "Security Audit",
+        "result": "Passed",
+        "auditor": "Independent Third Party"
+      },
+      "log2": {
+        "type": "Privacy Impact Assessment",
+        "result": "Completed",
+        "auditor": "Legal Oversight Committee"
+      },
+      "log3": {
+        "type": "System Integrity Check",
+        "result": "Verified",
+        "auditor": "Global Safety Alliance"
+      },
+      "month": {
+        "jan": "Jan 2025",
+        "dec": "Dec 2024",
+        "oct": "Oct 2024"
+      }
+    },
+    "contact": {
+      "title": "Have more questions about your privacy?",
+      "button": "See our Detailed FAQ"
+    }
+  },
+  "incidentCategories": {
+    "PHYSICAL_VIOLENCE": "Physical Violence",
+    "SEXUAL_ASSAULT": "Sexual Assault",
+    "EMOTIONAL_ABUSE": "Emotional Abuse",
+    "PSYCHOLOGICAL_ABUSE": "Psychological Abuse",
+    "NEGLECT": "Neglect",
+    "CYBERBULLYING": "Cyberbullying",
+    "HARASSMENT": "Harassment",
+    "DISCRIMINATION": "Discrimination",
+    "WORKPLACE_ABUSE": "Workplace Abuse",
+    "DOMESTIC_VIOLENCE": "Domestic Violence",
+    "CHILD_ABUSE": "Child Abuse",
+    "ELDER_ABUSE": "Elder Abuse",
+    "OTHER": "Other"
+  },
+  "evidenceUpload": {
+    "title": "Upload Evidence",
+    "description": "Photos, videos, documents - all auto-encrypted",
+    "chooseFiles": "Choose Files",
+    "privacyControls": "Privacy Controls",
+    "blurPreview": "Blur preview for safety",
+    "autoRedactFaces": "Auto-redact faces in images",
+    "uploadedFiles": "Uploaded Files",
+    "show": "Show",
+    "hide": "Hide",
+    "evidencePreview": "Evidence Preview"
+  },
+  "settings": {
+    "title": "Settings",
+    "preferences": "Preferences",
+    "description": "Manage your account settings and preferences",
+    "profile": {
+      "title": "Profile Information",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastNamePlaceholder": "Enter your last name",
+      "emailPlaceholder": "Enter your email address"
+    },
+    "privacy": {
+      "title": "Privacy Settings",
+      "anonymousMode": "Anonymous Mode",
+      "anonymousDescription": "Hide your identity in reports and forum posts",
+      "profileVisibility": "Profile Visibility",
+      "profileVisibilityDescription": "Control who can see your profile information"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "push": "Push Notifications",
+      "pushDescription": "Receive updates about your cases and messages",
+      "email": "Email Notifications",
+      "emailDescription": "Get important updates via email"
+    },
+    "appearance": {
+      "title": "Appearance",
+      "darkMode": "Dark Mode",
+      "darkModeDescription": "Switch between light and dark themes",
+      "language": "Language",
+      "languageDescription": "Choose your preferred language",
+      "currentLanguage": "English"
+    },
+    "actions": {
+      "title": "Quick Actions",
+      "saveChanges": "Save Changes",
+      "saving": "Saving...",
+      "previewProfile": "Preview Profile",
+      "deleteAccount": "Delete Account"
+    },
+    "status": {
+      "verified": "Account Verified",
+      "verifiedDescription": "Your account is secure and verified",
+      "emailVerified": "Email Verified",
+      "accountActive": "Account Active",
+      "privacyProtected": "Privacy Protected"
+    },
+    "errors": {
+      "saveError": "Failed to save settings",
+      "deleteError": "Failed to delete account"
+    },
+    "success": {
+      "profileUpdated": "Profile updated successfully",
+      "accountDeleted": "Account deleted successfully"
+    },
+    "confirmations": {
+      "deleteAccount": "Are you sure you want to delete your account? This action cannot be undone."
+    }
+  }
+}

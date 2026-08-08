@@ -1,0 +1,3 @@
+/* Google Fonts import moved to index.html for preconnect and reliability */
+@import 'tailwindcss';
+@import './styles/globals.css';

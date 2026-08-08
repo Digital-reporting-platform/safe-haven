@@ -1,0 +1,1587 @@
+{
+  "common": {
+    "welcome": "እንኳን ደህና መጡ",
+    "loading": "በመጫን ላይ...",
+    "error": "ስህተት ተከስቷል",
+    "success": "ተሳክቷል",
+    "save": "አስቀምጥ",
+    "cancel": "ሰርዝ",
+    "submit": "አስገባ",
+    "delete": "ሰርዝ",
+    "edit": "አርትዕ",
+    "close": "ዝጋ",
+    "back": "ተመለስ",
+    "next": "ቀጣይ",
+    "previous": "ቀዳሚ",
+    "search": "ፈልግ",
+    "filter": "አጣራ",
+    "logout": "ውጣ",
+    "login": "ግባ",
+    "register": "ተመዝገብ"
+  },
+  "language": {
+    "select": "ቋንቋ ይምረጡ",
+    "current": "የአሁኑ ቋንቋ",
+    "english": "English",
+    "amharic": "አማርኛ",
+    "switchTo": "ወደ {{language}} ቀይር",
+    "changeLanguage": "ቋንቋ ቀይር"
+  },
+  "navigation": {
+    "home": "መነሻ",
+    "report": "ሪፖርት",
+    "missing": "የጠፉ ሰዎች",
+    "support": "የድጋፍ አገልግሎቶች",
+    "dashboard": "ዳሽቦርድ",
+    "overview": "አጠቃላይ እይታ",
+    "cases": "ጉዳዮች",
+    "myCases": "የእኔ ጉዳዮች",
+    "safety": "ደህንነት",
+    "resources": "ግብዓቶች",
+    "messages": "መልዕክቶች",
+    "notifications": "ማሳወቂያዎች",
+    "profile": "መገለጫ",
+    "settings": "ቅንብሮች",
+    "about": "ስለ እኛ",
+    "contact": "ያግኙን",
+    "help": "እርዳታ",
+    "faq": "ተደጋጋሚ ጥያቄዎች",
+    "blog": "ብሎግ",
+    "transparency": "ግልጽነት",
+    "recoveryHub": "የማገገሚያ ማዕከል",
+    "supportDirectory": "የድጋፍ ማውጫ",
+    "empowerment": "ማብቃት",
+    "communityForum": "የማህበረሰብ መድረክ",
+    "appointments": "ቀጠሮዎች",
+    "examinations": "ምርመራዎች",
+    "consultations": "ምክክሮች",
+    "courtCalendar": "የፍርድ ቤት ቀን መቁጠሪያ",
+    "contentModeration": "የይዘት ቁጥጥር",
+    "moderation": "የይዘት ቁጥጥር",
+    "userManagement": "የተጠቃሚ አስተዳደር",
+    "analytics": "ትንታኔዎች",
+    "caseManagement": "የጉዳይ አስተዳደር",
+    "systemSettings": "የስርዓት ቅንብሮች",
+    "incidentOversight": "የክስተት ቁጥጥር",
+    "reportsOverview": "የሪፖርቶች አጠቃላይ እይታ",
+    "reports": "ሪፖርቶች",
+    "court": "ፍርድ ቤት",
+    "users": "ተጠቃሚዎች",
+    "missingPersons": "የጠፉ ሰዎች",
+    "missing persons": "የጠፉ ሰዎች"
+  },
+  "hero": {
+    "your": "የእርስዎ",
+    "matters": "አስፈላጊ ነው",
+    "words": {
+      "voice": "ድምጽ",
+      "story": "ታሪክ",
+      "hope": "ተስፋ",
+      "power": "ኃይል"
+    },
+    "description": "ስም አልባ የሪፖርት መድረክ።",
+    "descriptionHighlight": "ደህንነቱ የተጠበቀ፣ ለተጎጂዎች ያተኮረ።",
+    "features": {
+      "encrypted": "የተመሰጠረ",
+      "anonymous": "ስም አልባ",
+      "support": "ድጋፍ"
+    },
+    "cta": {
+      "startReport": "ሪፖርት ጀምር",
+      "exploreResources": "ግብዓቶችን ያስሱ"
+    },
+    "stats": {
+      "anonymous": "ስም አልባ",
+      "available": "ይገኛል",
+      "compromises": "ስምምነቶች"
+    },
+    "guestAccess": "የእንግዳ መዳረሻ"
+  },
+  "sectionPreviews": {
+    "badge": "በ10,000+ የማህበረሰብ አባላት የታመነ",
+    "title": "እንዴት",
+    "titleHighlight": "እንደምንደግፍዎ",
+    "description": "የኢትዮጵያን ማህበረሰብ እያንዳንዱን አባል ለመጠበቅ፣ ለመደገፍ እና ለማብቃት የተነደፉ አጠቃላይ አገልግሎቶችን ያግኙ",
+    "tabs": {
+      "report": {
+        "title": "ክስተት ሪፖርት ያድርጉ",
+        "shortTitle": "ሪፖርት",
+        "description": "ሚስጥራዊ እና ደህንነቱ የተጠበቀ ሪፖርት",
+        "stats": {
+          "value": "10,847",
+          "label": "የተሰሩ ሪፖርቶች"
+        }
+      },
+      "help": {
+        "title": "እርዳታ ያግኙ",
+        "shortTitle": "እርዳታ",
+        "description": "የ24/7 ድጋፍ እና ግብዓቶች",
+        "stats": {
+          "value": "24/7",
+          "label": "ሁልጊዜ ይገኛል"
+        }
+      },
+      "community": {
+        "title": "ማህበረሰብ እና መድረኮች",
+        "shortTitle": "ማህበረሰብ",
+        "description": "ለመገናኘት ደህንነቱ የተጠበቀ ቦታ",
+        "stats": {
+          "label": "ንቁ አባላት"
+        }
+      },
+      "support": {
+        "title": "የህግ እና የህክምና ድጋፍ",
+        "shortTitle": "ድጋፍ",
+        "description": "ሙያዊ እርዳታ",
+        "stats": {
+          "label": "የተረጋገጡ ባለሙያዎች"
+        }
+      },
+      "missing": {
+        "title": "የጠፉ ሰዎች",
+        "shortTitle": "የጠፉ",
+        "description": "ሪፖርት ያድርጉ እና ይፈልጉ",
+        "stats": {
+          "label": "የስኬት መጠን"
+        }
+      }
+    },
+    "reportPreview": {
+      "title": "ክስተት ሪፖርት ያድርጉ",
+      "subtitle": "100% ሚስጥራዊ እና የተመሰጠረ",
+      "description": "የላቀ የሪፖርት ስርዓታችን ማንነትዎን ለመጠበቅ እና ሙሉ ሚስጥራዊነትን ለማረጋገጥ ከጫፍ እስከ ጫፍ ምስጠራን ይጠቀማል። ክስተቶችን በደህና ሪፖርት ያድርጉ፣ የጉዳይ እድገትን ይከታተሉ እና የድጋፍ ግብዓቶችን ያግኙ።",
+      "features": {
+        "encryption": "የወታደራዊ ደረጃ ምስጠራ",
+        "anonymous": "ስም አልባ የማስገባት አማራጭ",
+        "available": "የ24/7 የማስገባት ተገኝነት"
+      },
+      "cta": "ሚስጥራዊ ሪፖርት ጀምር",
+      "whatToReport": "ምን ሪፖርት ማድረግ ይችላሉ:",
+      "reportTypes": {
+        "physical": "አካላዊ ጥቃት ወይም ድብደባ",
+        "sexual": "ወሲባዊ ትንኮሳ ወይም በደል",
+        "workplace": "የስራ ቦታ ማስፈራራት ወይም አድልዎ",
+        "domestic": "የቤት ውስጥ ጥቃት",
+        "child": "የህጻናት በደል ወይም ቸልተኝነት",
+        "online": "የመስመር ላይ ትንኮሳ ወይም ሳይበር ማስፈራራት"
+      }
+    },
+    "helpPreview": {
+      "title": "እርዳታ ያግኙ",
+      "subtitle": "የ24/7 ድጋፍ ይገኛል",
+      "description": "በኢትዮጵያ ውስጥ ወሳኝ የአደጋ ጊዜ ግብዓቶችን እና ሙያዊ የድጋፍ አገልግሎቶችን ያግኙ። በከባድ ጊዜያት ከትክክለኛው እርዳታ ጋር እናገናኝዎታለን።",
+      "emergencyNumbers": {
+        "police": {
+          "title": "የፖሊስ አደጋ",
+          "number": "991",
+          "desc": "ፌዴራል ፖሊስ - ብሔራዊ"
+        },
+        "medical": {
+          "title": "የህክምና አደጋ",
+          "number": "907",
+          "desc": "የቀይ መስቀል አምቡላንስ"
+        },
+        "support": {
+          "title": "የድጋፍ የስልክ መስመር",
+          "number": "8335",
+          "desc": "የአእምሮ ጤና - 24/7"
+        }
+      },
+      "services": "የድጋፍ አገልግሎቶች:",
+      "servicesList": {
+        "crisis": "የቀውስ ጣልቃ ገብነት ምክር",
+        "therapy": "በአሰቃቂ ሁኔታ የተመሰረተ ሕክምና",
+        "legal": "የህግ ምክክር ማመሳከሪያዎች",
+        "medical": "የህክምና እርዳታ ቅንጅት",
+        "shelter": "ደህንነቱ የተጠበቀ መጠለያ መረጃ",
+        "financial": "የገንዘብ እርዳታ መመሪያ"
+      }
+    },
+    "communityPreview": {
+      "title": "ማህበረሰብ እና መድረኮች",
+      "subtitle": "ደህንነቱ የተጠበቀ፣ የተቆጣጠሩ ቦታዎች",
+      "description": "በደህንነቱ የተጠበቀ፣ ስም አልባ አካባቢ በተጎጂዎች በሚመሩ ውይይቶች ይቀላቀሉ። ልምዶችን ያጋሩ፣ ድጋፍ ያግኙ እና ጉዞዎን ከሚረዱ ሌሎች ጋር ይገናኙ።",
+      "categories": "የመድረክ ምድቦች:",
+      "categoryList": {
+        "peer": "የእኩዮች የድጋፍ ቡድኖች",
+        "qa": "ጥያቄዎች እና መልሶች",
+        "resources": "የግብዓት መጋራት",
+        "stories": "የተጎጂዎች ታሪኮች"
+      },
+      "stats": {
+        "members": "ንቁ አባላት",
+        "posts": "በዚህ ወር ልጥፎች",
+        "responses": "አማካይ የምላሽ ጊዜ"
+      },
+      "recentActivity": "የቅርብ ጊዜ እንቅስቃሴ",
+      "anonymousUser": "ስም አልባ ተጠቃሚ",
+      "timeAgo": {
+        "hours": "ከ{{count}} ሰዓታት በፊት",
+        "minutes": "ከ{{count}} ደቂቃዎች በፊት",
+        "days": "ከ{{count}} ቀናት በፊት"
+      },
+      "samplePost": "ለድጋፉ ሁላችሁም እናመሰግናለን...",
+      "cta": "የማህበረሰብ መድረኮችን ይቀላቀሉ"
+    },
+    "supportPreview": {
+      "title": "የህግ እና የህክምና ድጋፍ",
+      "subtitle": "የተረጋገጡ ባለሙያዎች",
+      "description": "ተጎጂዎችን በርህራሄ እና በባለሙያነት በመደገፍ ላይ የተካኑ የተረጋገጡ የህግ ባለሙያዎች፣ የህክምና ባለሙያዎች እና ፈቃድ ያላቸው አማካሪዎች አውታረ መረባችንን ያግኙ።",
+      "categories": "የሙያ ምድቦች:",
+      "categoryList": {
+        "legal": "የህግ አማካሪዎች",
+        "medical": "የህክምና ባለሙያዎች",
+        "counseling": "ፈቃድ ያላቸው አማካሪዎች"
+      },
+      "features": {
+        "verified": "ሁሉም ባለሙያዎች ተረጋግጠዋል",
+        "confidential": "ሚስጥራዊ ምክክሮች",
+        "specialized": "በአሰቃቂ ሁኔታ ላይ የተካነ እንክብካቤ"
+      },
+      "cta": "ባለሙያዎችን ያስሱ"
+    },
+    "missingPreview": {
+      "title": "የጠፉ ሰዎች",
+      "subtitle": "ቤተሰቦችን እንደገና ለማገናኘት ይርዱ",
+      "description": "የጠፉ ሰዎችን ሪፖርት ያድርጉ ወይም አጠቃላይ የውሂብ ጎታችንን ይፈልጉ። እያንዳንዱ ሪፖርት ቤተሰቦችን እንደገና ለማገናኘት እና ማህበረሰባችንን ደህንነቱ የተጠበቀ እና መረጃ ያለው ለማድረግ ይረዳል።",
+      "stats": {
+        "active": "ንቁ ጉዳዮች",
+        "resolved": "የተፈቱ ጉዳዮች",
+        "rate": "የስኬት መጠን"
+      },
+      "recentSuccesses": "የቅርብ ጊዜ ስኬቶች",
+      "foundSafe": "ደህና ተገኝቷል",
+      "resolved": "ተፈትቷል",
+      "daysToResolve": "{{count}} ቀናት",
+      "noSuccessStories": "እስካሁን ለማሳየት የቅርብ ጊዜ የስኬት ታሪኮች የሉም።",
+      "actions": {
+        "report": "የጠፈ ሰው ሪፖርት ያድርጉ",
+        "search": "የውሂብ ጎታ ይፈልጉ"
+      }
+    }
+  },
+  "recoveryHub": {
+    "badge": "ማገገም እና እድገት",
+    "title": "ከሪፖርት በላይ:",
+    "titleSubtitle": "ወደ ጥንካሬ የሚወስድዎ መንገድ",
+    "description": "SafeHaven ከመድረክ በላይ ነው፣ ለፈውስ፣ ለመማር እና ለወደፊትዎ ለመገንባት መቅደስ ነው።",
+    "storytelling": {
+      "title": "የተጎጂዎች ታሪክ መናገሪያ ቦታ",
+      "subtitle": "በማህበረሰብ የሚመራ ፈውስ እና ግንኙነት",
+      "description": "ይህን መድረክ ማግኘቴ ብቻዬን እንዳልሆንኩ እንድገነዘብ አድርጎኛል። ሌሎች እውነታቸውን ሲናገሩ ማየቴ በመጨረሻ የራሴን ትረካ ለመመለስ ጥንካሬ ሰጠኝ...",
+      "featured": "ተለይቶ የቀረበ ልምድ",
+      "tags": {
+        "moderated": "የተቆጣጠረ",
+        "anonymous": "ስም አልባ",
+        "survivorOnly": "ለተጎጂዎች ብቻ"
+      },
+      "cta": "የተቆጣጠሩ መድረኮችን ያስሱ",
+      "ctaGuest": "ማህበረሰባችንን ይቀላቀሉ"
+    },
+    "empowerment": {
+      "title": "የማብቃት ፖርታል",
+      "subtitle": "ነጻነትዎን በተረጋገጡ እድሎች እንደገና ይገንቡ",
+      "description": "ነጻነትዎን ለተጎጂዎች በተዘጋጁ የተረጋገጡ እድሎች እንደገና ይገንቡ። ወደ ራስ መተማመን የሚወስድዎን ጉዞ እንደግፋለን።",
+      "features": {
+        "training": "የክህሎት ስልጠና እና የምስክር ወረቀት",
+        "placement": "የስራ ምደባ እርዳታ",
+        "leadership": "የበጎ ፈቃደኝነት አመራር ሚናዎች"
+      },
+      "cta": "ፖርታል ይድረሱ",
+      "ctaGuest": "ለመዳረሻ ይቀላቀሉ"
+    },
+    "blog": {
+      "title": "ግንዛቤ እና ተሟጋችነት",
+      "subtitle": "ትምህርት ወደ ዜሮ-መቻቻል ባህል የመጀመሪያው እርምጃ ነው",
+      "description": "ትምህርት ወደ ዜሮ-መቻቻል ባህል የመጀመሪያው እርምጃ ነው። ስውር የጥቃት ምልክቶችን ለመለየት፣ የህግ መብቶችዎን ለመረዳት እና መረጃ ለማግኘት ይማሩ።",
+      "latest": "የቅርብ ጊዜ ግንዛቤዎች",
+      "cta": "ጽሁፎችን ያስሱ"
+    }
+  },
+  "home": {
+    "marquee": "100% ስም አልባ • ከጫፍ እስከ ጫፍ የተመሰጠረ • በተጎጂዎች ላይ ያተኮረ",
+    "howItWorks": {
+      "badge": "ቀላል እና ደህንነቱ የተጠበቀ",
+      "title": "SafeHaven እንዴት ይሰራል",
+      "description": "ወደ ደህንነት እና መፍትሄ የሚወስድዎ ጉዞ እዚህ ይጀምራል። ሙሉ በሙሉ ስም አልባ እና ደህንነቱ የተጠበቀ።",
+      "steps": {
+        "step1": {
+          "title": "ደህንነቱ የተጠበቀ ሪፖርት",
+          "description": "ልምድዎን በደህንነቱ የተጠበቀ፣ የተመሰጠረ ፖርታላችን በኩል ያጋሩ። ማንነት አያስፈልግም፣ ምንም ምዝገባ አይቀመጥም። ደህንነትዎ የእኛ መነሻ ነው።"
+        },
+        "step2": {
+          "title": "ርህሩህ ግምገማ",
+          "description": "በአሰቃቂ ሁኔታ የሰለጠነ ቡድናችን ጉዳይዎን ይገመግማል። በፍላጎትዎ ላይ እናተኩራለን እና ከተረጋገጡ የአካባቢ ድጋፍ አውታረ መረቦች ጋር እናገናኝዎታለን።"
+        },
+        "step3": {
+          "title": "የተመራ ማገገም",
+          "description": "በራስዎ ፍጥነት ለፈውስ እና ለፍትህ ግብዓቶችን ያግኙ። እንደገና ሲገነቡ እና ወደፊት ሲራመዱ በደህና ቻናሎች በኩል ተገናኝተው ይቆዩ።"
+        }
+      },
+      "cta": {
+        "badge": "የተረጋገጠ የድጋፍ አውታረ መረብ",
+        "title": "ጉዞዎን ለመጀመር ዝግጁ ነዎት?",
+        "description": "በማውጫችን ውስጥ ያለ እያንዳንዱ የአገልግሎት አቅራቢ ከፍተኛውን የእንክብካቤ እና የደህንነት ደረጃዎችን ለማረጋገጥ በአስተዳዳሪዎች በእጅ ተረጋግጧል።",
+        "startReport": "ሚስጥራዊ ሪፖርት ጀምር",
+        "browseResources": "ግብዓቶችን ያስሱ"
+      }
+    },
+    "security": {
+      "badge": "ከፍተኛ የግላዊነት አርክቴክቸር",
+      "title": "ማንነትዎ ተደብቋል",
+      "titleHighlight": "በንድፍ፣ በፖሊሲ አይደለም።",
+      "description": "ደህንነትዎ እና ግላዊነትዎ መሰረታችን ናቸው። SafeHaven በዜሮ-ትረስት ማዕቀፍ ላይ ገንብተናል፣ እኛም እንኳን ማን እንደሆኑ ማየት አንችልም።",
+      "features": {
+        "zeroTrust": {
+          "title": "ዜሮ-ትረስት ፕሮቶኮል",
+          "description": "ምንም ልዩ መዳረሻ የለም። እያንዳንዱ ጥያቄ ተረጋግጧል፣ እና ሜታዳታ በጭራሽ አይቀመጥም።"
+        },
+        "encryption": {
+          "title": "E2E ምስጠራ",
+          "description": "በሚተይቡበት ጊዜ ተመስጥሯል። የተጋሩ ቁልፎች ያላቸው ስፔሻሊስቶች ብቻ መፍታት ይችላሉ።"
+        }
+      },
+      "vault": {
+        "title": "የቮልት ጥበቃ",
+        "status": "ስርዓት ቀጥታ እና ደህንነቱ የተጠበቀ",
+        "riskLevel": "0%",
+        "riskLabel": "የማንነት ፍሰት አደጋ",
+        "identityMasking": "የማንነት መሸፈኛ",
+        "metadataScrubbing": "የሜታዳታ ማጽዳት",
+        "ipAnonymization": "የIP ስም አልባነት",
+        "enabled": "ነቅቷል",
+        "active": "ንቁ",
+        "verified": "ተረጋግጧል",
+        "encryptionStatus": "የዳታቤዝ ምስጠራ ሁኔታ",
+        "optimal": "ምርጥ"
+      }
+    },
+    "supportCallout": {
+      "title": "አስቸኳይ እርዳታ ወይም ሙያዊ ግብዓቶች ያስፈልጉዎታል?",
+      "description": "የቀውስ የስልክ መስመሮችን፣ የNGO ሽርክናዎችን እና የተረጋገጡ የድጋፍ ድርጅቶችን በአንድ ቦታ ያግኙ።",
+      "cta": "የድጋፍ አገልግሎቶችን ያስሱ"
+    },
+    "finalCta": {
+      "title": "ተጽእኖ ለማድረግ ዝግጁ ነዎት?",
+      "description": "በጣም አስፈላጊ በሆነበት ጊዜ የዓለም ደረጃ ድጋፍ ለማግኘት SafeHaven የሚጠቀሙ በሺዎች የሚቆጠሩ ሰዎች ይቀላቀሉ።",
+      "submitReport": "ሚስጥራዊ ሪፖርት ያስገቡ",
+      "exploreResources": "ግብዓቶችን ያስሱ",
+      "security": "የወታደራዊ ደረጃ ምስጠራ • HIPAA ተገዢ • ISO 27001 የተረጋገጠ"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "ወደ SafeHaven ይግቡ",
+      "email": "የኢሜይል አድራሻ",
+      "emailPlaceholder": "ኢሜይልዎን ያስገቡ",
+      "password": "የይለፍ ቃል",
+      "passwordPlaceholder": "የይለፍ ቃልዎን ያስገቡ",
+      "submit": "ግባ",
+      "noAccount": "መለያ የለዎትም?",
+      "signUp": "ይመዝገቡ",
+      "forgotPassword": "የይለፍ ቃል ረሱ?"
+    },
+    "register": {
+      "title": "መለያ ይፍጠሩ",
+      "firstName": "ስም",
+      "lastName": "የአባት ስም",
+      "email": "የኢሜይል አድራሻ",
+      "password": "የይለፍ ቃል",
+      "confirmPassword": "የይለፍ ቃል ያረጋግጡ",
+      "submit": "መለያ ፍጠር",
+      "hasAccount": "መለያ አለዎት?",
+      "signIn": "ይግቡ"
+    }
+  },
+  "chatbot": {
+    "nav_label": "ውይይት",
+    "open_label": "ውይይት ክፈት",
+    "close_label": "ውይይት ዝጋ",
+    "title": "SafeHaven ረዳት",
+    "welcome": "አገልግሎታችንን እንዲጠቀሙ ለመርዳት እዚህ ነኝ",
+    "greeting": "ሰላም! ስለ SafeHaven ጥያቄዎች ልረዳዎት እችላለሁ። ምን ማወቅ ትፈልጋላችሁ?",
+    "input_placeholder": "ጥያቄዎን ይፃፉ...",
+    "input_label": "የመልእክት ግቢ",
+    "send_label": "መልእክት ላክ",
+    "questions": {
+      "how_it_works": "SafeHaven እንዴት ይሰራል?",
+      "privacy": "መረጃዬ የግል ነው?",
+      "ml_logic": "የML የአደጋ ግምገማው እንዴት ይሰራል?",
+      "legal": "ምን የህግ ድጋፍ ይገኛል?"
+    },
+    "answers": {
+      "emergency": "ከዚህ በአስቸኳይ ሁኔታ ውስጥ ከሆኑ፣ እባኮን የአደጋ ጊዜ አገልግሎት (911) ይደውሉ ወይም የአካባቢውን ባለስልጣናት ያግኙ። SafeHaven ደግሞ የ24 ሰዓት አደጋ ድጋፍ አለው።",
+      "reporting": "በሚስጥራችን የሪፖርት ቅጽ ጠቅላላ ሪፖርት ማድረግ ይችላሉ። ማንነቶ ይጠበቃል፣ እና ሪፖርቱ በ24 ሰዓታት ውስጥ በቡድናችን ይገመገማል።",
+      "privacy": "ግላዊነትዎ ቅድሚያችን ነው። ሁሉም ሪፖርቶች በሚስጥር ሊቀርቱ ይችላሉ። መረጃዎን ለመጠበቅ የማመስጠር እና ጠንካራ የመዳረሻ ቁጥጥሮችን እንጠቀማለን።",
+      "ml_logic": "የእኛ ML ስርዓት የአደጋ ደረጃዎችን ለመገመት እና ጉዳዮችን ለማስቀደም ሪፖርቶችን ይተነትናል። ይህ ለአማካሪዎች አስቸኳይ ጉዳዮችን በፊት ለመመለከት ይረዳል። ስርዓቱ ለፍትሃዊነት ተመላላሽ ሞኒተሪንግ ይደረጋል።",
+      "legal": "ከህጋዊ እርዳታ ድርጅቶች፣ ከነፃ ጠበቃዎች ጋር እናገናኝዎታለን፣ እና መብቶን እንዲያውቁ ልንረዳዎት እንችላለን። የህግ ድጋፍ ለቀደምት ሚስጥራዊ እና ነፃ ነው።",
+      "support": "SafeHaven ወደ አማካሪዎች፣ የህክምና አቅራቢዎች፣ እና የድጋፍ ቡድኖች መዳረሻ ይሰጣል። በደህና የመልእክት ስርዓታችን በኩል ከአማካሪዎች ጋር መገናኘት ይችላሉ።",
+      "missing": "ከሰው ጠፍተዋል ከሆነ፣ በየጠፉ ሰዎች ፖርታላችን ሪፖርት ማድረግ ይችላሉ። ከጠፉ ሰዎችን ለማግኘት ከባለስልጣናት እና ከNGO ጋር እንሰራለን።",
+      "system": "SafeHaven የጾብ አለመግባባት ለማዘግብ፣ የድጋፍ አገልግሎቶችን ለማግኘት፣ እና የጉዳይ መረጃውን በደህና ለመከታተል አጠቃላይ መድረክ ነው።",
+      "how_it_works": "SafeHaven በሚስጥር ጉዳዮችን ለማዘግብ፣ የጉዳይ ሁኔታዎን ለመከታተል፣ የድጋፍ መረጃዎችን ለማግኘት፣ እና ከአማካሪዎች እና የህግ ባለሙያዎች ጋር ለመገናኘት ያስችለዎታል። ሁሉም በአንድ ደህና መድረክ።",
+      "fallback": "ስለ SafeHaven ጥያቄዎች ለመርዳት እዚህ ነኝ። ስለ ሪፖርቲንግ፣ ግላዊነት፣ የድጋፍ አገልግሎቶች፣ የህግ እርዳታ፣ ወይም ስርዓቱ እንዴት እንደሚሰራ መጠየት ይችላሉ።"
+    }
+  },
+  "anonymousToggle": {
+    "title": "በስም አልባነት ያዘጋጁ",
+    "description": "ማንነትዎ ይጠበቃል",
+    "features": "✓ ዜሮ-እውቀት ማመስጠር • ✓ የማንነት መግለጢያዎች የሉም • ✓ በንድፍ ደህንነቱ የተጠበቀ"
+  },
+  "reportSuccessModal": {
+    "title": "ለመናገጥ የተነሳሱን እናመሰግናለን",
+    "anonymousMessage": "ሪፖርትዎ በደህንነት ተቀብሏል። በዚህ ብቻ አይደሉም።",
+    "verifiedMessage": "ሪፖርትዎ በደህንነት ተቀብሏል። ለድጋፍ እዚህ ነኝ።",
+    "trackingReference": "የክታታዎ ማስረጃዎ",
+    "saveToTrack": "ጉዳዮትን ለመከታተል ይህንን ያስቀምጡ",
+    "reportId": "ሪፖርት ID: {{id}}",
+    "locationAssessment": "የግልገለኛ አካባቢ ግምገማ",
+    "locationPrecision": "የአካባቢ ትክክል",
+    "safetyAssessment": "የደህንነት ግምገማ",
+    "timeToReport": "ወደ ሪፖርት የሚወስደው ጊዜ",
+    "preciseLocation": "ትክክለኛ አካባቢ ተለውᢷ",
+    "regionLocation": "የክልል ደረጃ አካባቢ",
+    "locationNotSpecified": "አካባቢ አልተገለጸም",
+    "highPriority": "ከፍተኛ ቅድሚያ",
+    "mediumPriority": "መካከለኛ ቅድሚያ",
+    "standardReview": "መደበኛ ግምገማ",
+    "medicalSupport": "የህክምና ቡድና ድጋፍ",
+    "legalSupport": "የህግ አማካሪ ድጋፍ",
+    "bothSupport": "ህክምና + ህግ ድጋፍ",
+    "whatHappensNext": "በፊቍለው ምን ይከሰታል?",
+    "nextSteps": {
+      "review": "ቡድናችን በ24 ሰዓታት ውስጥ ሪፖርትዎን እንገምገማለን።",
+      "triage": "NLP ማዘመኛ ሪፖርትዎን ወደ {{support}} አስተላለፈ።",
+      "anonymousTrack": "ዝማኔዎችን ለመመልከት እና የድጋፍ ቡድናዎን ለመልእክት በታች ያለውን <strong>ጉዳዮትዎን ይከታተሉ</strong> ቁልፍ ይጠቀሙ።",
+      "verifiedDashboard": "ሪፖርትዎን በዳሽቦርድዎ ማየት ይችላሉ።",
+      "confidential": "ሁሉም መረጃ ሚስጥራዊ እና ደህንነቱ የተጠበቀ ነው።"
+    },
+    "reportsRemaining": "{{remaining}} ከ {{daily}} የዕለታዊ ሪፖርቶች ቀርተዋል",
+    "trackCase": "ጉዳዮትዎን ይከታተሉ →",
+    "signUpAccount": "ለመለያ ይመዝገቡ",
+    "continueHome": "ወደ ቤት ቀጥል",
+    "goToDashboard": "ወደ ዳሽቦርድ ይሂዱ",
+    "encryptionProtected": "ሪፖርት ዎበማርባን፡ ማርታችእንደልእና በማርባን፡"
+  },
+  "incidentCategories": {
+    "PHYSICAL_VIOLENCE": "አካላዊ ጥቃት",
+    "SEXUAL_ASSAULT": "ወሲባዊ ጥቃት",
+    "EMOTIONAL_ABUSE": "ስሜታዊ በደል",
+    "PSYCHOLOGICAL_ABUSE": "ስነ-ልቦናዊ በደል",
+    "NEGLECT": "ቸልተኝነት",
+    "CYBERBULLYING": "የሳይበር ማስፈራራት",
+    "HARASSMENT": "ትንኮሳ",
+    "DISCRIMINATION": "አድልዎ",
+    "WORKPLACE_ABUSE": "የስራ ቦታ በደል",
+    "DOMESTIC_VIOLENCE": "የቤት ውስጥ ጥቃት",
+    "CHILD_ABUSE": "የህጻናት በደል",
+    "ELDER_ABUSE": "የአረጋውያን በደል",
+    "OTHER": "ሌላ"
+  },
+  "evidenceUpload": {
+    "title": "ማስረጃ ይስቀሉ",
+    "description": "ፎቶዎች፣ ቪዲዮዎች፣ ሰነዶች - ሁሉም በራስ-ሰር ተመስጥረዋል",
+    "chooseFiles": "ፋይሎችን ይምረጡ",
+    "privacyControls": "የግላዊነት ቁጥጥሮች",
+    "blurPreview": "ለደህንነት ቅድመ እይታን ያብራሩ",
+    "autoRedactFaces": "በምስሎች ውስጥ ፊቶችን በራስ-ሰር ያስወግዱ",
+    "uploadedFiles": "የተሰቀሉ ፋይሎች",
+    "show": "አሳይ",
+    "hide": "ደብቅ",
+    "evidencePreview": "የማስረጃ ቅድመ እይታ"
+  },
+  "settings": {
+    "title": "ቅንብሮች",
+    "preferences": "ምርጫዎች",
+    "description": "የመለያ ቅንብሮችዎን እና ምርጫዎችዎን ያስተዳድሩ",
+    "profile": {
+      "title": "የመገለጫ መረጃ",
+      "firstName": "ስም",
+      "lastName": "የአባት ስም",
+      "email": "የኢሜይል አድራሻ",
+      "firstNamePlaceholder": "ስምዎን ያስገቡ",
+      "lastNamePlaceholder": "የአባት ስምዎን ያስገቡ",
+      "emailPlaceholder": "የኢሜይል አድራሻዎን ያስገቡ"
+    },
+    "privacy": {
+      "title": "የግላዊነት ቅንብሮች",
+      "anonymousMode": "ስም አልባ ሁነታ",
+      "anonymousDescription": "በሪፖርቶች እና በመድረክ ልጥፎች ውስጥ ማንነትዎን ደብቅ",
+      "profileVisibility": "የመገለጫ ታይነት",
+      "profileVisibilityDescription": "የመገለጫ መረጃዎን ማን እንደሚያይ ይቆጣጠሩ"
+    },
+    "notifications": {
+      "title": "ማሳወቂያዎች",
+      "push": "የግፊት ማሳወቂያዎች",
+      "pushDescription": "ስለ ጉዳዮችዎ እና መልዕክቶችዎ ዝማኔዎችን ይቀበሉ",
+      "email": "የኢሜይል ማሳወቂያዎች",
+      "emailDescription": "አስፈላጊ ዝማኔዎችን በኢሜይል ያግኙ"
+    },
+    "appearance": {
+      "title": "መልክ",
+      "darkMode": "ጨለማ ሁነታ",
+      "darkModeDescription": "በብርሃን እና በጨለማ ገጽታዎች መካከል ይቀይሩ",
+      "language": "ቋንቋ",
+      "languageDescription": "የሚመርጡትን ቋንቋ ይምረጡ",
+      "currentLanguage": "አማርኛ"
+    },
+    "actions": {
+      "title": "ፈጣን እርምጃዎች",
+      "saveChanges": "ለውጦችን አስቀምጥ",
+      "saving": "በማስቀመጥ ላይ...",
+      "previewProfile": "መገለጫ ቅድመ እይታ",
+      "deleteAccount": "መለያ ሰርዝ"
+    },
+    "status": {
+      "verified": "መለያ ተረጋግጧል",
+      "verifiedDescription": "መለያዎ ደህንነቱ የተጠበቀ እና የተረጋገጠ ነው",
+      "emailVerified": "ኢሜይል ተረጋግጧል",
+      "accountActive": "መለያ ንቁ ነው",
+      "privacyProtected": "ግላዊነት የተጠበቀ"
+    },
+    "errors": {
+      "saveError": "ቅንብሮችን ማስቀመጥ አልተቻለም",
+      "deleteError": "መለያን መሰረዝ አልተቻለም"
+    },
+    "success": {
+      "profileUpdated": "መገለጫ በተሳካ ሁኔታ ተዘምኗል",
+      "accountDeleted": "መለያ በተሳካ ሁኔታ ተሰርዟል"
+    },
+    "confirmations": {
+      "deleteAccount": "መለያዎን መሰረዝ እርግጠኛ ነዎት? ይህ እርምጃ መልሰው ማድረግ አይቻልም።"
+    }
+  },
+  "reportPage": {
+    "title": "SafeHaven | ስም አልባ ሪፖርት",
+    "stepProgress": "ደረጃ {{current}} ከ {{total}}",
+    "complete": "{{percent}}% ተጠናቀቀ",
+    "reportsRemaining": "ዛሬ {{count}} ሪፖርቶች ቀርተዋል",
+    "anonymous": "ስም አልባ",
+    "verified": "የተረጋገጠ",
+    "unspecifiedCategory": "ያልተገለጸ ምድብ",
+    "step1": {
+      "title": "ምን እንደሆነ <span class='text-[#C15B3E]'>ይግለጹ</span>",
+      "description": "ታሪክዎን ያጋሩ። AI የእኛ በደህንነቱ የተጠበቀ ይተነትናል።",
+      "placeholder": "ታሪክዎ እዚህ ደህና ነው...",
+      "continue": "ቀጣይ"
+    },
+    "step2": {
+      "title": "<span class='text-[#C15B3E]'>ማስረጃ</span> ይጨምሩ",
+      "continue": "ቀጣይ"
+    },
+    "step3": {
+      "title": "አካባቢ & <span class='text-[#C15B3E]'>ጊዜ</span>",
+      "selectRegion": "ክልል ይምረጡ",
+      "incidentDate": "የክስተቱ ቀን እና ሰዓት",
+      "locationSelected": "የተመረጠ አካባቢ: <strong>{{location}}</strong>",
+      "continue": "ቀጣይ"
+    },
+    "step4": {
+      "title": "የእርስዎ <span class='text-[#C15B3E]'>መረጃ</span>",
+      "description": "ለተረጋገጠ ሪፖርቲንግ የእውቅዓት መረጃዎን ያስገቡ።",
+      "firstName": "ስም",
+      "lastName": "የአባት ስም",
+      "email": "ኢሜይል",
+      "phone": "ስልክ (አማራጭ)",
+      "firstNamePlaceholder": "ጃን",
+      "lastNamePlaceholder": "ዶ",
+      "emailPlaceholder": "jane@example.com",
+      "phonePlaceholder": "ለምሳሌ: +251...",
+      "continue": "ቀጣይ"
+    },
+    "step4Anonymous": {
+      "title": "<span class='text-[#C15B3E]'>ምድብ</span> ይምረጡ",
+      "reviewSubmit": "ግምገማ & አስገባ"
+    },
+    "incidentDescriptionLabel": "የክስተት መግለጫ",
+    "incidentDescriptionPlaceholder": "ታሪክዎ እዚህ ደህንነቱ የተጠበቀ ነው...",
+    "incidentDescriptionTitle": "የክስተት መግለጫ",
+    "step5": {
+      "title": "<span class='text-[#C15B3E]'>ምድብ</span> ይምረጡ",
+      "reviewSubmit": "ግምገማ & አስገባ"
+    },
+    "step5Anonymous": {
+      "title": "የመጨረሻ <span class='text-[#C15B3E]'>ምስጋና</span>",
+      "consentText": "{{type}} ሪፖርት ለ {{category}} በመስገባ ላይ ነዎት።",
+      "consentCheckbox": "ይህን መረጃ በእውነቱ እኩል መሆኑን እረጋገጣለሁ።",
+      "submit": "ደህንነቱ የተጠበቀ ሪፖርት አስገባ",
+      "encrypting": "በማመስጠር ላይ...",
+      "editDetails": "ዝርዝሮችን ያርትዑ"
+    },
+    "step6": {
+      "title": "የመጨረሻ <span class='text-[#C15B3E]'>ምስጋና</span>",
+      "consentText": "{{type}} ሪፖርት ለ {{category}} በመስገባ ላይ ነዎት።",
+      "contactInfo": "እውቅዓት: {{firstName}} {{lastName}} ({{email}})",
+      "consentCheckbox": "ይህን መረጃ በእውነቱ እኩል መሆኑን እረጋገጣለሁ።",
+      "submit": "ደህንነቱ የተጠበቀ ሪፖርት አስገባ",
+      "encrypting": "በማመስጠር ላይ...",
+      "editDetails": "ዝርዝሮችን ያርትዑ"
+    },
+    "regions": [
+      "አዲስ አበባ",
+      "አፋር",
+      "አማራ",
+      "ቤኒሻንጉል-ጉሙዝ",
+      "ድሬ ዳዋ",
+      "ጋምቤላ",
+      "ሀራሪ",
+      "ኦሮሚያ",
+      "ሲዳማ",
+      "ሶማሌ",
+      "ደቡብ ኢትዮጵያ",
+      "ደቡብ ምዕራብ ኢትዮጵያ",
+      "ቲግራይ"
+    ],
+    "errors": {
+      "dailyLimit": "የዛሬውን የሪፖርት ገደብ ለደህንነትዎ ደርሷል።",
+      "loginRequired": "ለተረጋገጠ ሪፖርቲንግ ለመስገብ እባክዎን ይግቡ",
+      "submissionFailed": "መስገብ አልተቻለም"
+    }
+  },
+  "missingPersons": {
+    "title": "የጠፉ ሰዎች",
+    "subtitle": "ፈልግ እና ሪፖርት አድርግ",
+    "description": "በማህበረሰብ የሚደገፍ ፍለጋ ከተረጋገጠ እና ደህንነቱ የተጠበቀ መረጃ ጋር። ሁሉም ሪፖርቶች ትክክለኛነታቸውን ለማረጋገጥ በአስተዳዳሪዎች ይረጋገጣሉ።",
+    "verifiedPlatform": "የተረጋገጠ እና ደህንነቱ የተጠበቀ መድረክ",
+    "reportMissingPerson": "የጠፋ ሰው ሪፖርት አድርግ",
+    "safetyGuidelines": "የደህንነት መመሪያዎች",
+    "safetyNotice": {
+      "title": "ደህንነት በመጀመሪያ",
+      "description": "የሁሉንም ሰው ግላዊነት እንጠብቃለን። ሚስጥራዊ ዝርዝሮች በይፋ አይታዩም። ሁሉም ሪፖርቶች እዚህ ከመታየታቸው በፊት በአስተዳዳሪዎች ይረጋገጣሉ።"
+    },
+    "search": {
+      "placeholder": "በአካባቢ፣ በመግለጫ ወይም በጉዳይ መለያ ይፈልጉ...",
+      "title": "የጠፉ ሰዎች ጉዳዮችን ይፈልጉ",
+      "filtersButton": "ማጣሪያዎች",
+      "filtersOn": "ማጣሪያዎች በርቷል"
+    },
+    "filters": {
+      "gender": "ጾታ",
+      "location": "አካባቢ",
+      "caseStatus": "የጉዳይ ሁኔታ",
+      "showing": "በማሳየት ላይ",
+      "verifiedCases": "የተረጋገጡ ጉዳዮች",
+      "clearAll": "ሁሉንም ማጣሪያዎች አጽዳ",
+      "allGenders": "ሁሉም ጾታዎች",
+      "allLocations": "ሁሉም አካባቢዎች",
+      "allCases": "ሁሉም ጉዳዮች",
+      "verifiedOnly": "የተረጋገጡ ብቻ",
+      "recentSevenDays": "የቅርብ ጊዜ (ባለፉት 7 ቀናት)",
+      "genderOptions": {
+        "male": "ወንድ",
+        "female": "ሴት"
+      },
+      "locationOptions": {
+        "addisAbaba": "አዲስ አበባ",
+        "hawassa": "ሀዋሳ",
+        "direDawa": "ድሬ ዳዋ"
+      }
+    },
+    "activeCases": {
+      "title": "ንቁ ጉዳዮች",
+      "description": "በአሁኑ ጊዜ እየተፈለጉ ያሉ የተረጋገጡ የጠፉ ሰዎች",
+      "activeCases": "ንቁ ጉዳዮች"
+    },
+    "loading": {
+      "title": "ጉዳዮችን በመጫን ላይ...",
+      "description": "የጠፉ ሰዎች መረጃ በማምጣት ላይ"
+    },
+    "error": {
+      "title": "መጫን አልተቻለም",
+      "description": "{error}"
+    },
+    "noCases": {
+      "title": "ምንም ጉዳዮች አልተገኙም",
+      "tryAdjust": "የፍለጋ መስፈርቶችዎን ወይም ማጣሪያዎችዎን ማስተካከል ይሞክሩ",
+      "noActiveCases": "በዚህ ጊዜ ምንም የተረጋገጡ የጠፉ ሰዎች ጉዳዮች የሉም",
+      "clearAllFilters": "ሁሉንም ማጣሪያዎች አጽዳ"
+    },
+    "caseCard": {
+      "activeSearch": "ንቁ ፍለጋ",
+      "yearsOld": "ዓመት",
+      "lastSeenLocation": "መጨረሻ የታየበት ቦታ",
+      "lastSeenOn": "መጨረሻ የታየበት ቀን",
+      "at": "በ",
+      "verified": "የተረጋገጠ",
+      "sightings": "ታይተዋል",
+      "reportSighting": "ታይቶ ሪፖርት አድርግ",
+      "details": "ዝርዝሮች",
+      "anonymousCase": "ስም-አልባ ጉዳይ"
+    },
+    "emergencyHelp": {
+      "title": "አስቸኳይ እርዳታ ያስፈልግዎታል?",
+      "description": "ለአስቸኳይ ሁኔታዎች እነዚህን የአደጋ ጊዜ አገልግሎቶች ያግኙ",
+      "policeEmergency": "የፖሊስ አደጋ ጊዜ",
+      "antiTrafficking": "ፀረ-ሰዎች ዝውውር",
+      "mentalHealthCrisis": "የአእምሮ ጤና ቀውስ"
+    },
+    "footer": {
+      "verificationNotice": "ሁሉም ጉዳዮች በአስተዳዳሪዎች ይረጋገጣሉ። የግል እና ሚስጥራዊ መረጃ የተጠበቀ ነው።",
+      "lawEnforcementContact": "ለህግ አስከባሪ አካላት ጥያቄዎች: havensafe207@gmail.com"
+    }
+  },
+  "supportServices": {
+    "badge": "የድጋፍ ስነ-ምህዳር",
+    "title": "እርዳታ ያግኙ",
+    "titleHighlight": "በአቅራቢያዎ።",
+    "description": "በኢትዮጵያ ውስጥ በደህንነቱ የተጠበቀ እና ደጋፊ አካባቢ ከተረጋገጡ የህክምና፣ የህግ እና የምክክር አገልግሎቶች ጋር ይገናኙ።",
+    "searchPlaceholder": "በአቅራቢያዬ እርዳታ ፈልግ (ህክምና፣ ህግ፣ ምክክር)",
+    "filterBy": "አጣራ በ",
+    "clearAll": "ሁሉንም አጽዳ",
+    "callNow": "አሁን ደውል",
+    "viewDetails": "ዝርዝሮችን ይመልከቱ",
+    "hotline": "የስልክ መስመር",
+    "languages": "ቋንቋዎች",
+    "region": "ክልል",
+    "type": "አይነት",
+    "noResults": "ከመመዘኛዎ ጋር የሚዛመድ አገልግሎት አልተገኘም"
+  },
+  "supportServicesPage": {
+    "hero": {
+      "badge": "ድጋፍ እና ግብዓቶች",
+      "title": "እርስዎ",
+      "titleHighlight": "ብቻዎ አይደሉም",
+      "titleEnd": "እርዳታ ይገኛል።",
+      "description": "ኢትዮጵያውያን ወደ ደህንነት እና ፈውስ የሚወስደውን ጉዞ እንዲጓዙ ለመርዳት የተነደፉ ፈጣን የቀውስ ጣልቃ ገብነት፣ በአሰቃቂ ሁኔታ የተመሰረተ ድጋፍ እና ሙያዊ ግብዓቶችን ያግኙ።",
+      "crisisHotlines": "የቀውስ የስልክ መስመሮች",
+      "browseDirectory": "ማውጫ ያስሱ"
+    },
+    "hotlines": {
+      "badge": "ፈጣን እርዳታ",
+      "title": "የቀውስ የስልክ መስመሮች",
+      "note": "SafeHaven ስም አልባ የሪፖርት መድረክ ነው እና በእውነተኛ ጊዜ የአደጋ ጊዜ መላኪያ ስርዓት አይደለም። ፈጣን ጣልቃ ገብነት የሚፈልጉ ለሕይወት አስጊ የሆኑ አደጋዎች እባክዎ ከታች ያሉትን አገልግሎቶች ያግኙ።",
+      "policeEmergency": "የፖሊስ አደጋ",
+      "redCrossAmbulance": "የቀይ መስቀል አምቡላንስ",
+      "mentalHealthSupport": "የአእምሮ ጤና ድጋፍ",
+      "call": "ደውል"
+    },
+    "institutional": {
+      "badge": "የተቋም ግብዓቶች",
+      "title": "ለመርዳት ዝግጁ የሆኑ ድርጅቶች",
+      "description": "SafeHaven ተጎጂዎችን የጥቃት ሰለባዎችን ለመደገፍ ቁርጠኛ የሆኑ ከተረጋገጡ የመንግስት ኤጀንሲዎች፣ መንግስታዊ ያልሆኑ ድርጅቶች እና በኢትዮጵያ ውስጥ ካሉ የጤና አገልግሎት አቅራቢዎች ጋር ያገናኛል።",
+      "ngos": "መንግስታዊ ያልሆኑ ድርጅቶች እና ሲቪል ማህበረሰብ",
+      "government": "የመንግስት ኤጀንሲዎች",
+      "health": "ጤና እና የአእምሮ ጤና",
+      "legal": "የህግ እርዳታ",
+      "registerPrompt": "የድጋፍ ድርጅት ነዎት?",
+      "registerDescription": "ተጎጂዎች በተረጋገጠ ማውጫችን በኩል እንዲያገኙዎት አገልግሎቶችዎን በመድረካችን ላይ ይመዝገቡ።",
+      "browseFullDirectory": "ሙሉውን ማውጫ ያስሱ"
+    },
+    "trust": {
+      "title": "አገልግሎቶቻችንን ለምን ማመን አለብዎት?",
+      "description": "ደህንነትዎ እና ግላዊነትዎ እናመቻችባቸው በእያንዳንዱ ግንኙነት ውስጥ ተካተዋል።",
+      "confidentiality": {
+        "title": "ሚስጥራዊነት",
+        "description": "ያለእርስዎ ግልጽ ፈቃድ የግል መረጃዎን ከአጋሮች ጋር በጭራሽ አናጋራም።"
+      },
+      "vetted": {
+        "title": "የተረጋገጡ አጋሮች",
+        "description": "በማውጫችን ውስጥ ያለ እያንዳንዱ ድርጅት ጥብቅ የማረጋገጫ ሂደት ያልፋል።"
+      },
+      "traumaInformed": {
+        "title": "በአሰቃቂ ሁኔታ ላይ የተመሰረተ",
+        "description": "ሁሉም የድጋፍ አገልግሎቶች ስሜታዊ ደህንነትዎን እና ማገገምዎን ቅድሚያ ይሰጣሉ።"
+      }
+    },
+    "cta": {
+      "title": "ቀጣዩን እርምጃ ለመውሰድ ዝግጁ ነዎት?",
+      "viewDirectory": "ሙሉ ማውጫ ይመልከቱ",
+      "submitReport": "ሪፖርት ያስገቡ"
+    }
+  },
+  "providerDirectory": {
+    "badge": "የተረጋገጠ የድጋፍ አውታረ መረብ",
+    "title": "ሙያዊ ድጋፍ",
+    "titleHighlight": "ማውጫ",
+    "description": "ለደህንነትዎ እና ለማገገምዎ ቁርጠኛ የሆኑ የተረጋገጡ ባለሙያዎችን ያግኙ። ማውጫችን አማካሪዎችን፣ የህግ አማካሪዎችን እና የህክምና ባለሙያዎችን ያቀርባል።",
+    "searchPlaceholder": "በስም፣ በስፔሻሊቲ ወይም በአካባቢ ይፈልጉ...",
+    "showFilters": "ማጣሪያዎችን አሳይ",
+    "hideFilters": "ማጣሪያዎችን ደብቅ",
+    "clearFilters": "ማጣሪያዎችን አጽዳ",
+    "filterBy": "አጣራ በ",
+    "serviceType": "የአገልግሎት አይነት",
+    "location": "አካባቢ",
+    "allServices": "ሁሉም አገልግሎቶች",
+    "allLocations": "ሁሉም አካባቢዎች",
+    "counseling": "ምክክር",
+    "medical": "ህክምና",
+    "legalAid": "የህግ እርዳታ",
+    "ngos": "መንግስታዊ ያልሆኑ ድርጅቶች",
+    "govAgencies": "የመንግስት ኤጀንሲዎች",
+    "shelters": "መጠለያዎች",
+    "verified": "የተረጋገጠ",
+    "available": "ይገኛል",
+    "contactInfo": "የእውቂያ መረጃ",
+    "phone": "ስልክ",
+    "email": "ኢሜይል",
+    "website": "ድረ-ገጽ",
+    "hours": "ሰዓታት",
+    "viewProfile": "መገለጫ ይመልከቱ",
+    "bookAppointment": "ቀጠሮ ያስይዙ",
+    "noResults": "ምንም አቅራቢዎች አልተገኙም",
+    "noResultsDescription": "ማጣሪያዎችዎን ወይም የፍለጋ ቃላትዎን ማስተካከል ይሞክሩ",
+    "loading": "አቅራቢዎችን በመጫን ላይ...",
+    "resultsCount": "{{count}} አቅራቢዎች ተገኝተዋል",
+    "page": "ገጽ {{current}} ከ {{total}}",
+    "previous": "ቀዳሚ",
+    "next": "ቀጣይ",
+    "safetyFirst": {
+      "title": "የእርስዎ ደህንነት በመጀመሪያ",
+      "description": "ሁሉም አቅራቢዎች ተረጋግጠዋል፣ ግን እባክዎ በራስዎ ስሜት ይተማመኑ። የእኛን",
+      "safetyPlanning": "የደህንነት እቅድ",
+      "toolsBefore": "መሳሪያዎችን ከማንኛውም ስብሰባ በፊት ይጠቀሙ።"
+    },
+    "noResultsFound": {
+      "title": "ምንም ውጤቶች አልተገኙም",
+      "description": "ተጨማሪ አቅራቢዎችን ለማግኘት ፍለጋዎን ወይም ማጣሪያዎችዎን ማስተካከል ይሞክሩ።",
+      "clearAllFilters": "ሁሉንም ማጣሪያዎች አጽዳ"
+    },
+    "providerCTA": {
+      "title": "የድጋፍ አቅራቢ ነዎት?",
+      "description": "የተረጋገጡ ባለሙያዎች አውታረ መረባችንን ይቀላቀሉ እና ተጎጂዎች ህይወታቸውን እንደገና እንዲያገኙ ይርዱ። ለጉዳይ አስተዳደር እና ግንኙነት ደህንነቱ የተጠበቀ መድረክ እናቀርባለን።",
+      "registerAsProvider": "እንደ አቅራቢ ይመዝገቡ",
+      "learnMore": "ተጨማሪ ይወቁ"
+    },
+    "footer": {
+      "disclaimer": "የ SafeHaven ማውጫ እርዳታ ለማግኘት የህዝብ ግብዓት ነው። ቀጥተኛ የህክምና ወይም የህግ ምክር አንሰጥም። በአስቸኳይ አደጋ ውስጥ ከሆኑ እባክዎ",
+      "emergencyHotlines": "የአደጋ ጊዜ የስልክ መስመሮችን",
+      "listedOnPlatform": "በመድረካችን ላይ የተዘረዘሩትን ይጠቀሙ።",
+      "copyright": "© 2026 የ SafeHaven ተነሳሽነት። ሁሉም መብቶች የተጠበቁ ናቸው።"
+    }
+  },
+  "survivor": {
+    "dashboard": {
+      "welcomeBack": "እንኳን ደህና መጡ {{name}}",
+      "safetyMatters": "ደህንነትዎ እና የማሻሻልዎ በጣም አስፈላጊ ነው",
+      "search": "ፈልግ",
+      "newReport": "አዲስ ሪፖርት",
+      "activeCase": "ንቁ ጉዳይ",
+      "incidentReport": "የክስተት ሪፖርት",
+      "caseProgress": "የጉዳይ እድገም",
+      "newMessageFromProfessional": "{{count}} አዲስ መልዕክት{{plural}} ከሙያዎ ዘንድ",
+      "tapBelowToView": "ለመመልከት እና ለመመለስ ከታች ይጫኑ",
+      "viewDetails": "ዝርዝሮችን ይመልከቱ",
+      "viewMessages": "መልዕክቶችን ይመልከቱ",
+      "noActiveReports": "ምንም ንቁ ሪፖርቶች አልተገኙም። እርዳታ ከፈለጉ እባክዎ ሪፖርት ያድርጉ።",
+      "quickActions": "ፈጣን እርምጃዎች",
+      "fileReport": "ሚስጥራዊ የክስተት ሪፖርት ያድርጉ",
+      "communityPost": "የማህበረሰብ ልጥፍ",
+      "communityPostDesc": "የማህበረሰብ ታሪኮችን ያጋሩ ወይም ያንብቡ",
+      "voiceMessage": "የድምጽ መልዕክት",
+      "voiceMessageDesc": "ደህንነቱ የተጠበቀ የድምጽ መልዕክት ይቅርቁ",
+      "empowerment": "ማብቃት",
+      "empowermentDesc": "ራስ እንክብካት፣ ግቦች እና የድጋፍ ክበብ",
+      "goTo": "ወደ",
+      "availableResources": "የገንዘብ ግብዓቶች",
+      "crisisHotline": "የቀውስ የስልክ መስመር",
+      "emergencySupport": "24/7 የአደጋ ድጋፍ",
+      "peerSupportGroups": "የእኩዮች የድጋፍ ቡድኖች",
+      "weeklyVirtualMeetings": "የሳምንታዊ ቨርቹዋል ስብስቦች",
+      "legalAid": "የህግ ድጋፍ",
+      "freeLegalConsultation": "ነፃ የህግ ምክር",
+      "needHelp": "እርዳታ ያስፈልጉዎታል?",
+      "supportAvailable": "24/7 ድጋፍ ይገኛል",
+      "contactSupport": "ድጋፍን ያግኙ"
+    },
+    "communityForum": {
+      "title": "የማህበረሰብ መድረክ",
+      "description": "ከተጎጂዎች ጋር በደህንነት የተጠበቀ እና የድጋፍ አካባቢ",
+      "createPost": "ልጥፍ ፍጠር",
+      "searchPlaceholder": "ውይይትን ፈልግ...",
+      "categories": "ምድቦች",
+      "allCategories": "ሁሉም ምድቦች",
+      "peerSupport": "የእኩዮች ድጋፍ",
+      "questionsAnswers": "ጥያቄዎች እና መልሶች",
+      "replyTooShort": "መልስ በጣም አጭር ነው (አንድ 5 ቁምፊ)",
+      "replyTooLong": "መልስ በጣም ረጅም ነው (ከ300 ቁምፊ በላይ)",
+      "postTooShort": "ልጥፍ በጣም አጭር ነው (አንድ 10 ቁምፊ)",
+      "postTooLong": "ልጥፍ በጣም ረጅም ነው (ከ500 ቁምፊ በላይ)",
+      "safeSpace": "ለተጎጂዎች የመገናኘት ደህንነቱ የተጠበቀ ቦታ",
+      "resourceSharing": "የግብዓት አካፋፍ",
+      "survivorStories": "የተጎጂዎች ታሪኮች",
+      "recentPosts": "የቅርብ ጊዜ ልጥፎች",
+      "noPostsFound": "ምንም ልጥፎች አልተገኙም",
+      "joinDiscussion": "ወደ ውይይት ተቀላቀሉ",
+      "shareExperience": "የእርስዎን ልምድ ያካፍሉ",
+      "askQuestion": "ጥያቄ ይጠይቁ",
+      "offerSupport": "ለአንዳንድ ድጋፍ ይስጡ",
+      "filter": "አጣራ",
+      "newPost": "አዲስ ልጥፍ",
+      "allTopics": "ሁሉም ርዕሶች",
+      "communityStats": "የማህበረሰብ ስታቲስቲክስ",
+      "members": "አባላት",
+      "postsToday": "ዛሬ ልጥፎች",
+      "onlineNow": "አሁን በመስመር ላይ",
+      "postPlaceholder": "የእርስዎን ታሪክ ያካፍሉ ወይም ድጋፍ ይጠይቁ... (ልጥፎች ስም አልባ ናቸው)",
+      "cancel": "ተው",
+      "post": "ልጥፍ",
+      "loadMorePosts": "ተጨማሪ ልጥፎች ጫን",
+      "postDetails": "የልጥፍ ዝርዝሮች",
+      "selectPost": "ልጥፍ ይምረጡ",
+      "selectPostDesc": "ዝርዝሮችን ለመመልከት እና ወደ ውይይት ለመቀላቀል ማንኛውንም ልጥፍ ይጫኑ",
+      "replyPlaceholder": "የደጋፍ መልስ ይጻፉ... (ስም አልባ)",
+      "reply": "መልስ",
+      "replies": "መልሶች",
+      "communityGuidelines": "የማህበረሰብ መመሪያዎች",
+      "guidelinesDesc": "ለእያንዳው ሰው ደህንነቱ የተጠበቀ ቦታ እንዲሆን መመሪያዎቻችንን እባክዎ ይመልከቱ።",
+      "guideline1": "ጥበብ ይልቡ",
+      "guideline1Desc": "ሳይሹው ድጋፍ ይስጡ",
+      "guideline2": "ስም ይጠብቁ",
+      "guideline2Desc": "ሁሉንም የግል እንዲጠብቁ",
+      "guideline3": "ዜሮ ትዕግስት",
+      "guideline3Desc": "የጥላቻ ንግግር ወይም ቀጣት የለም",
+      "leave": "ውጣ",
+      "iAgree": "እስማማለሁኝ",
+      "anonymous": "ስም አልባ",
+      "protected": "የተጠበቀ",
+      "more": "ተጨማሪ",
+      "share": "አካፍል",
+      "views": "መመልከቻዎች",
+      "likes": "ውደዶች",
+      "noPostsYet": "ምንም ልጥፎች የሉም",
+      "beFirstToPost": "የእርስዎን ታሪክ ለመካፈል ወይም ድጋፍ ለማግኘት የመጀመሪያው ይሁኑ"
+    },
+    "empowerment": {
+      "badge": "እድገም እና እድገም",
+      "title": "የማብቃት እና የሙያ ፖርታል",
+      "description": "ለረዥምጣዊ ጥንካሬ እና ነጻነት ወደ ሚወስደው ጉዞ ለመደጋገፍ የተነደፉ፣ የሙያ እድሎች፣ ስልጠና እና ግብዓቶች።",
+      "publicAccess": "የህዝብ መዳረሻ - እድሎችን ለመቃኘር መግቢያ አያስፈልግም",
+      "searchPlaceholder": "ሥራዎች፣ ስልጠናዎች ወይም ድርጅቶችን ይፈልጉ...",
+      "findOpportunity": "እድል ያግኙ",
+      "listings": "{{count}} ዝርዝሮች",
+      "verifiedPartnersOnly": "የተረጋገጡ አጋሮች ብቻ",
+      "jobsVolunteer": "ሥራዎች እና በጎ ፈቃደኝነት",
+      "trainingPrograms": "የስልጠና ፕሮግራሞች",
+      "myApplications": "የእኔ መግለጫዎች",
+      "noOpportunitiesFound": "ምንም እድሎች አልተገኙም",
+      "tryAdjustSearch": "ፍለጋዎን ማስተካከል ይሞክሩ",
+      "checkBackSoon": "ለአዲስ ዝርዝሮች በቅርቡ ይመለሱ",
+      "viewAllOpportunities": "ሁሉንም እድሎች ይመልከቱ",
+      "noApplicationsYet": "ምንም መግለጫዎች የሉም"
+    },
+    "myCases": {
+      "title": "የእኔ ጉዳዮች",
+      "description": "የሪፖርት ወካሎቻትን ይመልከቱ እና ይያስተዳድሩ",
+      "newReport": "አዲስ ሪፖርት",
+      "noCasesYet": "ምንም ጉዳዮች የሉም",
+      "haventSubmittedReports": "ምንም ሪፖርቶች አልሰጠሩም።",
+      "submitFirstReport": "የመጀመሪያዎን ሪፖርት ያስገቡ",
+      "caseDescription": "መግለጫ",
+      "noDescriptionProvided": "ምንም መግለጫ አልተሰጠም።",
+      "submitted": "ተሰጠረ",
+      "status": "ሁኔታ",
+      "id": "መለያ",
+      "complete": "{{percent}}% ተጠናቅቋል",
+      "messages": "መልዕክቶች",
+      "fullCaseDetails": "ሙሉ የጉዳይ ዝርዝሮች",
+      "newMessageFromProfessional": "{{count}} አዲስ መልዕክት{{plural}} ከሙያዎ ዘንድ",
+      "loading": "በመጫን ላይ..."
+    },
+    "messages": {
+      "title": "መልዕክቶች",
+      "assignedSupportChats": "የተመደደው የድጋፍ ውይይቶች",
+      "searchPlaceholder": "ውይይቶችን ይፈልጉ...",
+      "loading": "በመጫን ላይ...",
+      "noAssignedSupportChat": "ምንም የተመደደ የድጋፍ ውይይት ገጽ ገና አልተገኘም።",
+      "selectConversation": "ውይይት ይምረጡ",
+      "chatWith": "ከ {{name}} ጋር ውይይት",
+      "noMessagesYet": "ምንም መልዕክቶች የሉም። የመጀመሪያዎን መልዕክት ይላኩ።",
+      "pickConversation": "ከግራ ክፍል ውይይት ይምረጡ።",
+      "typeYourMessage": "መልዕክትዎን ይጻፉ...",
+      "send": "ላክ",
+      "sending": "በመላክ ላይ...",
+      "failedToLoadConversations": "ውይይቶችን ለመጫን አልተቻለም",
+      "failedToLoadMessages": "መልዕክቶችን ለመጫን አልተቻለም",
+      "failedToSendMessage": "መልዕክት ለመላክ አልተቻለም"
+    },
+    "safety": {
+      "title": "ደህንነት እና ማንነት",
+      "description": "ግላዊነትዎን እና ከመድረክ ጋር እንዴት እንደሚገናኙት ይቆጣጠሩ። ደህንነትዎ እና ጥሩት ከፍትሃዎችዎ ከፍተኛ ቅድሚያ ነው።",
+      "secureEnvironment": "ደህንነቱ የተጠበቀ አካባቢ",
+      "privacyLevel": "የግላዊነት ደረጃ",
+      "high": "ከፍተኛ",
+      "encryption": "ምስጠራ",
+      "active": "ንቁ",
+      "session": "ክፍለስ",
+      "secure": "ደህንነቱ የተጠበቀ",
+      "anonymityControls": "የስም አልባነት ቁጥጥሮች",
+      "anonymityDesc": "ማንነትዎ እንዴት እንደሚጠበቅ ይቆጣጠሩ",
+      "privateIdentityMode": "የግል ማንነት ሁነታ",
+      "privateIdentityDesc": "ስምዎን እና ሜታዳታ ከአማካሪዎች እና ከሌሎች ተጠቃሚዎች ያደብቁ እስከሚምርዱ ድረስ።",
+      "anonymousReporting": "ስም አልባ ሪፖርቲንግ",
+      "anonymousReportingDesc": "ሁሉም የክስተት ሪፖርቶች ወደ መለያዎ ማንነት ምንም አገናኝ ያለም",
+      "privacyPreferences": "የግላዊነት ምርጫዎች",
+      "privacyDesc": "የክፍለስ ደህንነት እና የውሂብ ጥበቃ",
+      "clearHistoryOnExit": "በመውጣት ታሪክን አጽዳ",
+      "clearHistoryDesc": "በመውጣት ጊዜ የፍለጋ ታሪክዎን እና የአካባቢውን የመድረክ ካሽ በራስ-ሰር አጽዳ።",
+      "inactivityTimeout": "የማራተት ጊዜ ገደብ",
+      "inactivityDesc": "ለጥበቃዎ ደህንነት በ15 ደቂቃዎች ማራተት ከተሸ በራስ-ሰር ይውጡ።",
+      "safetyNotifications": "የደህንነት ማሳወቂያዎች",
+      "safetyNotifDesc": "እንዴት እንደሚማልክዎት ይምረጡ",
+      "stealthNotifications": "የስም አልባ ማሳወቂያዎች",
+      "stealthNotifDesc": "የመልዕክቱን አይነት ለመደበቅ 'የስርዓት ዝማኔ' ያሉ የጠቅሳ ርዕሶችን ይቀበሉ።",
+      "criticalSOSAlerts": "ወሳኝ የSOS ማስጠሪያዎች",
+      "criticalSOSDesc": "በአስቸኳይ አደጋ ጊዜ ወሳኝ የደህንነት ማስጠሪያዎች የማዶ ሁነታን እንዲያልፉ ፍቀዱ",
+      "statusDashboard": "የሁኔታ ዳሽቦርድ",
+      "networkPrivacy": "የኔትዎርክ ግላዊነት",
+      "sessionKey": "የክፍለስ ቁልፍ",
+      "verified": "ተረጋግጧል",
+      "saveChanges": "ለውጦችን አስቀምጥ",
+      "settingsUpdated": "ቅንብሮች ተዘምነዋል",
+      "dataManagement": "የውሂብ አስተዳደር",
+      "downloadMyData": "ውሂቤን ይያውርዱ",
+      "deleteAccount": "መለያን ይሰርዙ",
+      "resetDefaults": "ነባርዎችን እንደነባር ይመለሱ",
+      "yourDataStaysLocal": "ውሂቤን በአካባቢው ይቀመጣል",
+      "yourDataStaysDesc": "የላቀት የተሻለ የአካባቢ-መጀመሪያ ምስጠራ እንጠቀማለን። ይህ ማለት የግል ቁልፎችዎ ከመሳሪያዎ አይወጡም የማንነት መለያዎችን ለመጠበቅ እንዳንችል።",
+      "verifiedProtection": "የተረጋገጠ ጥበቃ",
+      "verifiedProtectionDesc": "የደህንነት ፕሮቶኮሎቻችን በህግ እና በአሰቃቂ ሁኔታ ባለሙያዎች ይገመግማሉ ለኢትዮጵያውያን ተጎጂዎች ከፍተኛ ደረጃዎችን እንዲያሳኩ ይረዳሉ።",
+      "encryptionActiveSecure": "ምስጠራ ንቁ እና ደህንነቱ የተጠበቀ",
+      "endToEndEncryption": "ከጫፍ እስከ ጫፍ ምስጠራ",
+      "endToEndDesc": "መረጃዎች ከተተከሉ በኋላ በደህንነት ይመስጠራሉ። እኛም እንኳን ማንነትዎን ማየት እንችልም።",
+      "dataProtection": "የውሂብ ጥበቃ",
+      "dataProtectionDesc": "የጥበቃ መስርቶቻችን በአለማኛ እና በደህንነት ባለሙያዎች ይገመግማሉ ለኢትዮጵያውያን ተጎጂዎች ከፍተኛ ደረጃዎችን እንዲያሳኩ ይረዳሉ።"
+    },
+    "settings": {
+      "title": "ቅንብሮች",
+      "description": "የመለያ ቅንብሮችዎን እና ምርጫዎችዎን ያስተዳድሩ",
+      "preferences": "ምርጫዎች",
+      "profile": {
+        "title": "የመገለጫ መረጃ",
+        "firstName": "ስም",
+        "lastName": "የአባት ስም",
+        "email": "የኢሜይል አድራሻ",
+        "firstNamePlaceholder": "ስምዎን ያስገቡ",
+        "lastNamePlaceholder": "የአባት ስምዎን ያስገቡ",
+        "emailPlaceholder": "ኢሜይልዎን ያስገቡ"
+      },
+      "privacy": {
+        "title": "ግላዊነት እና ደህንነት",
+        "anonymousMode": "ስም አልባ ሁነታ",
+        "anonymousDescription": "ማንነትዎን በግል ይያዙ",
+        "profileVisibility": "የመገለጫ ታይነት",
+        "profileVisibilityDescription": "መገለጫዎን ማን እንደሚያይ ይቆጣጠሩ"
+      },
+      "notifications": {
+        "title": "ማሳወቂያዎች",
+        "push": "የግፊት ማሳወቂያዎች",
+        "pushDescription": "አስፈላጊ ዝማኔዎችን ይቀበሉ",
+        "email": "የኢሜይል ማሳወቂያዎች",
+        "emailDescription": "ዝማኔዎችን በኢሜይል ያግኙ"
+      },
+      "appearance": {
+        "title": "መልክ",
+        "darkMode": "ጨለማ ሁነታ",
+        "darkModeDescription": "ወደ ጨለማ ገጽታ ይቀይሩ",
+        "language": "ቋንቋ",
+        "languageDescription": "የሚመርጡትን ቋንቋ ይምረጡ",
+        "currentLanguage": "አማርኛ"
+      },
+      "actions": {
+        "title": "ፈጣን እርምጃዎች",
+        "saveChanges": "ለውጦችን አስቀምጥ",
+        "saving": "በማስቀመጥ ላይ...",
+        "previewProfile": "መገለጫን ቅድመ እይታ",
+        "deleteAccount": "መለያን ሰርዝ"
+      },
+      "status": {
+        "verified": "መለያ ተረጋግጧል",
+        "verifiedDescription": "መለያዎ ደህንነቱ የተጠበቀ እና የተረጋገጠ ነው",
+        "emailVerified": "ኢሜይል ተረጋግጧል",
+        "accountActive": "መለያ ንቁ ነው",
+        "privacyProtected": "ግላዊነት የተጠበቀ"
+      },
+      "errors": {
+        "saveError": "ከማስቀመጥዎ በፊት ስህተቶችን ያስተካክሉ።",
+        "deleteError": "መለያን መሰረዝ አልተሳካም"
+      },
+      "success": {
+        "profileUpdated": "መገለጫ በተሳካ ሁኔታ ተዘምኗል!",
+        "accountDeleted": "መለያ በተሳካ ሁኔታ ተሰርዟል"
+      },
+      "confirmations": {
+        "deleteAccount": "መለያዎን መሰረዝ እርግጠኛ ነዎት? ይህ እርምጃ መልሰው ማግኘት አይቻልም።"
+      }
+    }
+  },
+  "mainFooter": {
+    "tagline": "ደህንነትዎ ቅድሚያ የምንሰጠው ጉዳይ ነው። ሚስጥራዊ ድጋፍ እና ግብዓቶች 24/7 ይገኛሉ።",
+    "encryption": "ባለ 256-ቢት E2E ምስጠራ",
+    "sections": {
+      "platform": "መድረክ",
+      "resources": "ግብዓቶች",
+      "legal": "ህጋዊ"
+    },
+    "links": {
+      "home": "መነሻ",
+      "about": "ስለ እኛ",
+      "reportIncident": "ክስተት ሪፖርት አድርግ",
+      "myCases": "የእኔ ጉዳዮች",
+      "resources": "ግብዓቶች",
+      "cases": "ጉዳዮች",
+      "auditLogs": "የኦዲት ምዝግብ ማስታወሻዎች",
+      "report": "ሪፖርት",
+      "support": "ድጋፍ",
+      "missingPersons": "የጠፉ ሰዎች",
+      "supportDirectory": "የድጋፍ ማውጫ",
+      "recoveryHub": "የማገገሚያ ማዕከል",
+      "blog": "ብሎግ",
+      "privacyPolicy": "የግላዊነት ፖሊሲ",
+      "termsOfService": "የአገልግሎት ውሎች",
+      "accessibility": "ተደራሽነት",
+      "transparency": "ግልጽነት"
+    },
+    "compliance": {
+      "wcag": "WCAG AA",
+      "iso": "ISO 27001"
+    },
+    "bottom": {
+      "rights": "© 2025 መብቱ በህግ የተጠበቀ ነው።",
+      "builtFor": "ለሰው ልጅ የተገነባ",
+      "signOut": "ውጣ"
+    }
+  },
+  "blogPage": {
+    "hero": {
+      "badge": "የማህበረሰብ ታሪኮች እና ግንዛቤዎች",
+      "titleStart": "የ",
+      "titleHighlight": "ተስፋ እና ፈውስ",
+      "titleEnd": " ታሪኮች",
+      "description": "ከጥቃት የተረፉ ሰዎች እውነተኛ ተሞክሮዎች፣ የባለሙያዎች ግንዛቤዎች እና ጉዞዎን የሚደግፉ ግብዓቶች።",
+      "searchPlaceholder": "ታሪኮችን፣ ርዕሶችን ወይም ጸሐፊዎችን ይፈልጉ..."
+    },
+    "categories": {
+      "all": "ሁሉም ዜናዎች",
+      "educational": "ትምህርታዊ",
+      "insights": "አጠቃላይ ግንዛቤዎች"
+    },
+    "mainContent": {
+      "featuredStories": "ተለይተው የቀረቡ ታሪኮች",
+      "featuredBadge": "ተለይቶ የቀረበ",
+      "exploreCategory": "በምድብ ያስሱ",
+      "latestStories": "የቅርብ ጊዜ ታሪኮች",
+      "readFull": "ሙሉ ጽሑፉን ያንብቡ",
+      "showLess": "አሳንስ",
+      "readMore": "ተጨማሪ ያንብቡ"
+    },
+    "sidebar": {
+      "trendingTopics": "በአሁኑ ጊዜ ታዋቂ የሆኑ ርዕሶች",
+      "moderationNoticeTitle": "አስተማማኝ እና ደጋፊ አካባቢን ለማረጋገጥ ሁሉም ይዘቶች ቁጥጥር ይደረግባቸዋል።",
+      "moderationNoticeDesc": "እባክዎ በሁሉም ግንኙነቶች አክብሮት እና ርህራሄ የተሞላበት ይሁኑ።"
+    }
+  },
+  "privacyPage": {
+    "badge": "የግላዊነት ፖሊሲ",
+    "hero": {
+      "titleStart": "የእርስዎ ",
+      "titleHighlight": "ግላዊነት",
+      "description": "በ SafeHaven ውስጥ፣ ግላዊነትዎ ለምናደርገው ነገር ሁሉ መሰረታዊ ነው። መረጃዎን እንዴት እንደምንጠብቅ እና መብቶችዎን እንደምናከብር ይወቁ።",
+      "learnMore": "ተጨማሪ ይወቁ"
+    },
+    "principles": {
+      "title": "የእኛ የግላዊነት መርሆዎች",
+      "subtitle": "እነዚህ ዋና መርሆዎች የእርስዎን ግላዊ መረጃ እንዴት እንደምናስተናግድ ይመራሉ::",
+      "dataMinimization": {
+        "title": "የመረጃ መቀነስ",
+        "desc": "አገልግሎቶቻችንን ለማቅረብ እና ደህንነትዎን ለማረጋገጥ አስፈላጊ የሆነውን አነስተኛ መረጃ ብቻ እንሰበስባለን።"
+      },
+      "transparency": {
+        "title": "ግልጽነት",
+        "desc": "ምን አይነት መረጃ እንደምንሰበስብ፣ እንዴት እንደምንጠቀምበት እና ከመረጃዎ ጋር የተያያዙ መብቶችዎን በግልፅ እናብራራለን።"
+      },
+      "secureStorage": {
+        "title": "ደህንነቱ የተጠበቀ ማከማቻ",
+        "desc": "ያልተፈቀደ መዳረሻን ለመከላከል ሁሉም መረጃዎች የተመሰጠሩ እና በኢንዱስትሪ መሪ የደህንነት እርምጃዎች የተከማቹ ናቸው።"
+      }
+    },
+    "dataCollection": {
+      "title": "ምን መረጃ እንሰበስባለን",
+      "subtitle": "ደህንነቱ የተጠበቀ እና ውጤታማ የድጋፍ አገልግሎቶችን ለማቅረብ አስፈላጊ መረጃዎችን ብቻ እንሰበስባለን።",
+      "youProvide": {
+        "title": "እርስዎ የሚያቀርቡት መረጃ",
+        "item1": "የሪፖርት ይዘት እና ደጋፊ ሰነዶች",
+        "item2": "የመለያ መረጃ (ለመመዝገብ ከመረጡ)",
+        "item3": "ከድጋፍ አገልግሎቶች ጋር የሚደረግ ግንኙነት"
+      },
+      "autoCollected": {
+        "title": "በራስ-ሰር የሚሰበሰቡ",
+        "item1": "አገልግሎታችንን ለማሻሻል ስም-አልባ የአጠቃቀም ስታቲስቲክስ",
+        "item2": "የመሣሪያ ዓይነት እና የአሳሽ መረጃ (አይከማችም)",
+        "item3": "ለአገልግሎት ማመቻቸት የክፍለ ጊዜ ቆይታ"
+      }
+    },
+    "rights": {
+      "title": "የእርስዎ የመረጃ መብቶች",
+      "subtitle": "በግል መረጃዎ እና እንዴት ጥቅም ላይ እንደሚውል ላይ ሙሉ ቁጥጥር አልዎት።",
+      "access": {
+        "title": "መረጃዎን ይድረሱ",
+        "desc": "ስለ እርስዎ ያለን የግል መረጃ ሁሉ ቅጂ ይጠይቁ።"
+      },
+      "portability": {
+        "title": "የውሂብ ተንቀሳቃሽነት",
+        "desc": "መረጃዎን በተዋቀረ፣ በማሽን ሊነበብ በሚችል ቅርጸት ይቀበሉ።"
+      },
+      "deletion": {
+        "title": "የመሰረዝ መብት",
+        "desc": "ለህጋዊ መስፈርቶች ተገዢ ሆኖ የግል መረጃዎን እንዲሰረዝ ይጠይቁ።"
+      },
+      "withdraw": {
+        "title": "ስምምነትን ማውጣት",
+        "desc": "በማንኛውም ጊዜ ለመረጃ ማቀናበሪያ ስምምነትን ይሰርዙ።"
+      }
+    },
+    "contact": {
+      "title": "ስለ ግላዊነትዎ ጥያቄዎች?",
+      "subtitle": "የእኛ የግላዊነት ቡድን መብቶችዎን እንዲረዱ እና እንዲጠቀሙ ሊረዳዎት እዚህ አለ።",
+      "button": "የግላዊነት ቡድንን ያነጋግሩ"
+    }
+  },
+  "accessibilityPage": {
+    "badge": "የተደራሽነት መግለጫ",
+    "hero": {
+      "titleStart": "ተደራሽ ",
+      "titleHighlight": "ድጋፍ",
+      "description": "SafeHaven ተደራሽ የድጋፍ አገልግሎቶችን ለማቅረብ ቁርጠኛ ነው። የእኛ መድረክ የ WCAG 2.1 AA መስፈርቶችን ያሟላል እና የተለያዩ ችሎታዎች እና አጋዥ ቴክኖሎጂዎች ያሉባቸውን ተጠቃሚዎች ይደግፋል።",
+      "explore": "ባህሪያትን ያስሱ"
+    },
+    "features": {
+      "badge": "አጋዥ ቴክኖሎጂዎች",
+      "title": "የተደራሽነት ባህሪያት",
+      "subtitle": "የተለያዩ ችሎታዎች ያላቸውን ተጠቃሚዎች ለመደገፍ አብሮ የተሰሩ ባህሪያት። የቁልፍ ሰሌዳ አሰሳን ይሞክሩ!",
+      "visual": {
+        "title": "የእይታ ተደራሽነት",
+        "desc": "ከፍተኛ የንፅፅር አማራጮች፣ የስክሪን አንባቢ ተኳኋኝነት እና የእይታ እክል ላለባቸው ተጠቃሚዎች የሚስተካከሉ የጽሑፍ መጠኖች።"
+      },
+      "keyboard": {
+        "title": "የቁልፍ ሰሌዳ አሰሳ",
+        "desc": "በመድረክ በሙሉ ግልጽ የትኩረት አመልካቾች እና ምክንያታዊ የትር ቅደም ተከተል ያለው ሙሉ የቁልፍ ሰሌዳ ተደራሽነት።"
+      },
+      "audio": {
+        "title": "የድምጽ ድጋፍ",
+        "desc": "የስክሪን አንባቢ ተኳኋኝነት እና ለአስፈላጊ የበይነገጽ ክፍሎች የድምጽ መግለጫዎች።"
+      }
+    },
+    "demos": {
+      "title": "የእኛን የተደራሽነት ባህሪያት ይሞክሩ",
+      "subtitle": "የእኛ የተደራሽነት ችሎታዎች መስተጋብራዊ ሰልፎች።"
+    },
+    "keyboardDemo": {
+      "title": "የቁልፍ ሰሌዳ አሰሳን ይሞክሩ",
+      "desc": "የእይታ ግብረመልስ ለማየት ማንኛውንም ቁልፍ ይጫኑ። የእኛ መድረክ የቁልፍ ሰሌዳ-ብቻ አሰሳን ሙሉ በሙሉ ይደግፋል።"
+    },
+    "contrastDemo": {
+      "title": "ከፍተኛ ንፅፅር ሁነታ",
+      "desc": "የተሻለ ታይነትን ለማግኘት የእኛ በይነገጽ እንዴት እንደሚላመድ ለማየት ይቀያይሩ።",
+      "on": "በርቷል",
+      "off": "ጠፍቷል",
+      "highContrast": "ከፍተኛ ንፅፅር",
+      "standard": "መደበኛ ንፅፅር"
+    },
+    "textSizeDemo": {
+      "title": "የጽሑፍ መጠን ማስተካከያ",
+      "desc": "ተጠቃሚዎች የይዘት መጥፋት ሳይኖር እስከ 200% የጽሑፍ መጠን ማስተካከል ይችላሉ።",
+      "preview": "ጽሑፍን ቅድመ እይታ በ "
+    },
+    "standards": {
+      "title": "ደረጃዎች እና ተገዢነት",
+      "subtitle": "ለተደራሽነት ደረጃዎች እና አካታች ንድፍ ያለን ቁርጠኝነት።",
+      "wcag": {
+        "title": "WCAG 2.1 AA ተገዢነት",
+        "desc": "ሁሉንም የድር ይዘት ተደራሽነት መመሪያዎች ደረጃ AA መስፈርቶችን ያሟላል።"
+      },
+      "mobile": {
+        "title": "የሞባይል ተደራሽነት",
+        "desc": "ለንክኪ በይነገጾች እና ለሞባይል ማያ ገጽ አንባቢዎች የተመቻቸ።"
+      },
+      "cross": {
+        "title": "የመስቀል-መድረክ ድጋፍ",
+        "desc": "በዴስክቶፕ፣ ታብሌት እና የሞባይል መሳሪያዎች ላይ ተከታታይ የተደራሽነት ባህሪያት።"
+      }
+    },
+    "support": {
+      "title": "የተደራሽነት ድጋፍ ይፈልጋሉ?",
+      "desc": "አገልግሎቶቻችንን ለመድረስ ችግሮች እያጋጠሙዎት ከሆነ ወይም ተደራሽነትን ለማሻሻል ጥቆማዎች ካሉዎት እባክዎ የድጋፍ ቡድናችንን ያነጋግሩ።",
+      "contact": "ድጋፍን ያነጋግሩ",
+      "report": "ችግርን ሪፖርት አድርግ"
+    },
+    "footer": {
+      "note": "SafeHaven ተደራሽነትን ለማሻሻል በቀጣይነት እየሰራ ነው። ይህ መግለጫ ለመጨረሻ ጊዜ የዘመነው በ ",
+      "skipLink": "ወደ ዋናው ይዘት ይዝለሉ",
+      "srOnly": "የተደራሽነት ባህሪ: "
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "badge": "ስለ Safe Ethiopia",
+      "titleStart": "የበለጠ ደህንነቷ የተጠበቀ ",
+      "titleHighlight": "ኢትዮጵያን ",
+      "titleEnd": "አብረን እንገንባ",
+      "description": "እኛ በመላው ኢትዮጵያ ሪፖርት ለማድረግ፣ ለመፈወስ እና ለማህበረሰብ ድጋፍ ደህንነቱ የተጠበቀ ቦታዎችን ለመፍጠር የተቋቋምን አሰቃቂ ሁኔታዎችን ያገናዘበ መድረክ ነን። የእኛ ተልእኮ እያንዳንዱን ኢትዮጵያዊ የጥቃት ዑደትን ለመስበር በሚያስፈልጉ መሳሪያዎች እና ግብዓቶች ማብቃት ነው።",
+      "getHelp": "አሁን እርዳታ ያግኙ",
+      "learnMore": "ተጨማሪ ይወቁ"
+    },
+    "mission": {
+      "title": "ተልዕኳችን",
+      "desc": "ኢትዮጵያውያን ጥቃትን ሪፖርት እንዲያደርጉ፣ የድጋፍ አገልግሎቶችን እንዲያገኙ እና ከጥቃት እና ከአድልዎ ነፃ የሆኑ ጠንካራ ማህበረሰቦችን እንዲገነቡ የሚያስችል ደህንነቱ የተጠበቀ፣ ሚስጥራዊ እና ባህልን ያገናዘበ መድረክ ለማቅረብ።",
+      "item1": "ለሁሉም ኢትዮጵያውያን ደህንነቱ የተጠበቀ የሪፖርት ማቅረቢያ መንገዶችን መፍጠር",
+      "item2": "አሰቃቂ ሁኔታዎችን ያገናዘበ ድጋፍን ወዲያውኑ ማግኘት",
+      "item3": "ለዘለቄታው ጥበቃ የማህበረሰብ አውታረ መረቦችን መገንባት",
+      "item4": "በመረጃ በተደገፉ ግንዛቤዎች አማካኝነት ስልታዊ ለውጥ እንዲመጣ መሟገት"
+    },
+    "vision": {
+      "title": "ራዕያችን",
+      "desc": "እያንዳንዱ ሰው ደህንነት የሚሰማው፣ የሚደመጥበት እና የሚደገፍበት፣ ማህበረሰቦች ጥቃትን ለመከላከል የሚያስችል አቅም ያላቸው እና ሁሉም ዜጎች በክብር እና በመከባበር ማደግ የሚችሉበት አካባቢ የሚፈጠርባትን ኢትዮጵያ እናያለን።",
+      "item1": "ከጥቃት እና ከብዝበዛ ነፃ የሆነች ኢትዮጵያ",
+      "item2": "እርስ በእርስ የሚደጋገፉ እና የሚጠበቁ ማህበረሰቦች",
+      "item3": "በእዝነት እና በብቃት ምላሽ የሚሰጡ ስርዓቶች",
+      "item4": "የደህንነት እና የመከባበር ባህል"
+    },
+    "values": {
+      "title": "ዋና እሴቶቻችን",
+      "subtitle": "እነዚህ መርሆዎች የምናደርገውን እያንዳንዱን ውሳኔ እና የምንገነባውን እያንዳንዱን ባህሪ ይመራሉ",
+      "safety": {
+        "title": "ደህንነት በመጀመሪያ",
+        "desc": "እያንዳንዱ ባህሪ የተጠቃሚን ደህንነት እና ስሜታዊ ደህንነት እንደ ዋና ቅድሚያ በማድረግ የተነደፈ ነው"
+      },
+      "confidentiality": {
+        "title": "ፍጹም ሚስጥራዊነት",
+        "desc": "ወታደራዊ-ደረጃ ምስጠራ ለሁሉም ተጠቃሚዎች ሙሉ ግላዊነትን እና ማንነትን መደበቅን ያረጋግጣል"
+      },
+      "trauma": {
+        "title": "አሰቃቂ ሁኔታን ያገናዘበ",
+        "desc": "የእኛ አቀራረብ በአሰቃቂ ሁኔታ የተረፉ ሰዎችን ፍላጎቶች በመረዳት እና ምላሽ በመስጠት ላይ የተመሰረተ ነው"
+      },
+      "community": {
+        "title": "በማህበረሰብ የሚመራ",
+        "desc": "ባህላዊ አግባብነትን ለማረጋገጥ መፍትሄዎች ከኢትዮጵያ ማህበረሰቦች ጋር በጋራ የተነደፉ ናቸው"
+      },
+      "cultural": {
+        "title": "ባህላዊ ትብነት",
+        "desc": "የኢትዮጵያን ባህሎች፣ ቋንቋዎች እና ማህበራዊ አወቃቀሮችን እናከብራለን እና እናካትታለን"
+      },
+      "excellence": {
+        "title": "የአገልግሎት የላቀነት",
+        "desc": "ለእያንዳንዱ ተጠቃሚ ከፍተኛ ጥራት ያለው ድጋፍ እና ግብዓቶችን ለማቅረብ ቁርጠኞች ነን"
+      }
+    },
+    "cta": {
+      "title": "ደህንነቷ የተጠበቀ ኢትዮጵያን በመገንባት ይቀላቀሉን",
+      "desc": "ድጋፍ ቢፈልጉ፣ በበጎ ፈቃደኝነት መስራት ቢፈልጉ ወይም ከእኛ ጋር አጋር ለመሆን ቢፈልጉ፣ በተልዕኳችን ውስጥ ለእርስዎ ቦታ አለ።",
+      "getHelp": "አሁን እርዳታ ያግኙ",
+      "partner": "ከእኛ ጋር አጋር ይሁኑ"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "badge": "SafeHavenን ያግኙ",
+      "titleStart": "ከእኛ ጋር ",
+      "titleHighlight": "ይገናኙ",
+      "description": "እኛ ለመርዳት እዚህ ነን። ድጋፍ ቢፈልጉ፣ ስለ አገልግሎቶቻችን ጥያቄዎች ቢኖሩዎት ወይም ችግርን ሪፖርት ማድረግ ከፈለጉ፣ ቡድናችን በበርካታ መንገዶች እርስዎን ለመርዳት ዝግጁ ነው።"
+    },
+    "departments": {
+      "title": "የመምሪያ እውቂያዎች",
+      "subtitle": "ለእርስዎ የተለየ ጥያቄ ትክክለኛውን ቡድን ያግኙ።",
+      "privacy": {
+        "title": "ግላዊነት እና የመረጃ ጥበቃ",
+        "desc": "የመረጃ መብቶች፣ የግላዊነት ፖሊሲዎች፣ የGDPR ተገዢነት እና የደህንነት ጉዳዮች።"
+      },
+      "legal": {
+        "title": "ህግ እና ተገዢነት",
+        "desc": "የአገልግሎት ውሎች፣ የህግ ስምምነቶች፣ አጋርነቶች እና የቁጥጥር ጉዳዮች።"
+      },
+      "support": {
+        "title": "አጠቃላይ ድጋፍ",
+        "desc": "የቴክኒክ ችግሮች፣ የመለያ ድጋፍ፣ የተደራሽነት ጉዳዮች እና አጠቃላይ ጥያቄዎች።"
+      },
+      "media": {
+        "title": "አጋርነቶች እና ሚዲያ",
+        "desc": "የንግድ አጋርነቶች፣ የሚዲያ ጥያቄዎች፣ ትብብሮች እና ጋዜጣዊ መግለጫዎች።"
+      }
+    },
+    "form": {
+      "title": "መልእክት ይላኩልን",
+      "subtitle": "ከታች ያለውን ቅጽ ይሙሉ እና በ24 ሰዓታት ውስጥ እንመልስልዎታለን።",
+      "name": "ሙሉ ስም *",
+      "namePlaceholder": "የእርስዎ ሙሉ ስም",
+      "email": "የኢሜይል አድራሻ *",
+      "emailPlaceholder": "your@email.com",
+      "phone": "ስልክ ቁጥር",
+      "phonePlaceholder": "+251 911 123 456",
+      "company": "ኩባንያ/ድርጅት",
+      "companyPlaceholder": "የኩባንያ ስም (አማራጭ)",
+      "subject": "ጉዳዩ *",
+      "subjectPlaceholder": "የጥያቄዎ አጭር መግለጫ",
+      "inquiryType": "የጥያቄ ዓይነት *",
+      "inquirySelect": "የጥያቄ ዓይነት ይምረጡ",
+      "inquiryGeneral": "አጠቃላይ ጥያቄ",
+      "inquiryPrivacy": "የግላዊነት ጉዳዮች",
+      "inquiryTech": "የቴክኒክ ድጋፍ",
+      "inquiryLegal": "የህግ ጥያቄዎች",
+      "inquiryAccess": "የተደራሽነት ጉዳዮች",
+      "inquiryPartner": "የአጋርነት እድሎች",
+      "inquiryBilling": "የክፍያ ጥያቄዎች",
+      "inquiryMedia": "የሚዲያ ጥያቄዎች",
+      "urgency": "የአስቸኳይነት ደረጃ",
+      "urgencyLow": "ዝቅተኛ - አጠቃላይ ጥያቄ",
+      "urgencyNormal": "መደበኛ - መደበኛ ጥያቄ",
+      "urgencyHigh": "ከፍተኛ - ፈጣን ምላሽ ያስፈልጋል",
+      "urgencyUrgent": "አስቸኳይ - አስቸኳይ ትኩረት ያስፈልጋል",
+      "message": "መልእክት *",
+      "messagePlaceholder": "እባክዎ ስለ ጥያቄዎ ዝርዝሮችን ያቅርቡ። የበለጠ መረጃ ባቀረቡ ቁጥር በተሻለ ሁኔታ ልንረዳዎ እንችላለን።",
+      "sending": "መልእክት በመላክ ላይ...",
+      "submit": "መልእክት ላክ",
+      "successTitle": "መልእክት በተሳካ ሁኔታ ተልኳል!",
+      "successDesc": "SafeHavenን ስላነጋገሩ እናመሰግናለን። መልእክትዎን ደርሶናል እና በ24 ሰዓታት ውስጥ እንመልስልዎታለን።",
+      "successExpected": "የሚጠበቀው የምላሽ ጊዜ: 24 ሰዓታት"
+    },
+    "faq": {
+      "title": "ተደጋግመው የሚጠየቁ ጥያቄዎች",
+      "subtitle": "ስለ SafeHaven አገልግሎቶች እና ድጋፍ ለተለመዱ ጥያቄዎች መልስ ያግኙ።",
+      "q1": "ምላሽ ለማግኘት ምን ያህል ጊዜ ይወስዳል?",
+      "a1": "ብዙውን ጊዜ ለኢሜይል ጥያቄዎች በ24 ሰዓታት ውስጥ እና ለስልክ ድጋፍ በስራ ሰዓታት ውስጥ ወዲያውኑ ምላሽ እንሰጣለን።",
+      "q2": "መረጃዬ ሚስጥራዊ ሆኖ ይቀመጣል?",
+      "a2": "አዎ፣ ሁሉም ግንኙነቶች የተመሰጠሩ እና በከፍተኛ ሚስጥራዊነት የሚስተናገዱ ናቸው። ያለግልጽ ስምምነት የግል መረጃን መቼም ቢሆን አናጋራም።",
+      "q3": "የ24/7 ድጋፍ ይሰጣሉ?",
+      "a3": "አዎ፣ የእኛ የቀጥታ ውይይት 24/7 ይገኛል፣ እና የአደጋ ጊዜ ድጋፍ ሁል ጊዜ ተደራሽ ነው። የስልክ ድጋፍ በስራ ሰዓታት ውስጥ ይገኛል።",
+      "q4": "የተደራሽነት ችግርን እንዴት ሪፖርት ማድረግ እችላለሁ?",
+      "a4": "በእኛ የግንኙነት ቅጽ በኩል፣ የድጋፍ መስመራችንን በመደወል፣ ወይም በተደራሽነት ገፃችን ላይ ያለውን ችግር ሪፖርት አድርግ የሚለውን ቁልፍ በመጠቀም የተደራሽነት ችግሮችን ሪፖርት ማድረግ ይችላሉ።",
+      "q5": "ድጋፍን ሳነጋግር ምን መረጃ ማካተት አለብኝ?",
+      "a5": "እባክዎ ስለ ችግርዎ፣ ማንኛውንም የስህተት መልእክቶች፣ ምን ለማድረግ እንደሞከሩ እና ለክትትል የግንኙነት መረጃዎን ጨምሮ በተቻለ መጠን ብዙ ዝርዝሮችን ያቅርቡ።",
+      "q6": "ስልጠናዎችን ወይም ወርክሾፖችን ይሰጣሉ?",
+      "a6": "አዎ፣ የተለያዩ የስልጠና ፕሮግራሞችን እና ወርክሾፖችን እናቀርባለን። ስለሚገኙ ፕሮግራሞች መረጃ ለማግኘት የእኛን የአጋርነት ቡድን ያነጋግሩ።"
+    }
+  },
+  "termsPage": {
+    "hero": {
+      "badge": "የአገልግሎት ውሎች",
+      "titleStart": "የአገልግሎት ",
+      "titleHighlight": "ውሎች",
+      "description": "የSafeHavenን አገልግሎቶች በኃላፊነት እና በብቃት ለመጠቀም ግልጽ መመሪያዎች። የእርስዎ ደህንነት እና ግላዊነት የእኛ ዋና ቅድሚያዎች ናቸው።",
+      "review": "ውሎችን ይገምግሙ"
+    },
+    "overview": {
+      "badge": "የህግ ማዕቀፍ",
+      "title": "የአገልግሎት ስምምነት አጠቃላይ እይታ",
+      "desc": "እነዚህ ውሎች የSafeHavenን መድረክ እና አገልግሎቶች አጠቃቀምዎን ይገዛሉ።",
+      "service": {
+        "title": "የአገልግሎት አጠቃቀም",
+        "desc": "መድረካችንን እንዴት መጠቀም እንደሚችሉ እና እንደ ተጠቃሚ ከእርስዎ ምን እንደምንጠብቅ።"
+      },
+      "privacy": {
+        "title": "ግላዊነት እና ደህንነት",
+        "desc": "መረጃዎን ለመጠበቅ እና ሚስጥራዊነትን ለመጠበቅ ያለን ቁርጠኝነት።"
+      },
+      "responsibilities": {
+        "title": "የተጠቃሚ ኃላፊነቶች",
+        "desc": "አገልግሎቶቻችንን ሲጠቀሙ እና ክስተቶችን ሲዘግቡ ከእርስዎ ምን እንደምንጠብቅ።"
+      }
+    },
+    "keyTerms": {
+      "title": "ዋና ውሎች እና ሁኔታዎች",
+      "desc": "መድረካችንን በደህንነት እና በብቃት ለመጠቀም አስፈላጊ መመሪያዎች።",
+      "t1": {
+        "title": "ተቀባይነት ያለው አጠቃቀም",
+        "desc": "አገልግሎቶቻችንን ለታሰበላቸው ዓላማ ማለትም በቤት ውስጥ ብጥብጥ እና ተያያዥ ጉዳዮች ላይ ሪፖርት ለማድረግ እና ድጋፍ ለመፈለግ ብቻ ይጠቀሙ።"
+      },
+      "t2": {
+        "title": "የይዘት መመሪያዎች",
+        "desc": "ክስተቶችን ሲዘግቡ ትክክለኛ መረጃ ያቅርቡ። የሐሰት ወይም አሳሳች ሪፖርቶችን አያቅርቡ።"
+      },
+      "t3": {
+        "title": "ሚስጥራዊነት",
+        "desc": "የሌሎችን ግላዊነት ያክብሩ። በእኛ መድረክ በኩል የተገኘ ሚስጥራዊ መረጃ አያጋሩ።"
+      },
+      "t4": {
+        "title": "የመለያ ደህንነት",
+        "desc": "የመለያ ምስክርነቶችዎን ደህንነት ይጠብቁ እና ለማንኛውም ያልተፈቀደ መዳረሻ ወዲያውኑ ያሳውቁን።"
+      }
+    },
+    "notices": {
+      "title": "አስፈላጊ ማሳወቂያዎች",
+      "desc": "ስለ አገልግሎቶቻችን እና መብቶችዎ ወሳኝ መረጃ።",
+      "emergency": {
+        "title": "የአደጋ ጊዜ አገልግሎቶች",
+        "desc": "SafeHaven የአደጋ ጊዜ አገልግሎቶችን አይተካም። አፋጣኝ አደጋ በሚያጋጥምበት ጊዜ፣ የአካባቢ ባለስልጣናትን ወይም የአደጋ ጊዜ አገልግሎቶችን በቀጥታ ያነጋግሩ።",
+        "l1": "• ለአፋጣኝ ስጋቶች የአደጋ ጊዜ አገልግሎቶችን ይደውሉ",
+        "l2": "• የአካባቢ የቤት ውስጥ ብጥብጥ የስልክ መስመሮችን ያነጋግሩ",
+        "l3": "• አስፈላጊ ከሆነ ወዲያውኑ የህክምና እርዳታ ይፈልጉ"
+      },
+      "rights": {
+        "title": "መብቶችዎ",
+        "desc": "የግል መረጃዎን በማንኛውም ጊዜ የማግኘት፣ የማሻሻል ወይም የመሰረዝ መብት አልዎት።",
+        "l1": "• የመረጃ መዳረሻ እና ተንቀሳቃሽነት ይጠይቁ",
+        "l2": "• ትክክል ያልሆነ መረጃ ያርሙ",
+        "l3": "• መለያዎን እና መረጃዎን ይሰርዙ",
+        "l4": "• ለመረጃ ሂደት ፈቃድዎን ያንሱ"
+      }
+    },
+    "contact": {
+      "title": "ስለ ውሎቻችን ጥያቄዎች አሉዎት?",
+      "desc": "የእኛ የህግ ቡድን የአገልግሎት ውሎቻችንን ማናቸውንም ገጽታዎች ለማብራራት ይገኛል።",
+      "button": "የድጋፍ ቡድንን ያነጋግሩ"
+    }
+  },
+  "transparencyPage": {
+    "hero": {
+      "badge": "እምነት እና ታማኝነት",
+      "titleStart": "የግልጽነት ",
+      "titleHighlight": "ሪፖርት",
+      "description": "በSafeHaven ግልጽነት ፖሊሲ ብቻ ሳይሆን የእኛ መሠረት ነው። ውሂብዎን እንዴት እንደምንጠብቅ፣ ጥያቄዎችን እንዴት እንደምናስተናግድ እና ከፍተኛውን የማንነት መደበቅ ደረጃዎች እንዴት እንደምንጠብቅ ይወቁ።",
+      "explore": "የደህንነት ባህሪያትን ያስሱ"
+    },
+    "stats": {
+      "badge": "በቁጥሮች",
+      "title": "የእኛ ተጽዕኖ",
+      "reports": "የተጠበቁ ሪፖርቶች",
+      "requests": "ውድቅ የተደረጉ የመረጃ ጥያቄዎች",
+      "uptime": "የደህንነት የስራ ጊዜ",
+      "partners": "የተረጋገጡ አጋሮች"
+    },
+    "security": {
+      "title": "የእኛ የደህንነት አርክቴክቸር",
+      "subtitle": "በግል ሪፖርት አቀራረብ እና በማህበረሰብ ደህንነት ላይ ኢንዱስትሪውን እንዴት እንደምንመራ።",
+      "f1": {
+        "title": "ዜሮ-እውቀት ምስጠራ",
+        "desc": "ለሁሉም ሪፖርቶች E2EE እንጠቀማለን። የእኛ የውሂብ ጎታ አስተዳዳሪዎች እንኳን የምስጢራዊ ገቢዎቻችሁን ይዘት ማንበብ አይችሉም።"
+      },
+      "f2": {
+        "title": "አውቶማቲክ የሜታዳታ ማስወገድ",
+        "desc": "ሁሉም የተሰቀሉ ምስሎች እና ሰነዶች ደህንነቱ በተጠበቀ አገልጋዮቻችን ላይ ከመከማቸታቸው በፊት EXIF እና GPS ውሂብ በራስ-ሰር ይወገዳሉ።"
+      },
+      "f3": {
+        "title": "የአይፒ መሸፈን",
+        "desc": "የተጠቃሚ አይፒ አድራሻዎችን አንመዘግብም። የሪፖርት አቀራረብ ሂደት ውስጥ የጂኦግራፊያዊ አካባቢዎ መቼም አይመዘገብም።"
+      }
+    },
+    "audit": {
+      "title": "የስርዓት ኦዲት ታሪክ",
+      "subtitle": "መደበኛ የሶስተኛ ወገን ኦዲቶች ከፍተኛውን ደረጃዎች እንደምንጠብቅ ያረጋግጣሉ።",
+      "requestText": "ሙሉ ሪፖርት ይጠይቁ (ለተፈቀደላቸው ድርጅቶች ብቻ)",
+      "button": "የክትትል ኮሚቴን ያነጋግሩ",
+      "log1": {
+        "type": "የደህንነት ኦዲት",
+        "result": "አልፏል",
+        "auditor": "ገለልተኛ ሶስተኛ ወገን"
+      },
+      "log2": {
+        "type": "የግላዊነት ተጽዕኖ ግምገማ",
+        "result": "ተጠናቋል",
+        "auditor": "የህግ ክትትል ኮሚቴ"
+      },
+      "log3": {
+        "type": "የስርዓት ትክክለኛነት ማረጋገጫ",
+        "result": "ተረጋግጧል",
+        "auditor": "ዓለም አቀፍ የደህንነት ጥምረት"
+      },
+      "month": {
+        "jan": "ጥር 2017",
+        "dec": "ታህሳስ 2016",
+        "oct": "ጥቅምት 2016"
+      }
+    },
+    "contact": {
+      "title": "ስለ ግላዊነትዎ ተጨማሪ ጥያቄዎች አሉዎት?",
+      "button": "የእኛን ዝርዝር ተደጋግመው የሚጠየቁ ጥያቄዎች ይመልከቱ"
+    }
+  }
+}
+

@@ -1,0 +1,733 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String     @id @default(cuid())
+  email             String     @unique
+  password          String?
+  firstName         String?
+  lastName          String?
+  phone             String?
+  role              UserRole   @default(SURVIVOR)
+  status            UserStatus @default(ACTIVE)
+  isEmailVerified   Boolean    @default(false)
+  language          String     @default("en")
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+  deletedAt         DateTime?
+  resetToken        String?
+  resetTokenExpires DateTime?
+
+  // Relations
+  reports         Report[]
+  caseComments    CaseComment[]
+  forumPosts      ForumPost[]
+  supportRequests SupportRequest[]
+  conversations1  Conversation[]   @relation("Participant1")
+  conversations2  Conversation[]   @relation("Participant2")
+  sentMessages    Message[]
+  otps            OTP[]
+  savedJobs       SavedJob[]
+  jobApplications JobApplication[]
+
+  @@index([email])
+  @@index([role])
+  @@index([status])
+  @@index([resetToken])
+}
+
+enum UserRole {
+  GUEST
+  SURVIVOR
+  COUNSELOR
+  MEDICAL_PROFESSIONAL
+  LEGAL_ADVISOR
+  ADMIN
+  MODERATOR
+  SYSTEM
+}
+
+enum UserStatus {
+  INVITED
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+  DELETED
+}
+
+// Message audience for system message targeting
+enum MessageAudience {
+  ALL
+  SURVIVOR
+  ASSIGNED_PROFESSIONAL
+  SUPPORT_PROVIDER
+  COUNSELOR
+  ADMIN
+}
+
+model Report {
+  id          String           @id @default(cuid())
+  reporterId  String?
+  title       String
+  description String           @db.Text
+  category    IncidentCategory
+  severity    SeverityLevel
+  status      ReportStatus     @default(PENDING_REVIEW)
+  isAnonymous Boolean          @default(true)
+  language    String           @default("en")
+
+  // ML Classification
+  classificationScore     Float?
+  classificationLabel     String?
+  suggestedCaseType       String?
+  suggestedPriority       String?
+  classificationConfirmed Boolean @default(false)
+
+  // Location & IP Risk
+  location          String?
+  gpsLat            Float?
+  gpsLng            Float?
+  ipAddress         String? @db.VarChar(255)
+  ipHash            String? @unique
+  deviceFingerprint String? @db.VarChar(255)
+
+  // Location Validation
+  detectedCountry           String?
+  detectedRegion            String?
+  detectedCity              String?
+  locationMismatchWarning   Boolean @default(false)
+  locationMismatchConfirmed Boolean @default(false)
+
+  // Fraud Detection
+  riskScore           Float   @default(0)
+  flaggedAsRepetitive Boolean @default(false)
+  isDuplicate         Boolean @default(false)
+
+  // Contact for anonymous reports
+  contactEmail String?
+
+  // Anonymous tracking number for accessing case messages without login
+  trackingNumber String? @unique
+
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  resolvedAt DateTime?
+  closedAt   DateTime?
+
+  // Status history for audit trail
+  statusHistory Json?
+
+  // Relations
+  reporter       User?           @relation(fields: [reporterId], references: [id], onDelete: SetNull)
+  evidences      Evidence[]
+  caseAssignment CaseAssignment?
+  caseComments   CaseComment[]
+  auditLogs      AuditLog[]
+
+  @@index([status])
+  @@index([category])
+  @@index([severity])
+  @@index([riskScore])
+  @@index([ipHash])
+  @@index([trackingNumber])
+  @@index([createdAt])
+}
+
+enum IncidentCategory {
+  PHYSICAL_VIOLENCE
+  SEXUAL_ASSAULT
+  EMOTIONAL_ABUSE
+  PSYCHOLOGICAL_ABUSE
+  NEGLECT
+  CYBERBULLYING
+  HARASSMENT
+  DISCRIMINATION
+  WORKPLACE_ABUSE
+  DOMESTIC_VIOLENCE
+  CHILD_ABUSE
+  ELDER_ABUSE
+  OTHER
+}
+
+enum SeverityLevel {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum ReportStatus {
+  PENDING_REVIEW
+  RECEIVED
+  ASSIGNED
+  IN_SUPPORT
+  RESOLVED
+  CLOSED
+  REJECTED
+}
+
+model Evidence {
+  id          String   @id @default(cuid())
+  reportId    String
+  fileUrl     String
+  fileName    String
+  fileType    String
+  fileSize    Int
+  description String?
+  createdAt   DateTime @default(now())
+
+  // Relations
+  report Report @relation(fields: [reportId], references: [id], onDelete: Cascade)
+
+  @@index([reportId])
+}
+
+model CaseAssignment {
+  id           String           @id @default(cuid())
+  reportId     String           @unique
+  assignedToId String
+  assignedById String?
+  caseType     CaseType
+  priority     CasePriority     @default(MEDIUM)
+  dueDate      DateTime?
+  notes        String?          @db.Text
+  status       AssignmentStatus @default(ACTIVE)
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+  completedAt  DateTime?
+
+  // Relations
+  report           Report            @relation(fields: [reportId], references: [id], onDelete: Cascade)
+  assignedTo       ServiceProvider   @relation("primaryAssignee", fields: [assignedToId], references: [id])
+  supportProviders ServiceProvider[] @relation("supportProviders")
+  feedbacks        CaseFeedback[]
+
+  @@index([reportId])
+  @@index([assignedToId])
+  @@index([caseType])
+  @@index([priority])
+  @@index([status])
+}
+
+enum CaseType {
+  COUNSELING
+  MEDICAL_SUPPORT
+  LEGAL_ASSISTANCE
+  EMERGENCY_SUPPORT
+  PREVENTION_EDUCATION
+  RESOURCE_REFERRAL
+  COMBINED_SUPPORT
+}
+
+enum CasePriority {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum AssignmentStatus {
+  ACTIVE
+  ON_HOLD
+  COMPLETED
+  CANCELLED
+}
+
+model CaseComment {
+  id              String          @id @default(cuid())
+  reportId        String
+  // authorId is nullable for anonymous users and system messages
+  authorId        String?
+  // The role of the sender (for display and access control)
+  senderRole      UserRole        @default(SURVIVOR)
+  // Whether this is an automated system message
+  isSystemMessage Boolean         @default(false)
+  // Target audience for system messages (who should see this message)
+  audience        MessageAudience @default(ALL)
+  content         String          @db.Text
+  isPublic        Boolean         @default(true)
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  // Relations
+  report Report @relation(fields: [reportId], references: [id], onDelete: Cascade)
+  author User?  @relation(fields: [authorId], references: [id])
+
+  @@index([reportId])
+  @@index([authorId])
+  @@index([senderRole])
+  @@index([audience])
+  @@index([createdAt])
+}
+
+model ServiceProvider {
+  id              String              @id @default(cuid())
+  name            String
+  type            ServiceProviderType
+  email           String?
+  phone           String?
+  address         String?             @db.Text
+  city            String?
+  country         String?
+  description     String?             @db.Text
+  website         String?
+  isVerified      Boolean             @default(false)
+  rating          Float?              @default(0)
+  availability    String?
+  languages       String[]            @default(["en"])
+  specializations String[]
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+
+  // Relations
+  assignedCases   CaseAssignment[]        @relation("primaryAssignee")
+  supportCases    CaseAssignment[]        @relation("supportProviders")
+  supportRequests SupportRequest[]
+  reviews         ServiceProviderReview[]
+
+  @@index([type])
+  @@index([isVerified])
+}
+
+enum ServiceProviderType {
+  COUNSELOR
+  MEDICAL_PROFESSIONAL
+  LEGAL_ADVISOR
+  NGO
+  GOVERNMENT_AGENCY
+  COMMUNITY_CENTER
+  SHELTER
+  HOTLINE
+}
+
+model ServiceProviderReview {
+  id                String   @id @default(cuid())
+  serviceProviderId String
+  rating            Int      @default(5)
+  feedback          String?  @db.Text
+  createdAt         DateTime @default(now())
+
+  // Relations
+  serviceProvider ServiceProvider @relation(fields: [serviceProviderId], references: [id], onDelete: Cascade)
+
+  @@index([serviceProviderId])
+}
+
+model SupportRequest {
+  id                String        @id @default(cuid())
+  userId            String
+  serviceProviderId String
+  description       String        @db.Text
+  status            RequestStatus @default(PENDING)
+  requestedAt       DateTime      @default(now())
+  respondedAt       DateTime?
+  resolvedAt        DateTime?
+
+  // Relations
+  user            User            @relation(fields: [userId], references: [id])
+  serviceProvider ServiceProvider @relation(fields: [serviceProviderId], references: [id])
+
+  @@index([userId])
+  @@index([serviceProviderId])
+  @@index([status])
+}
+
+enum RequestStatus {
+  PENDING
+  ACCEPTED
+  IN_PROGRESS
+  COMPLETED
+  REJECTED
+  CANCELLED
+}
+
+model CaseFeedback {
+  id               String   @id @default(cuid())
+  caseAssignmentId String
+  rating           Int
+  feedback         String?  @db.Text
+  createdAt        DateTime @default(now())
+
+  // Relations
+  caseAssignment CaseAssignment @relation(fields: [caseAssignmentId], references: [id], onDelete: Cascade)
+
+  @@index([caseAssignmentId])
+}
+
+model ForumPost {
+  id          String          @id @default(cuid())
+  authorId    String
+  title       String
+  content     String          @db.Text
+  category    ForumCategory
+  status      ForumPostStatus @default(PENDING_MODERATION)
+  views       Int             @default(0)
+  likes       Int             @default(0)
+  isAnonymous Boolean         @default(true)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  deletedAt   DateTime?
+
+  // Relations
+  author   User           @relation(fields: [authorId], references: [id])
+  comments ForumComment[]
+
+  @@index([authorId])
+  @@index([category])
+  @@index([status])
+  @@index([createdAt])
+}
+
+enum ForumCategory {
+  PEER_SUPPORT
+  STORYTELLING
+  QUESTIONS_ANSWERS
+  RESOURCES
+  ANNOUNCEMENTS
+  AWARENESS
+}
+
+enum ForumPostStatus {
+  PENDING_MODERATION
+  PUBLISHED
+  HIDDEN
+  DELETED
+}
+
+model ForumComment {
+  id        String   @id @default(cuid())
+  postId    String
+  content   String   @db.Text
+  likes     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  post ForumPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@index([postId])
+}
+
+model MissingPerson {
+  id               String              @id @default(cuid())
+  firstName        String
+  lastName         String
+  age              Int?
+  description      String?             @db.Text
+  photoUrl         String?
+  lastSeenLocation String
+  lastSeenDate     DateTime
+  status           MissingPersonStatus @default(ACTIVE)
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
+  resolvedAt       DateTime?
+
+  // Relations
+  sightings Sighting[]
+
+  @@index([status])
+  @@index([lastSeenDate])
+}
+
+model Sighting {
+  id              String   @id @default(cuid())
+  missingPersonId String
+  location        String
+  sightingDate    DateTime
+  description     String?  @db.Text
+  contactName     String?
+  contactPhone    String?
+  contactEmail    String?
+  isVerified      Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  missingPerson MissingPerson @relation(fields: [missingPersonId], references: [id], onDelete: Cascade)
+
+  @@index([missingPersonId])
+  @@index([sightingDate])
+  @@index([isVerified])
+}
+
+enum MissingPersonStatus {
+  PENDING
+  ACTIVE
+  FOUND
+  CLOSED
+}
+
+model AnalyticsSnapshot {
+  id                    String   @id @default(cuid())
+  date                  DateTime @default(now())
+  totalReports          Int      @default(0)
+  reportsByCategory     String   @db.Text // JSON
+  reportsBySeverity     String   @db.Text // JSON
+  resolutionRate        Float    @default(0)
+  averageResolutionTime Int      @default(0)
+  anonymousReportCount  Int      @default(0)
+  publicReportCount     Int      @default(0)
+  casesByType           String   @db.Text // JSON
+  uniqueReporters       Int      @default(0)
+
+  @@unique([date])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  action     String
+  entityType String
+  entityId   String
+  changes    String   @db.Text // JSON
+  userId     String?
+  ipAddress  String?
+  createdAt  DateTime @default(now())
+
+  // Relations
+  report Report? @relation(fields: [entityId], references: [id], onDelete: SetNull)
+
+  @@index([entityType])
+  @@index([entityId])
+  @@index([createdAt])
+}
+
+model MLTrainingData {
+  id        String           @id @default(cuid())
+  category  IncidentCategory
+  text      String           @db.Text
+  severity  SeverityLevel
+  frequency Int              @default(1)
+  isActive  Boolean          @default(true)
+  createdAt DateTime         @default(now())
+
+  @@index([category])
+  @@index([isActive])
+}
+
+model SystemSetting {
+  id          String   @id @default(cuid())
+  category    String   @unique
+  data        Json
+  updatedById String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+}
+
+model Conversation {
+  id             String   @id @default(cuid())
+  participant1Id String
+  participant2Id String
+  subject        String?
+  lastMessageAt  DateTime @default(now())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  participant1 User      @relation("Participant1", fields: [participant1Id], references: [id])
+  participant2 User      @relation("Participant2", fields: [participant2Id], references: [id])
+  messages     Message[]
+
+  @@index([participant1Id])
+  @@index([participant2Id])
+  @@index([lastMessageAt])
+}
+
+model Message {
+  id             String   @id @default(cuid())
+  conversationId String
+  senderId       String
+  content        String   @db.Text
+  isRead         Boolean  @default(false)
+  attachments    Json? // Array of {name, type, size, url}
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender       User         @relation(fields: [senderId], references: [id])
+
+  @@index([conversationId])
+  @@index([senderId])
+  @@index([createdAt])
+}
+
+model AppointmentRequest {
+  id               String            @id @default(cuid())
+  caseId           String
+  requestedById    String
+  requestedToId    String
+  proposedDateTime DateTime
+  message          String?           @db.Text
+  status           AppointmentStatus @default(PENDING)
+  responseMessage  String?           @db.Text
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  @@index([caseId])
+  @@index([requestedById])
+  @@index([requestedToId])
+  @@index([status])
+}
+
+enum AppointmentStatus {
+  PENDING
+  ACCEPTED
+  DECLINED
+  CANCELLED
+}
+
+// OTP Types for different verification flows
+enum OTPType {
+  EMAIL_VERIFICATION
+  ACCOUNT_ACTIVATION
+  LOGIN_OTP
+  PASSWORD_RESET
+}
+
+// OTP Model for email verification and MFA
+model OTP {
+  id        String    @id @default(cuid())
+  userId    String
+  code      String
+  type      OTPType
+  expiresAt DateTime
+  createdAt DateTime  @default(now())
+  usedAt    DateTime?
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([code])
+  @@index([type])
+  @@index([expiresAt])
+}
+
+// Job Opportunities for survivor economic empowerment
+model JobOpportunity {
+  id               String   @id @default(cuid())
+  externalId       String   @unique
+  source           String // e.g., 'HAHU', 'NGOJOBS'
+  sourceUrl        String
+  title            String
+  company          String
+  description      String   @db.Text
+  category         String
+  tags             String[] @default([])
+  minRecoveryLevel Int      @default(1) // 1-5 scale for survivor readiness
+  isVerified       Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  // Relations
+  savedBy      SavedJob[]
+  applications JobApplication[]
+
+  @@index([source])
+  @@index([isVerified])
+  @@index([minRecoveryLevel])
+  @@index([createdAt])
+}
+
+// Saved jobs for survivors
+model SavedJob {
+  id               String   @id @default(cuid())
+  userId           String
+  jobOpportunityId String
+  createdAt        DateTime @default(now())
+
+  // Relations
+  user           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  jobOpportunity JobOpportunity @relation(fields: [jobOpportunityId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, jobOpportunityId])
+  @@index([userId])
+  @@index([jobOpportunityId])
+}
+
+// Job applications tracking
+model JobApplication {
+  id               String               @id @default(cuid())
+  userId           String
+  jobOpportunityId String
+  status           JobApplicationStatus @default(APPLIED)
+  appliedAt        DateTime             @default(now())
+  notes            String?              @db.Text
+  updatedAt        DateTime             @updatedAt
+
+  // Relations
+  user           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  jobOpportunity JobOpportunity @relation(fields: [jobOpportunityId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([jobOpportunityId])
+  @@index([status])
+}
+
+enum JobApplicationStatus {
+  APPLIED
+  UNDER_REVIEW
+  INTERVIEW_SCHEDULED
+  ACCEPTED
+  REJECTED
+  WITHDRAWN
+}
+
+// Contact Form Submissions
+model ContactSubmission {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  phone       String?
+  company     String?
+  subject     String
+  inquiryType ContactInquiryType
+  urgency     ContactUrgency @default(NORMAL)
+  message     String   @db.Text
+  status      ContactStatus @default(NEW)
+  ipAddress   String?  @db.VarChar(255)
+  userAgent   String?  @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@index([status])
+  @@index([inquiryType])
+  @@index([urgency])
+  @@index([createdAt])
+}
+
+enum ContactInquiryType {
+  GENERAL
+  PRIVACY
+  TECHNICAL
+  LEGAL
+  ACCESSIBILITY
+  PARTNERSHIP
+  BILLING
+  MEDIA
+}
+
+enum ContactStatus {
+  NEW
+  IN_PROGRESS
+  RESPONDED
+  RESOLVED
+  CLOSED
+}
+
+enum ContactUrgency {
+  LOW
+  NORMAL
+  HIGH
+  URGENT
+}

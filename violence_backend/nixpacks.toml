@@ -1,0 +1,17 @@
+[phases.setup]
+nixPkgs = ["nodejs-22_x"]
+
+[phases.install]
+cmds = [
+  "npm ci"
+]
+
+[phases.build]
+cmds = [
+  "npx prisma generate",
+  "npx nest build",
+  "npm prune --omit=dev"
+]
+
+[start]
+cmd = "npx prisma migrate deploy && node dist/main"

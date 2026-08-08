@@ -1,0 +1,3 @@
+-- Consolidated into prisma/migrations/init/migration.sql.
+-- Intentionally left empty so fresh shadow databases do not try to alter tables
+-- before the base schema exists.

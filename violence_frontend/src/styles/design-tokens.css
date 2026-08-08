@@ -1,0 +1,637 @@
+/* SafeHaven Design System - Hero Mockup Variants */
+
+
+
+/* Shared Design Tokens */
+
+:root {
+
+  /* Spacing Scale */
+
+  --space-xxs: 4px;
+
+  --space-xs: 8px;
+
+  --space-sm: 12px;
+
+  --space-md: 16px;
+
+  --space-lg: 24px;
+
+  --space-xl: 40px;
+
+  --space-2xl: 64px;
+
+
+
+  /* Typography Scale */
+
+  --font-size-xs: 12px;
+
+  --font-size-sm: 14px;
+
+  --font-size-base: 16px;
+
+  --font-size-lg: 18px;
+
+  --font-size-xl: 20px;
+
+  --font-size-2xl: 24px;
+
+  --font-size-3xl: 30px;
+
+  --font-size-4xl: 36px;
+
+  --font-size-5xl: 48px;
+
+  --font-size-6xl: 60px;
+
+
+
+  /* Border Radius */
+
+  --radius-sm: 8px;
+
+  --radius-md: 12px;
+
+  --radius-lg: 16px;
+
+  --radius-xl: 24px;
+
+  --radius-2xl: 32px;
+
+
+
+  /* Shadows */
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+
+
+  /* Motion */
+
+  --duration-fast: 120ms;
+
+  --duration-normal: 250ms;
+
+  --duration-slow: 400ms;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+
+
+/* Variant 1: Minimal Calm */
+
+.hero-minimal-calm {
+
+  /* Colors */
+
+  --color-primary: #C15B3E; /* Terracotta */
+
+  --color-primary-light: #f3b8a0; /* Terracotta 200 */
+
+  --color-primary-dark: #8c3e2b; /* Terracotta 700 */
+
+  --color-secondary: #6B705C; /* Olive Green */
+
+  --color-accent: #DDA15E; /* Golden Hour */
+
+  --color-background: #FDFDF5;
+
+  --color-surface: #f8f9f5; /* Ivory 50 */
+
+  --color-text-primary: #2f3126; /* Olive 900 */
+
+  --color-text-secondary: #4e5241; /* Olive 500 */
+
+  --color-text-muted: #6b705c; /* Olive 400 */
+
+  --color-border: #d4dccb; /* Olive 200 */
+
+  --color-success: #6B705C; /* Olive Green */
+
+  --color-warning: #DDA15E; /* Golden Hour */
+
+  --color-error: #C15B3E; /* Terracotta */
+
+
+
+  /* Layout */
+
+  --hero-height-desktop: 72vh;
+
+  --hero-height-mobile: 48vh;
+
+  --container-max-width: 1200px;
+
+  --content-max-width: 800px;
+
+
+
+  /* Typography */
+
+  --font-family-primary: 'Inter', system-ui, sans-serif;
+
+  --font-family-display: 'Inter', system-ui, sans-serif;
+
+  --font-weight-normal: 400;
+
+  --font-weight-medium: 500;
+
+  --font-weight-semibold: 600;
+
+  --font-weight-bold: 700;
+
+  --font-weight-black: 900;
+
+
+
+  /* Components */
+
+  --button-height: 48px;
+
+  --button-padding-x: 24px;
+
+  --button-radius: var(--radius-xl);
+
+  --card-padding: var(--space-lg);
+
+  --card-radius: var(--radius-lg);
+
+}
+
+
+
+/* Variant 2: Warm Trust */
+
+.hero-warm-trust {
+
+  /* Colors */
+
+  --color-primary: #dc2626; /* Red 600 */
+
+  --color-primary-light: #fecaca; /* Red 200 */
+
+  --color-primary-dark: #991b1b; /* Red 800 */
+
+  --color-secondary: #ea580c; /* Orange 600 */
+
+  --color-accent: #d97706; /* Amber 600 */
+
+  --color-background: #fefefe;
+
+  --color-surface: #fef7f0; /* Orange 25 */
+
+  --color-text-primary: #1c1917; /* Stone 900 */
+
+  --color-text-secondary: #78716c; /* Stone 500 */
+
+  --color-text-muted: #a8a29e; /* Stone 400 */
+
+  --color-border: #e7e5e4; /* Stone 200 */
+
+  --color-success: #16a34a; /* Green 600 */
+
+  --color-warning: #d97706; /* Amber 600 */
+
+  --color-error: #dc2626; /* Red 600 */
+
+
+
+  /* Layout */
+
+  --hero-height-desktop: 72vh;
+
+  --hero-height-mobile: 48vh;
+
+  --container-max-width: 1200px;
+
+  --content-max-width: 800px;
+
+
+
+  /* Typography */
+
+  --font-family-primary: 'Inter', system-ui, sans-serif;
+
+  --font-family-display: 'Playfair Display', serif;
+
+  --font-weight-normal: 400;
+
+  --font-weight-medium: 500;
+
+  --font-weight-semibold: 600;
+
+  --font-weight-bold: 700;
+
+  --font-weight-black: 900;
+
+
+  /* Components */
+
+  --button-height: 52px;
+
+  --button-padding-x: 32px;
+
+  --button-radius: var(--radius-2xl);
+
+  --card-padding: var(--space-xl);
+
+  --card-radius: var(--radius-xl);
+
+}
+
+
+
+/* Variant 3: Dark Box */
+
+.hero-dark-box {
+
+  /* Colors */
+
+  --color-primary: #6366f1; /* Indigo 500 */
+
+  --color-primary-light: #c7d2fe; /* Indigo 200 */
+
+  --color-primary-dark: #4338ca; /* Indigo 700 */
+
+  --color-secondary: #8b5cf6; /* Violet 500 */
+
+  --color-accent: #06b6d4; /* Cyan 500 */
+
+  --color-background: #0f172a; /* Slate 900 */
+
+  --color-surface: #1e293b; /* Slate 800 */
+
+  --color-text-primary: #f8fafc; /* Slate 50 */
+
+  --color-text-secondary: #cbd5e1; /* Slate 300 */
+
+  --color-text-muted: #64748b; /* Slate 500 */
+
+  --color-border: #334155; /* Slate 700 */
+
+  --color-success: #10b981; /* Emerald 500 */
+
+  --color-warning: #f59e0b; /* Amber 500 */
+
+  --color-error: #ef4444; /* Red 500 */
+
+
+
+  /* Layout */
+
+  --hero-height-desktop: 72vh;
+
+  --hero-height-mobile: 48vh;
+
+  --container-max-width: 1200px;
+
+  --content-max-width: 800px;
+
+
+
+  /* Typography */
+
+  --font-family-primary: 'Inter', system-ui, sans-serif;
+
+  --font-family-display: 'JetBrains Mono', monospace;
+
+  --font-weight-normal: 400;
+
+  --font-weight-medium: 500;
+
+  --font-weight-semibold: 600;
+
+  --font-weight-bold: 700;
+
+  --font-weight-black: 900;
+
+
+
+  /* Components */
+
+  --button-height: 48px;
+
+  --button-padding-x: 24px;
+
+  --button-radius: var(--radius-md);
+
+  --card-padding: var(--space-lg);
+
+  --card-radius: var(--radius-lg);
+
+
+
+  /* Special Dark Box Effects */
+
+  --secure-box-bg: rgba(15, 23, 42, 0.95);
+
+  --secure-box-border: rgba(255, 255, 255, 0.1);
+
+  --secure-box-glow: 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+
+  --secure-box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+  --secure-box-backdrop: blur(12px);
+
+}
+
+
+
+/* Mobile-First Responsive Breakpoints */
+
+@media (min-width: 640px) {
+
+  :root {
+
+    --font-size-base: 18px; /* Larger base font on mobile+ */
+
+  }
+
+}
+
+
+
+/* Accessibility Enhancements */
+
+@media (prefers-reduced-motion: reduce) {
+
+  :root {
+
+    --duration-fast: 0ms;
+
+    --duration-normal: 0ms;
+
+    --duration-slow: 0ms;
+
+  }
+
+}
+
+
+
+/* High Contrast Mode */
+
+@media (prefers-contrast: high) {
+
+  .hero-minimal-calm,
+
+  .hero-warm-trust,
+
+  .hero-dark-box {
+
+    --color-border: currentColor;
+
+    --shadow-sm: none;
+
+    --shadow-md: none;
+
+    --shadow-lg: none;
+
+    --shadow-xl: none;
+
+    --shadow-2xl: none;
+
+  }
+
+}
+
+
+
+/* Component Utilities */
+
+.btn-primary {
+
+  height: var(--button-height);
+
+  padding: 0 var(--button-padding-x);
+
+  border-radius: var(--button-radius);
+
+  background-color: var(--color-primary);
+
+  color: var(--color-background);
+
+  font-weight: var(--font-weight-bold);
+
+  font-family: var(--font-family-primary);
+
+  transition: all var(--duration-normal) var(--ease-out);
+
+  min-width: 44px; /* WCAG AA touch target */
+
+  min-height: 44px;
+
+}
+
+
+
+.btn-primary:hover {
+
+  background-color: var(--color-primary-dark);
+
+  transform: translateY(-1px);
+
+  box-shadow: var(--shadow-lg);
+
+}
+
+
+
+.btn-primary:focus {
+
+  outline: 2px solid var(--color-primary);
+
+  outline-offset: 2px;
+
+}
+
+
+
+.secure-box {
+
+  background: var(--secure-box-bg, var(--color-surface));
+
+  border: 1px solid var(--secure-box-border, var(--color-border));
+
+  border-radius: var(--radius-lg);
+
+  box-shadow:
+
+    var(--secure-box-glow, var(--shadow-md)),
+
+    var(--secure-box-shadow, var(--shadow-xl));
+
+    -webkit-backdrop-filter:var(--secure-box-backdrop,none);
+
+  backdrop-filter: var(--secure-box-backdrop, none);
+
+  position: relative;
+
+  z-index: 10;
+
+}
+
+
+
+.trust-indicator {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: var(--space-xs);
+
+  font-size: var(--font-size-xs);
+
+  font-weight: var(--font-weight-medium);
+
+  color: var(--color-success);
+
+}
+
+
+
+.progress-bar {
+
+  width: 100%;
+
+  height: 8px;
+
+  background-color: var(--color-border);
+
+  border-radius: var(--radius-sm);
+
+  overflow: hidden;
+
+}
+
+
+
+.progress-fill {
+
+  height: 100%;
+
+  background: linear-gradient(
+
+    90deg,
+
+    var(--color-primary),
+
+    var(--color-secondary)
+
+  );
+
+  border-radius: var(--radius-sm);
+
+  transition: width var(--duration-slow) var(--ease-out);
+
+}
+
+
+
+/* Iconography Guidelines */
+
+.icon-sm {
+
+  width: 16px;
+
+  height: 16px;
+
+}
+
+.icon-md {
+
+  width: 20px;
+
+  height: 20px;
+
+}
+
+.icon-lg {
+
+  width: 24px;
+
+  height: 24px;
+
+}
+
+.icon-xl {
+
+  width: 32px;
+
+  height: 32px;
+
+}
+
+
+
+/* Motion Presets */
+
+.animate-fade-in {
+
+  animation: fadeIn var(--duration-normal) var(--ease-out);
+
+}
+
+
+
+.animate-slide-up {
+
+  animation: slideUp var(--duration-normal) var(--ease-out);
+
+}
+
+
+
+@keyframes fadeIn {
+
+  from {
+
+    opacity: 0;
+
+  }
+
+  to {
+
+    opacity: 1;
+
+  }
+
+}
+
+
+
+@keyframes slideUp {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+

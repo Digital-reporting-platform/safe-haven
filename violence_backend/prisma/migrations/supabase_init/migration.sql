@@ -1,0 +1,1 @@
+-- Deprecated duplicate baseline migration.\n-- This migration intentionally does nothing to avoid conflicts with prisma/migrations/init.\n
