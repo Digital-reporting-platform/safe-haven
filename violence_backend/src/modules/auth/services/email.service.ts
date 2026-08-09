@@ -35,9 +35,9 @@ export class EmailService {
       tls: {
         rejectUnauthorized: false, // Allow self-signed certificates in dev
       },
-      connectionTimeout: 30000, // 30 seconds - increased for network issues
-      greetingTimeout: 30000,
-      socketTimeout: 30000,
+      connectionTimeout: 8000, // 8 seconds timeout
+      greetingTimeout: 8000,
+      socketTimeout: 8000,
     });
 
     // Verify connection asynchronously

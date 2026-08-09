@@ -160,6 +160,9 @@ export function UsersPage() {
         <p className="text-xs text-muted-foreground">{user.email}</p>
         <p className="text-xs text-muted-foreground">Joined: {formatDate(user.createdAt)}</p>
         <p className="text-xs text-muted-foreground">Status: {user.status}</p>
+        <p className="text-xs text-muted-foreground">
+          Email: {user.isEmailVerified ? 'Verified' : 'Not verified'}
+        </p>
       </div>,
       { duration: 5000 }
     );
@@ -417,7 +420,14 @@ export function UsersPage() {
                         >
                           <TableCell className="py-2.5">
                             <div className="font-medium text-[#4A4D42]">{formatName(user)}</div>
-                            <div className="text-xs text-[#6B705C]">{user.email}</div>
+                            <div className="flex items-center gap-2 text-xs text-[#6B705C]">
+                              <span>{user.email}</span>
+                              {!user.isEmailVerified && (
+                                <Badge variant="outline" className="bg-[#FEFAF5] text-[#DDA15E] border-[#F1D6B5] text-[10px] h-4 px-1.5">
+                                  Unverified
+                                </Badge>
+                              )}
+                            </div>
                           </TableCell>
                           <TableCell className="py-2.5">
                             <span

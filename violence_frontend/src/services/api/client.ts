@@ -23,7 +23,7 @@ export const api = axios.create({
     'Content-Type': 'application/json',
   },
   withCredentials: true, // Include cookies for auth
-  timeout: 10000, // 10 second timeout
+  timeout: 15000, // 15 second timeout for API requests
 });
 
 // Add a request interceptor to attach JWT
@@ -47,9 +47,11 @@ api.interceptors.response.use(
       message: error.message,
       response: error.response ? {
         status: error.response.status,
+        statusText: error.response.statusText,
         data: error.response.data
       } : 'No response',
-      isNetworkError: !error.response
+      isNetworkError: !error.response,
+      requestData: error.config?.data
     });
 
     // Handle network errors

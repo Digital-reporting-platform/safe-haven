@@ -31,6 +31,7 @@ export type AdminUser = {
   phone?: string | null;
   role: UserRole;
   status: UserStatus;
+  isEmailVerified: boolean;
   language?: string;
   createdAt: string;
   updatedAt: string;

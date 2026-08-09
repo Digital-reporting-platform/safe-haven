@@ -53,10 +53,37 @@ export class AuthService {
     // Check if user already exists
     const existingUser = await this.prisma.user.findUnique({
       where: { email: dto.email },
+      select: { id: true, isEmailVerified: true },
     });
 
     if (existingUser) {
-      throw new BadRequestException('Email already registered');
+      if (!existingUser.isEmailVerified) {
+        // Re-generate OTP and trigger email in background without blocking response
+        const otp = await this.otpService.createOTP(existingUser.id, OTPType.EMAIL_VERIFICATION, 15);
+        this.emailService
+          .sendOTPEmail(
+            dto.email,
+            otp.code,
+            OTPType.EMAIL_VERIFICATION,
+            dto.firstName || undefined,
+          )
+          .catch((err) => {
+            this.logger.error(`Failed to send verification email to ${dto.email}: ${err.message || err}`);
+          });
+
+        return {
+          user: {
+            id: existingUser.id,
+            email: dto.email,
+            firstName: dto.firstName || null,
+            lastName: dto.lastName || null,
+            role: UserRole.SURVIVOR,
+            isEmailVerified: false,
+          },
+          message: 'Account already exists but is not verified. A new verification code has been sent to your email.',
+        };
+      }
+      throw new BadRequestException('Email already registered. Please try logging in instead.');
     }
 
     // Hash password
@@ -86,14 +113,18 @@ export class AuthService {
       },
     });
 
-    // Generate and send email verification OTP (15 min expiry)
+    // Generate and send email verification OTP asynchronously to prevent API request timeout
     const otp = await this.otpService.createOTP(user.id, OTPType.EMAIL_VERIFICATION, 15);
-    await this.emailService.sendOTPEmail(
-      user.email,
-      otp.code,
-      OTPType.EMAIL_VERIFICATION,
-      user.firstName || undefined,
-    );
+    this.emailService
+      .sendOTPEmail(
+        user.email,
+        otp.code,
+        OTPType.EMAIL_VERIFICATION,
+        user.firstName || undefined,
+      )
+      .catch((err) => {
+        this.logger.error(`Failed to send verification email to ${user.email}: ${err.message || err}`);
+      });
 
     this.logger.log(`Survivor registered (unverified): ${user.email}`);
 
@@ -389,6 +420,7 @@ export class AuthService {
         phone: true,
         role: true,
         status: true,
+        isEmailVerified: true,
         language: true,
         createdAt: true,
         updatedAt: true,
