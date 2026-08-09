@@ -1,0 +1,13 @@
+# Playwright test artifacts
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Auth storage states (generated during setup)
+.auth/
+
+# Test files
+test-files/
+*.pdf
+*.jpg
+*.png

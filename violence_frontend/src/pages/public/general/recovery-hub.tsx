@@ -138,12 +138,36 @@ export const RecoveryHub = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const apiKey = import.meta.env.VITE_NEWSDATA_API_KEY || 'pub_5550c56614de4db7a7298138db643e72';
-        const url = `https://newsdata.io/api/1/latest?apikey=${apiKey}&q=trauma%20OR%20violence%20OR%20bullying&country=et&language=am,en`;
+        const apiKey = import.meta.env.VITE_GNEWS_API_KEY;
+        
+        // Skip API call if no valid API key is configured
+        if (!apiKey) {
+          console.warn('No valid GNews API key configured. Using fallback articles.');
+          setLoadingNews(false);
+          return;
+        }
+        
+        const url = `https://gnews.io/api/v4/search?q=trauma%20OR%20violence%20OR%20bullying%20OR%20domestic%20violence%20OR%20harassment%20OR%20safety%20OR%20abuse%20prevention&lang=en&max=2&apikey=${apiKey}`;
         const response = await fetch(url);
+        
+        if (!response.ok) {
+          if (response.status === 401) {
+            console.warn('GNews API key is invalid or expired. Please update VITE_GNEWS_API_KEY in .env');
+          }
+          return;
+        }
+        
         const data = await response.json();
-        if (data && data.results) {
-          setNews(data.results.slice(0, 2));
+        if (data && data.articles) {
+          // Transform GNews format to match our expected format
+          const transformedNews = data.articles.map((article: any) => ({
+            title: article.title,
+            description: article.description,
+            link: article.url,
+            category: ['NEWS'],
+            pubDate: article.publishedAt
+          }));
+          setNews(transformedNews);
         }
       } catch (error) {
         console.error('Error fetching news:', error);

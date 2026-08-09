@@ -84,8 +84,6 @@ pnpm-lock.yaml
 # Test results and reports
 test-results/
 **/test-results/
-e2e/
-**/e2e/
 integration/
 **/integration/
 *.test-results
@@ -98,7 +96,6 @@ test-results.xml
 
 # Frontend specific test results
 violence_frontend/test-results/
-violence_frontend/e2e/
 violence_frontend/playwright-report/
 violence_frontend/build/
 

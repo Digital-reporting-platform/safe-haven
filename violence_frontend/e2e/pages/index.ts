@@ -1,0 +1,10 @@
+export { BasePage } from './base.page';
+export { LoginPage } from './login.page';
+export { RegisterPage } from './register.page';
+export { ReportPage } from './report.page';
+export { DashboardPage } from './dashboard.page';
+export { AdminPage } from './admin.page';
+export { CaseManagerPage } from './case-manager.page';
+export { ModeratorPage } from './moderator.page';
+export { MedicalPage } from './medical.page';
+export { LegalPage } from './legal.page';

@@ -32,7 +32,6 @@ next-env.d.ts
 .vite/
 
 #testing
-e2e/
 playwright-report/
 test-results/
 
