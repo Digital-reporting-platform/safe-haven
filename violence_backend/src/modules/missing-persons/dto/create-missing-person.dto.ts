@@ -1,4 +1,4 @@
-import { IsString, IsOptional, IsInt, IsDateString, IsEnum, ValidatorConstraint, ValidatorConstraintInterface, ValidationArguments } from 'class-validator';
+import { IsString, IsOptional, IsInt, IsDateString, IsEnum, ValidatorConstraint, ValidatorConstraintInterface, ValidationArguments, Validate } from 'class-validator';
 import { MissingPersonStatus } from '@prisma/client';
 
 @ValidatorConstraint({ name: 'isRecentDate', async: false })
@@ -42,7 +42,7 @@ export class CreateMissingPersonDto {
   lastSeenLocation!: string;
 
   @IsDateString()
-  @IsRecentDate()
+  @Validate(IsRecentDateConstraint)
   lastSeenDate!: string;
 
   @IsOptional()
