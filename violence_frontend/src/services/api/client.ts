@@ -10,6 +10,13 @@ export const supabase = createClient(
 
 // Use environment variable for API URL with fallback
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/api/v1';
+
+// Debug: Log the API URL being used
+console.log('[API Client] Environment mode:', import.meta.env.MODE);
+console.log('[API Client] Production mode:', import.meta.env.PROD);
+console.log('[API Client] VITE_API_URL from env:', import.meta.env.VITE_API_URL);
+console.log('[API Client] Final API URL being used:', API_URL);
+
 export const api = axios.create({
   baseURL: API_URL,
   headers: {
@@ -32,6 +39,19 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
+    // Debug: Log the error details
+    console.error('[API Client] Request failed:', {
+      url: error.config?.url,
+      baseURL: error.config?.baseURL,
+      fullURL: `${error.config?.baseURL}${error.config?.url}`,
+      message: error.message,
+      response: error.response ? {
+        status: error.response.status,
+        data: error.response.data
+      } : 'No response',
+      isNetworkError: !error.response
+    });
+
     // Handle network errors
     if (!error.response) {
       // Network error or timeout
