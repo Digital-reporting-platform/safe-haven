@@ -10,7 +10,41 @@ import {
   Max,
   MaxLength,
   Min,
+  ValidatorConstraint,
+  ValidatorConstraintInterface,
+  ValidationArguments,
+  registerDecorator,
 } from 'class-validator';
+
+@ValidatorConstraint({ name: 'isRecentIncidentDate', async: false })
+export class IsRecentIncidentDateConstraint implements ValidatorConstraintInterface {
+  validate(dateString: string, args: ValidationArguments) {
+    if (!dateString) return true;
+    
+    const incidentDate = new Date(dateString);
+    const now = new Date();
+    const diffInDays = (now.getTime() - incidentDate.getTime()) / (1000 * 60 * 60 * 24);
+    
+    // The incident date must be within the last 7 days
+    return diffInDays <= 7 && diffInDays >= 0;
+  }
+
+  defaultMessage(args: ValidationArguments) {
+    return 'The incident date must be within the last 7 days';
+  }
+}
+
+export function IsRecentIncidentDate() {
+  return function (object: Object, propertyName: string) {
+    registerDecorator({
+      target: object.constructor,
+      propertyName: propertyName,
+      options: undefined,
+      constraints: [],
+      validator: IsRecentIncidentDateConstraint,
+    });
+  };
+}
 
 export class CreateReportDto {
   @ApiProperty({
@@ -70,6 +104,7 @@ export class CreateReportDto {
   })
   @IsOptional()
   @IsDateString()
+  @IsRecentIncidentDate()
   occurredAt?: string;
 
   @ApiProperty({

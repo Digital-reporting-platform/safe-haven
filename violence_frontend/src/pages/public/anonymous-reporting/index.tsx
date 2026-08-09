@@ -29,7 +29,7 @@ import { EvidenceUpload } from '@/components/ui/EvidenceUpload';
 import { toast } from 'sonner';
 import { reportService } from '@/services/report';
 import { ReportSuccessModal } from '@/components/ui/ReportSuccessModal';
-import { validateEmail, validatePhone, validateName } from '@/utils/validation';
+import { validateEmail, validatePhone, validateName, validateDescription, validateLocation } from '@/utils/validation';
 
 
 const INCIDENT_TYPE_CONFIG: Record<
@@ -267,13 +267,33 @@ export function ReportPage() {
       case 'email':
         return validateEmail(value);
       case 'phone':
-        return validatePhone(value);
+        return validatePhone(value, false); // Optional for anonymous reports
       case 'description':
-        if (value.length < 20) return 'Description must be at least 20 characters';
+        return validateDescription(value, 20, 5000);
+      case 'location':
+        return validateLocation(value);
+      case 'date':
+        if (!value) return undefined; // Optional field
+        const incidentDate = new Date(value);
+        const now = new Date();
+        const diffInDays = (now.getTime() - incidentDate.getTime()) / (1000 * 60 * 60 * 24);
+        if (diffInDays > 7) return 'The incident date must be within the last 7 days';
+        if (diffInDays < 0) return 'Incident date cannot be in the future';
         return undefined;
       default:
         return undefined;
     }
+  };
+
+  const validateAndProceed = (field: string, value: any, nextStep: number) => {
+    const error = validateField(field, value);
+    if (error) {
+      setErrors(prev => ({ ...prev, [field]: error }));
+      setTouched(prev => ({ ...prev, [field]: true }));
+      return false;
+    }
+    setCurrentStep(nextStep);
+    return true;
   };
 
   const handleInputChange = (field: string, value: any) => {
@@ -314,6 +334,15 @@ export function ReportPage() {
     e.preventDefault();
     if (reportsCount >= DAILY_LIMIT) {
       return toast.error(t('reportPage.errors.dailyLimit'));
+    }
+
+    // Validate date if provided
+    if (formData.date) {
+      const dateErr = validateField('date', formData.date);
+      if (dateErr) {
+        toast.error(dateErr);
+        return;
+      }
     }
 
     setIsSubmitting(true);
@@ -440,20 +469,27 @@ export function ReportPage() {
                     id="incidentDescription"
                     value={formData.description}
                     onChange={(e) => handleInputChange('description', e.target.value)}
-                    className="min-h-[250px] w-full rounded-lg border-2 border-stone-200 p-6 text-lg transition-all outline-none focus:border-[#C15B3E] bg-white"
+                    onBlur={() => handleBlur('description')}
+                    className={`min-h-[250px] w-full rounded-lg border-2 p-6 text-lg transition-all outline-none bg-white ${
+                      errors.description && touched.description ? 'border-red-500 focus:border-red-500' : 'border-stone-200 focus:border-[#C15B3E]'
+                    }`}
                     placeholder={t('reportPage.incidentDescriptionPlaceholder')}
                     title={t('reportPage.incidentDescriptionTitle')}
                   />
+                  {errors.description && touched.description && (
+                    <p className="mt-2 flex items-center gap-1 text-sm text-red-500">
+                      <AlertCircle size={14} /> {errors.description}
+                    </p>
+                  )}
+                  <p className="mt-1 text-xs text-stone-500">
+                    Minimum 20 characters, maximum 5000 characters
+                  </p>
                 <Button
                   type="button"
-                  onClick={() => {
-                    if (formData.description.length >= 20) {
-                      setCurrentStep(2);
-                    }
-                  }}
-                  disabled={formData.description.length < 20}
+                  onClick={() => validateAndProceed('description', formData.description, 2)}
+                  disabled={!formData.description || formData.description.length < 20}
                   className={`h-16 w-full rounded-lg text-lg font-bold relative z-50 transition-all ${
-                    formData.description.length >= 20 
+                    formData.description && formData.description.length >= 20 
                       ? 'bg-[#C15B3E] text-white hover:bg-[#A84D33]' 
                       : 'bg-stone-300 text-stone-500 cursor-not-allowed'
                   }`}
@@ -500,7 +536,10 @@ export function ReportPage() {
                     id="incidentRegion"
                     value={formData.location}
                     onChange={(e) => handleInputChange('location', e.target.value)}
-                    className="h-14 rounded-lg border-2 border-stone-200 p-3 bg-white focus:border-[#C15B3E] outline-none"
+                    onBlur={() => handleBlur('location')}
+                    className={`h-14 rounded-lg border-2 p-3 bg-white outline-none transition-all ${
+                      errors.location && touched.location ? 'border-red-500 focus:border-red-500' : 'border-stone-200 focus:border-[#C15B3E]'
+                    }`}
                     title={t('reportPage.step3.selectRegion')}
                   >
                     <option value="">{t('reportPage.step3.selectRegion')}</option>
@@ -510,15 +549,33 @@ export function ReportPage() {
                       </option>
                     ))}
                   </select>
+                  {errors.location && touched.location && (
+                    <p className="mt-1 flex items-center gap-1 text-xs text-red-500">
+                      <AlertCircle size={12} /> {errors.location}
+                    </p>
+                  )}
                   <label htmlFor="incidentDate" className="sr-only">Incident Date</label>
                   <input
                     id="incidentDate"
                     type="datetime-local"
+                    min={new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().slice(0, 16)}
+                    max={new Date().toISOString().slice(0, 16)}
                     value={formData.date}
                     onChange={(e) => handleInputChange('date', e.target.value)}
-                    className="h-14 rounded-lg border-2 border-stone-200 p-3 bg-white focus:border-[#C15B3E] outline-none"
+                    onBlur={() => handleBlur('date')}
+                    className={`h-14 rounded-lg border-2 p-3 bg-white outline-none transition-all ${
+                      errors.date && touched.date ? 'border-red-500 focus:border-red-500' : 'border-stone-200 focus:border-[#C15B3E]'
+                    }`}
                     title={t('reportPage.step3.incidentDate')}
                   />
+                  {errors.date && touched.date && (
+                    <p className="mt-1 flex items-center gap-1 text-xs text-red-500">
+                      <AlertCircle size={12} /> {errors.date}
+                    </p>
+                  )}
+                  <p className="mt-1 text-xs text-stone-500">
+                    Only dates within the last 7 days are available for reporting
+                  </p>
                 </div>
                 {formData.location && (
                   <div className="rounded-lg bg-[#C15B3E]/10 p-3 text-sm text-[#C15B3E]" dangerouslySetInnerHTML={{ 
@@ -536,9 +593,7 @@ export function ReportPage() {
                   </Button>
                   <Button
                     type="button"
-                    onClick={() => {
-                      setCurrentStep(4);
-                    }}
+                    onClick={() => validateAndProceed('location', formData.location, 4)}
                     disabled={!formData.location}
                     className="h-16 flex-1 rounded-lg bg-[#C15B3E] text-lg font-bold text-white hover:bg-[#A84D33] relative z-50"
                     style={{ position: 'relative', zIndex: 50 }}

@@ -16,7 +16,7 @@ import {
 import { toast } from 'sonner';
 import { missingPersonsService } from '@/services/missingPersonsService';
 import { MissingPerson as ApiMissingPerson, MissingPersonStatus } from '@/types/forum';
-import { validateEmail, validatePhone, validateName } from '@/utils/validation';
+import { validateEmail, validatePhone, validateName, validateAge, validateLocation } from '@/utils/validation';
 import { useTranslation } from 'react-i18next';
 
 const GENDER_OPTIONS = ['Male', 'Female'];
@@ -215,14 +215,36 @@ export function MissingPersonsPage() {
         if (!value) return undefined; // Optional
         return validateName(value, 'Name');
       case 'age':
-        if (!value) return 'Age is required';
-        if (parseInt(value) <= 0) return 'Age must be a positive number';
-        return undefined;
+        return validateAge(value);
       case 'contactEmail':
+        // Only validate if Email is the selected contact method
+        if (formData.contactMethod !== 'Email') return undefined;
         if (!value) return 'Contact email is required';
         return validateEmail(value);
       case 'contactPhone':
-        return validatePhone(value);
+        // Only validate if Phone is the selected contact method
+        if (formData.contactMethod !== 'Phone') return undefined;
+        return validatePhone(value, true); // Required for missing persons reports
+      case 'lastSeenDate':
+        if (!value) return 'Last seen date is required';
+        const lastSeenDate = new Date(value);
+        const now = new Date();
+        const diffInDays = (now.getTime() - lastSeenDate.getTime()) / (1000 * 60 * 60 * 24);
+        if (diffInDays > 30) return 'The last seen date must be within the last 30 days';
+        if (diffInDays < 0) return 'Last seen date cannot be in the future';
+        return undefined;
+      case 'lastSeenLocation':
+        return validateLocation(value);
+      case 'physicalDescription':
+        if (!value) return 'Physical description is required';
+        if (value.trim().length < 10) return 'Physical description must be at least 10 characters';
+        if (value.trim().length > 500) return 'Physical description must not exceed 500 characters';
+        return undefined;
+      case 'circumstances':
+        if (!value) return 'Circumstances is required';
+        if (value.trim().length < 10) return 'Circumstances must be at least 10 characters';
+        if (value.trim().length > 1000) return 'Circumstances must not exceed 1000 characters';
+        return undefined;
       default:
         return undefined;
     }
@@ -283,15 +305,40 @@ export function MissingPersonsPage() {
     e.preventDefault();
     
     const nameErr = formData.name ? validateName(formData.name, 'Name') : undefined;
-    const ageErr = !formData.age ? 'Age is required' : (parseInt(formData.age) <= 0 ? 'Age must be a positive number' : undefined);
-    const emailErr = validateEmail(formData.contactEmail);
-    const phoneErr = validatePhone(formData.contactPhone);
+    const ageErr = validateAge(formData.age);
+    const genderErr = !formData.gender ? 'Gender is required' : undefined;
+    const relationshipErr = !formData.reporterRelationship ? 'Relationship is required' : undefined;
+    
+    // Only validate the contact method that's selected
+    let emailErr: string | undefined = undefined;
+    let phoneErr: string | undefined = undefined;
+    let contactMethodErr: string | undefined = undefined;
+    
+    if (!formData.contactMethod) {
+      contactMethodErr = 'Please select a contact method';
+    } else if (formData.contactMethod === 'Email') {
+      emailErr = validateEmail(formData.contactEmail);
+    } else if (formData.contactMethod === 'Phone') {
+      phoneErr = validatePhone(formData.contactPhone, true);
+    }
+    
+    const lastSeenDateErr = validateReportField('lastSeenDate', formData.lastSeenDate);
+    const locationErr = validateLocation(formData.lastSeenLocation);
+    const descriptionErr = validateReportField('physicalDescription', formData.physicalDescription);
+    const circumstancesErr = validateReportField('circumstances', formData.circumstances);
 
     const errors = {
       name: nameErr,
       age: ageErr,
+      gender: genderErr,
+      reporterRelationship: relationshipErr,
+      contactMethod: contactMethodErr,
       contactEmail: emailErr,
-      contactPhone: phoneErr
+      contactPhone: phoneErr,
+      lastSeenDate: lastSeenDateErr,
+      lastSeenLocation: locationErr,
+      physicalDescription: descriptionErr,
+      circumstances: circumstancesErr
     };
 
     setReportErrors(errors);
@@ -299,10 +346,20 @@ export function MissingPersonsPage() {
       name: true,
       age: true,
       contactEmail: true,
-      contactPhone: true
+      contactPhone: true,
+      lastSeenDate: true,
+      lastSeenLocation: true,
+      physicalDescription: true,
+      circumstances: true
     });
 
     if (Object.values(errors).some(e => e)) {
+      // Show specific error messages for better UX
+      const errorFields = Object.entries(errors)
+        .filter(([_, err]) => err)
+        .map(([field, _]) => field);
+      
+      console.log('Form validation errors:', errors);
       toast.error('Please fix the errors in the form');
       return;
     }
@@ -895,7 +952,7 @@ export function MissingPersonsPage() {
                         onChange={(e) =>
                           handleInputChange('gender', e.target.value)
                         }
-                        className="w-full rounded-lg border border-[var(--color-border)] p-2"
+                        className={`w-full rounded-lg border p-2 ${reportErrors.gender && reportTouched.gender ? 'border-red-500 focus:ring-red-500' : 'border-[var(--color-border)]'}`}
                       >
                         <option value="">Select gender</option>
                         {GENDER_OPTIONS.map((gender) => (
@@ -904,6 +961,11 @@ export function MissingPersonsPage() {
                           </option>
                         ))}
                       </select>
+                      {reportErrors.gender && reportTouched.gender && (
+                        <p className="mt-1 flex items-center gap-1 text-xs text-red-500">
+                          <AlertCircle size={12} /> {reportErrors.gender}
+                        </p>
+                      )}
                     </div>
 
                     <div>
@@ -917,12 +979,23 @@ export function MissingPersonsPage() {
                         id="lastSeenDate"
                         type="date"
                         required
+                        min={new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]}
+                        max={new Date().toISOString().split('T')[0]}
                         value={formData.lastSeenDate}
                         onChange={(e) =>
                           handleInputChange('lastSeenDate', e.target.value)
                         }
-                        className="w-full rounded-lg border border-[var(--color-border)] p-2"
+                        onBlur={() => handleReportBlur('lastSeenDate')}
+                        className={`w-full rounded-lg border p-2 ${reportErrors.lastSeenDate && reportTouched.lastSeenDate ? 'border-red-500 focus:ring-red-500' : 'border-[var(--color-border)]'}`}
                       />
+                      {reportErrors.lastSeenDate && reportTouched.lastSeenDate && (
+                        <p className="mt-1 flex items-center gap-1 text-xs text-red-500">
+                          <AlertCircle size={12} /> {reportErrors.lastSeenDate}
+                        </p>
+                      )}
+                      <p className="mt-1 text-xs text-[var(--color-muted-foreground)]">
+                        Only dates within the last 30 days are available for reporting
+                      </p>
                     </div>
                   </div>
 
@@ -958,9 +1031,15 @@ export function MissingPersonsPage() {
                         onChange={(e) =>
                           handleInputChange('lastSeenLocation', e.target.value)
                         }
-                        className="w-full rounded-lg border border-[var(--color-border)] p-2"
+                        onBlur={() => handleReportBlur('lastSeenLocation')}
+                        className={`w-full rounded-lg border p-2 ${reportErrors.lastSeenLocation && reportTouched.lastSeenLocation ? 'border-red-500 focus:ring-red-500' : 'border-[var(--color-border)]'}`}
                         placeholder="City, area, or landmark"
                       />
+                      {reportErrors.lastSeenLocation && reportTouched.lastSeenLocation && (
+                        <p className="mt-1 flex items-center gap-1 text-xs text-red-500">
+                          <AlertCircle size={12} /> {reportErrors.lastSeenLocation}
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -976,13 +1055,23 @@ export function MissingPersonsPage() {
                       onChange={(e) =>
                         handleInputChange('physicalDescription', e.target.value)
                       }
-                      className="w-full rounded-lg border border-[var(--color-border)] p-2"
+                      onBlur={() => handleReportBlur('physicalDescription')}
+                      className={`w-full rounded-lg border p-2 ${reportErrors.physicalDescription && reportTouched.physicalDescription ? 'border-red-500 focus:ring-red-500' : 'border-[var(--color-border)]'}`}
                       rows={3}
                       placeholder="Height, hair color, clothing, distinguishing features..."
                     />
+                    {reportErrors.physicalDescription && reportTouched.physicalDescription && (
+                      <p className="mt-1 flex items-center gap-1 text-xs text-red-500">
+                        <AlertCircle size={12} /> {reportErrors.physicalDescription}
+                      </p>
+                    )}
+                    <p className="mt-1 text-xs text-[var(--color-muted-foreground)]">
+                      Minimum 10 characters, maximum 500 characters
+                    </p>
                   </div>
+                </div>
 
-                  <div className="mb-4">
+                <div className="mb-4">
                     <label className="mb-2 block text-sm font-medium">
                       Photo{' '}
                       <span className="text-[var(--color-muted-foreground)]">
@@ -1010,7 +1099,6 @@ export function MissingPersonsPage() {
                       </label>
                     </div>
                   </div>
-                </div>
 
                 {/* Circumstances */}
                 <div>
@@ -1028,10 +1116,19 @@ export function MissingPersonsPage() {
                       onChange={(e) =>
                         handleInputChange('circumstances', e.target.value)
                       }
-                      className="w-full rounded-lg border border-[var(--color-border)] p-2"
+                      onBlur={() => handleReportBlur('circumstances')}
+                      className={`w-full rounded-lg border p-2 ${reportErrors.circumstances && reportTouched.circumstances ? 'border-red-500 focus:ring-red-500' : 'border-[var(--color-border)]'}`}
                       rows={3}
                       placeholder="Was there abuse? Mental health concerns? Suspected trafficking? Bullying?"
                     />
+                    {reportErrors.circumstances && reportTouched.circumstances && (
+                      <p className="mt-1 flex items-center gap-1 text-xs text-red-500">
+                        <AlertCircle size={12} /> {reportErrors.circumstances}
+                      </p>
+                    )}
+                    <p className="mt-1 text-xs text-[var(--color-muted-foreground)]">
+                      Minimum 10 characters, maximum 1000 characters
+                    </p>
                   </div>
 
                   <div>
@@ -1051,7 +1148,7 @@ export function MissingPersonsPage() {
                           e.target.value
                         )
                       }
-                      className="w-full rounded-lg border border-[var(--color-border)] p-2"
+                      className={`w-full rounded-lg border p-2 ${reportErrors.reporterRelationship && reportTouched.reporterRelationship ? 'border-red-500 focus:ring-red-500' : 'border-[var(--color-border)]'}`}
                     >
                       <option value="">Select relationship</option>
                       {RELATIONSHIP_OPTIONS.map((relationship) => (
@@ -1060,6 +1157,11 @@ export function MissingPersonsPage() {
                         </option>
                       ))}
                     </select>
+                    {reportErrors.reporterRelationship && reportTouched.reporterRelationship && (
+                      <p className="mt-1 flex items-center gap-1 text-xs text-red-500">
+                        <AlertCircle size={12} /> {reportErrors.reporterRelationship}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -1083,7 +1185,7 @@ export function MissingPersonsPage() {
                       onChange={(e) =>
                         handleInputChange('contactMethod', e.target.value)
                       }
-                      className="w-full rounded-lg border border-[var(--color-border)] p-2"
+                      className={`w-full rounded-lg border p-2 ${reportErrors.contactMethod && reportTouched.contactMethod ? 'border-red-500 focus:ring-red-500' : 'border-[var(--color-border)]'}`}
                     >
                       <option value="">Select method</option>
                       {CONTACT_METHODS.map((method) => (
@@ -1092,6 +1194,11 @@ export function MissingPersonsPage() {
                         </option>
                       ))}
                     </select>
+                    {reportErrors.contactMethod && reportTouched.contactMethod && (
+                      <p className="mt-1 flex items-center gap-1 text-xs text-red-500">
+                        <AlertCircle size={12} /> {reportErrors.contactMethod}
+                      </p>
+                    )}
                   </div>
 
                   {formData.contactMethod === 'Email' && (

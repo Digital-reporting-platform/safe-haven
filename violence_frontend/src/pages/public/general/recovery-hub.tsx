@@ -65,6 +65,10 @@ const slides = [
   },
 ];
 
+// News cache configuration
+const NEWS_CACHE_KEY = 'recovery_hub_news_cache';
+const CACHE_DURATION = 10 * 60 * 1000; // 10 minutes
+
 export const RecoveryHub = () => {
   const {
     user,
@@ -138,6 +142,17 @@ export const RecoveryHub = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
+        // Check cache first
+        const cachedData = localStorage.getItem(NEWS_CACHE_KEY);
+        if (cachedData) {
+          const { data, timestamp } = JSON.parse(cachedData);
+          if (Date.now() - timestamp < CACHE_DURATION) {
+            setNews(data);
+            setLoadingNews(false);
+            return;
+          }
+        }
+
         const apiKey = import.meta.env.VITE_GNEWS_API_KEY;
         
         // Skip API call if no valid API key is configured
@@ -153,7 +168,15 @@ export const RecoveryHub = () => {
         if (!response.ok) {
           if (response.status === 401) {
             console.warn('GNews API key is invalid or expired. Please update VITE_GNEWS_API_KEY in .env');
+          } else if (response.status === 429) {
+            console.warn('GNews API rate limit exceeded. Using cached data if available.');
+            // If we have cached data (even if expired), use it during rate limit
+            if (cachedData) {
+              const { data } = JSON.parse(cachedData);
+              setNews(data);
+            }
           }
+          setLoadingNews(false);
           return;
         }
         
@@ -167,10 +190,23 @@ export const RecoveryHub = () => {
             category: ['NEWS'],
             pubDate: article.publishedAt
           }));
+          
+          // Cache the results
+          localStorage.setItem(NEWS_CACHE_KEY, JSON.stringify({
+            data: transformedNews,
+            timestamp: Date.now()
+          }));
+          
           setNews(transformedNews);
         }
       } catch (error) {
         console.error('Error fetching news:', error);
+        // Try to use cached data on error
+        const cachedData = localStorage.getItem(NEWS_CACHE_KEY);
+        if (cachedData) {
+          const { data } = JSON.parse(cachedData);
+          setNews(data);
+        }
       } finally {
         setLoadingNews(false);
       }
