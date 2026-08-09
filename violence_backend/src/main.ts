@@ -32,6 +32,7 @@ async function bootstrap() {
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
+  'https://safe-haven-hujv-sigma.vercel.app',
   process.env.FRONTEND_URL,
 ].filter((origin): origin is string => Boolean(origin));
 
