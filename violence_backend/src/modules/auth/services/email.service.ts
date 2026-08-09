@@ -17,36 +17,57 @@ export class EmailService {
     const gmailAppPassword = this.configService.get<string>('GMAIL_APP_PASSWORD');
 
     if (!gmailUser || !gmailAppPassword) {
-      this.logger.warn('Gmail credentials not configured. Emails will be logged but not sent.');
+      this.logger.warn('Gmail credentials not configured (GMAIL_USER / GMAIL_APP_PASSWORD missing). Emails will be logged to server console.');
       return;
     }
 
-    // Try port 465 (SSL) first due to network issues, then fallback to 587 (TLS)
-    const usePort465 = this.configService.get<string>('SMTP_USE_SSL') !== 'false';
-    
-    this.transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: usePort465 ? 465 : 587,
-      secure: usePort465, // true for 465 (SSL), false for 587 (TLS)
-      auth: {
-        user: gmailUser,
-        pass: gmailAppPassword,
-      },
-      tls: {
-        rejectUnauthorized: false, // Allow self-signed certificates in dev
-      },
-      connectionTimeout: 8000, // 8 seconds timeout
-      greetingTimeout: 8000,
-      socketTimeout: 8000,
-    });
+    // Clean app password (remove spaces if copied as "xxxx xxxx xxxx xxxx")
+    const cleanAppPassword = gmailAppPassword.replace(/\s+/g, '');
+    const usePort465 = this.configService.get<string>('SMTP_USE_SSL') === 'true';
 
-    // Verify connection asynchronously
+    const createTransporter = (port: number, secure: boolean) => {
+      return nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port,
+        secure,
+        auth: {
+          user: gmailUser,
+          pass: cleanAppPassword,
+        },
+        tls: {
+          rejectUnauthorized: false, // Allow self-signed certificates in dev/proxy environments
+        },
+        connectionTimeout: 8000,
+        greetingTimeout: 8000,
+        socketTimeout: 8000,
+      });
+    };
+
+    // Default to port 587 TLS on cloud hosts like Render unless SMTP_USE_SSL is explicitly set to true
+    const primaryPort = usePort465 ? 465 : 587;
+    const primarySecure = usePort465;
+    this.transporter = createTransporter(primaryPort, primarySecure);
+
+    // Verify connection asynchronously with automatic port fallback
     this.transporter.verify((error) => {
       if (error) {
-        this.logger.error('Email transporter verification failed:', error.message);
-        this.logger.warn('Emails will be logged but may not send. Check your Gmail App Password and network settings.');
+        this.logger.warn(`Email transporter failed on port ${primaryPort}: ${error.message}`);
+        const fallbackPort = primaryPort === 465 ? 587 : 465;
+        const fallbackSecure = fallbackPort === 465;
+        this.logger.log(`Attempting fallback email transporter on port ${fallbackPort}...`);
+
+        const fallbackTransporter = createTransporter(fallbackPort, fallbackSecure);
+        fallbackTransporter.verify((fallbackError) => {
+          if (fallbackError) {
+            this.logger.error('Email transporter verification failed on all ports:', fallbackError.message);
+            this.logger.warn('Check Render environment variables: GMAIL_USER, GMAIL_APP_PASSWORD (16-char App Password), and set SMTP_USE_SSL=false for port 587. Generated OTPs will be logged in server logs.');
+          } else {
+            this.transporter = fallbackTransporter;
+            this.logger.log(`Fallback email transporter ready on port ${fallbackPort}`);
+          }
+        });
       } else {
-        this.logger.log(`Email transporter ready (port ${usePort465 ? 465 : 587})`);
+        this.logger.log(`Email transporter ready on port ${primaryPort}`);
       }
     });
   }
@@ -63,9 +84,9 @@ export class EmailService {
     const emailContent = this.getEmailContent(type, code, to, firstName);
     const subject = this.getEmailSubject(type);
 
-    // If no transporter configured (dev mode), just log
+    // If no transporter configured, log OTP to server logs
     if (!this.transporter) {
-      this.logger.log(`[DEV MODE] ${subject} to ${to}: ${code}`);
+      this.logger.warn(`[DEV/NO-TRANSPORTER LOG] ${subject} to ${to}: ${code}`);
       return;
     }
 
@@ -80,18 +101,8 @@ export class EmailService {
       this.logger.log(`OTP email sent to ${to} (${type})`);
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : String(error);
-      this.logger.error(`Failed to send email to ${to}:`);
-      this.logger.error(`Error: ${errorMessage}`);
-      
-      // Log the OTP in development for testing purposes
-      if (this.configService.get('NODE_ENV') === 'development') {
-        this.logger.warn(`[DEV MODE] OTP for ${to}: ${code}`);
-        this.logger.warn('Email sending failed but OTP is logged above for testing');
-        // Don't throw in dev mode - allow login to continue
-        throw new Error(`DEV_MODE_OTP:${code}`);
-      }
-      
-      throw new Error('Failed to send OTP email');
+      this.logger.error(`Failed to send email to ${to}: ${errorMessage}`);
+      this.logger.warn(`[OTP FALLBACK LOG] Verification OTP for ${to} (${type}): ${code}`);
     }
   }
 
