@@ -22,6 +22,7 @@ import { WorkflowModule } from './modules/workflow/workflow.module';
 import { MissingPersonsModule } from './modules/missing-persons/missing-persons.module';
 import { JobPortalModule } from './modules/job-portal/jobportal.module';
 import { ContactModule } from './modules/contact/contact.module';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -63,5 +64,6 @@ import { ContactModule } from './modules/contact/contact.module';
     JobPortalModule,
     ContactModule,
   ],
+  controllers: [AppController],
 })
 export class AppModule {}
