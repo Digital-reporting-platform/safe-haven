@@ -107,10 +107,10 @@ export const authService = {
       role: data.role || UserRole.SURVIVOR,
     });
 
-    const { user, message } = response.data;
+    const { user, message, devOtp } = response.data;
     const transformedUser = this.transformUser(user);
     if (transformedUser) {
-      return { user: transformedUser, message };
+      return { user: transformedUser, message, devOtp };
     }
     return null;
   },
@@ -188,7 +188,7 @@ async logout() {
    * Resend email verification OTP
    * POST /auth/resend-otp
    */
-  async resendEmailVerificationOTP(email: string): Promise<{ message: string }> {
+  async resendEmailVerificationOTP(email: string): Promise<{ message: string; devOtp?: string }> {
     const response = await api.post('/auth/resend-otp', {
       email: email.trim().toLowerCase(),
       type: 'EMAIL_VERIFICATION',

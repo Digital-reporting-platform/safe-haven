@@ -80,6 +80,7 @@ export class AuthService {
             role: UserRole.SURVIVOR,
             isEmailVerified: false,
           },
+          devOtp: otp.code,
           message: 'Account already exists but is not verified. A new verification code has been sent to your email.',
         };
       }
@@ -137,6 +138,7 @@ export class AuthService {
         role: user.role,
         isEmailVerified: user.isEmailVerified,
       },
+      devOtp: otp.code,
       message: 'Registration successful. Please check your email for verification code.',
     };
   }
@@ -1003,6 +1005,7 @@ export class AuthService {
     this.logger.log(`OTP resent to ${user.email} (${dto.type})`);
 
     return {
+      devOtp: otp.code,
       message: 'If your email is registered, you will receive a new code',
     };
   }

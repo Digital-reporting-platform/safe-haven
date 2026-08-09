@@ -37,12 +37,16 @@ export function VerifyEmailPage() {
 
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
-  // Auto-focus first input on mount
+  const codeParam = searchParams.get('code') || '';
+
+  // Auto-focus first input on mount & auto-fill code if present in URL
   useEffect(() => {
-    if (inputRefs.current[0]) {
+    if (codeParam && codeParam.length === 6) {
+      setOtp(codeParam.split(''));
+    } else if (inputRefs.current[0]) {
       inputRefs.current[0].focus();
     }
-  }, []);
+  }, [codeParam]);
 
   const handleOtpChange = (index: number, value: string) => {
     // Only allow digits
@@ -132,9 +136,12 @@ export function VerifyEmailPage() {
     try {
       const result = await authService.resendEmailVerificationOTP(email);
       toast.success(result.message || 'Verification code resent!');
-      // Clear current OTP
-      setOtp(['', '', '', '', '', '']);
-      inputRefs.current[0]?.focus();
+      if (result.devOtp && result.devOtp.length === 6) {
+        setOtp(result.devOtp.split(''));
+      } else {
+        setOtp(['', '', '', '', '', '']);
+        inputRefs.current[0]?.focus();
+      }
     } catch (err: any) {
       const message = err?.response?.data?.message || err?.message || 'Failed to resend code';
       toast.error(Array.isArray(message) ? message[0] : message);

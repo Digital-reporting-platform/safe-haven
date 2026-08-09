@@ -154,8 +154,8 @@ export function RegisterPage() {
 
       if (result) {
         toast.success(result.message || 'Account created! Please verify your email.');
-        // Redirect to verify-email page with email pre-filled
-        navigate(`/auth/verify-email?email=${encodeURIComponent(result.user.email)}`);
+        const codeParam = (result as any).devOtp ? `&code=${encodeURIComponent((result as any).devOtp)}` : '';
+        navigate(`/auth/verify-email?email=${encodeURIComponent(result.user.email)}${codeParam}`);
       }
     } catch (error: any) {
       const message =
