@@ -19,7 +19,11 @@ async function bootstrap() {
 
   app.setGlobalPrefix(globalPrefix);
   
-  app.use(helmet());
+  // Configure helmet with CORS-friendly settings
+  app.use(helmet({
+    crossOriginResourcePolicy: { policy: "cross-origin" },
+    crossOriginOpenerPolicy: { policy: "same-origin-allow-popups" },
+  }));
   
   app.useGlobalPipes(
     new ValidationPipe({

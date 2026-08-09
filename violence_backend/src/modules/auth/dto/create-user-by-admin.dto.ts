@@ -43,7 +43,7 @@ export class CreateUserByAdminDto {
   @IsString()
   @MinLength(2, { message: 'First name must be at least 2 characters' })
   @MaxLength(50, { message: 'First name must not exceed 50 characters' })
-  @Matches(/^[a-zA-Z\s'-]+$/, {
+  @Matches(/^[\p{L}\s'-]+$/u, {
     message:
       'First name can only contain letters, spaces, hyphens, and apostrophes',
   })
@@ -58,7 +58,7 @@ export class CreateUserByAdminDto {
   @IsString()
   @MinLength(2, { message: 'Last name must be at least 2 characters' })
   @MaxLength(50, { message: 'Last name must not exceed 50 characters' })
-  @Matches(/^[a-zA-Z\s'-]+$/, {
+  @Matches(/^[\p{L}\s'-]+$/u, {
     message:
       'Last name can only contain letters, spaces, hyphens, and apostrophes',
   })
@@ -71,7 +71,7 @@ export class CreateUserByAdminDto {
   })
   @IsOptional()
   @IsString()
-  @Matches(/^\+?[1-9]\d{1,14}$/, { message: 'Please provide a valid phone number' })
+  @Matches(/^(\+?[1-9]\d{6,14})$/, { message: 'Please provide a valid phone number' })
   phone?: string;
 
   @ApiProperty({
