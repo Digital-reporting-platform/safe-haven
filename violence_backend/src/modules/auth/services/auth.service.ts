@@ -965,7 +965,7 @@ export class AuthService {
       return { message: 'If your email is registered, you will receive a new code' };
     }
 
-    // Check rate limiting (at least 60 seconds between resends)
+    // Check rate limiting (at least 15 seconds between resends)
     const existingOTP = await this.prisma.oTP.findFirst({
       where: {
         userId: user.id,
@@ -976,8 +976,8 @@ export class AuthService {
 
     if (existingOTP) {
       const secondsSinceLastOTP = (Date.now() - existingOTP.createdAt.getTime()) / 1000;
-      if (secondsSinceLastOTP < 60) {
-        const waitSeconds = Math.ceil(60 - secondsSinceLastOTP);
+      if (secondsSinceLastOTP < 15) {
+        const waitSeconds = Math.ceil(15 - secondsSinceLastOTP);
         throw new BadRequestException(
           `Please wait ${waitSeconds} seconds before requesting a new code`,
         );
@@ -988,13 +988,17 @@ export class AuthService {
     const expiryMinutes = dto.type === OTPType.ACCOUNT_ACTIVATION ? 60 : 15;
     const otp = await this.otpService.createOTP(user.id, dto.type, expiryMinutes);
 
-    // Send email
-    await this.emailService.sendOTPEmail(
-      user.email,
-      otp.code,
-      dto.type,
-      user.firstName || undefined,
-    );
+    // Send email asynchronously so API response doesn't hang or fail
+    this.emailService
+      .sendOTPEmail(
+        user.email,
+        otp.code,
+        dto.type,
+        user.firstName || undefined,
+      )
+      .catch((err) => {
+        this.logger.error(`Failed to send OTP email to ${user.email}: ${err.message || err}`);
+      });
 
     this.logger.log(`OTP resent to ${user.email} (${dto.type})`);
 

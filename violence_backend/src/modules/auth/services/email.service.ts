@@ -73,6 +73,53 @@ export class EmailService {
   }
 
   /**
+   * Helper method to send email via Resend API (HTTPS) or Nodemailer (SMTP)
+   */
+  private async dispatchEmail(to: string, subject: string, html: string): Promise<boolean> {
+    const resendApiKey = this.configService.get<string>('RESEND_API_KEY');
+    if (resendApiKey) {
+      try {
+        const fromEmail = this.configService.get<string>('RESEND_FROM_EMAIL') || 'SafeHaven <onboarding@resend.dev>';
+        const response = await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${resendApiKey.trim()}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            from: fromEmail,
+            to: [to],
+            subject,
+            html,
+          }),
+        });
+
+        if (response.ok) {
+          this.logger.log(`Email successfully sent via Resend API to ${to}`);
+          return true;
+        } else {
+          const errData = await response.json().catch(() => ({}));
+          this.logger.warn(`Resend API response status ${response.status}:`, errData);
+        }
+      } catch (err: any) {
+        this.logger.error(`Resend API error: ${err.message || err}`);
+      }
+    }
+
+    if (this.transporter) {
+      await this.transporter.sendMail({
+        from: `"SafeHaven" <${this.configService.get('GMAIL_USER')}>`,
+        to,
+        subject,
+        html,
+      });
+      return true;
+    }
+
+    return false;
+  }
+
+  /**
    * Send OTP email based on type
    */
   async sendOTPEmail(
@@ -84,21 +131,13 @@ export class EmailService {
     const emailContent = this.getEmailContent(type, code, to, firstName);
     const subject = this.getEmailSubject(type);
 
-    // If no transporter configured, log OTP to server logs
-    if (!this.transporter) {
-      this.logger.warn(`[DEV/NO-TRANSPORTER LOG] ${subject} to ${to}: ${code}`);
-      return;
-    }
-
     try {
-      await this.transporter.sendMail({
-        from: `"SafeHaven" <${this.configService.get('GMAIL_USER')}>`,
-        to,
-        subject,
-        html: emailContent,
-      });
-
-      this.logger.log(`OTP email sent to ${to} (${type})`);
+      const sent = await this.dispatchEmail(to, subject, emailContent);
+      if (sent) {
+        this.logger.log(`OTP email sent to ${to} (${type})`);
+      } else {
+        this.logger.warn(`[OTP FALLBACK LOG] Verification OTP for ${to} (${type}): ${code}`);
+      }
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : String(error);
       this.logger.error(`Failed to send email to ${to}: ${errorMessage}`);
@@ -122,18 +161,8 @@ export class EmailService {
       </div>
     `;
 
-    if (!this.transporter) {
-      this.logger.log(`[DEV MODE] Welcome email to ${to}`);
-      return;
-    }
-
     try {
-      await this.transporter.sendMail({
-        from: `"SafeHaven" <${this.configService.get('GMAIL_USER')}>`,
-        to,
-        subject: 'Welcome to SafeHaven',
-        html,
-      });
+      await this.dispatchEmail(to, 'Welcome to SafeHaven', html);
     } catch (error) {
       this.logger.error(`Failed to send welcome email to ${to}:`, error);
     }
